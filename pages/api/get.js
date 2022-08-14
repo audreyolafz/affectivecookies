@@ -11,6 +11,5 @@ const airtable = new AirtablePlus({
 
 export default async (req, res) => {
   const data = await airtable.read();
-  // const data = await airtable.create({ label: {border-solid.value}, completed: true });
   res.status(200).json(data);
 };
