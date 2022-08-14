@@ -7,10 +7,17 @@ const airtable = new AirtablePlus({
 });
 
 export default async (req, res) => {
-  if (req.query.item || req.query.people) {
+  if (
+    req.query.name ||
+    req.query.people ||
+    req.query.future ||
+    req.query.place
+  ) {
     const record = await airtable.create({
-      item: req.query.item,
+      name: req.query.name,
       people: req.query.people,
+      future: req.query.future,
+      place: req.query.place,
     });
     res.status(200).send(`Created record ${record.id}`);
   } else {
