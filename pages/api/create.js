@@ -7,9 +7,9 @@ const airtable = new AirtablePlus({
 });
 
 export default async (req, res) => {
-  if (req.query.todo && req.query.people) {
+  if (req.query.item || req.query.people) {
     const record = await airtable.create({
-      item: req.query.todo,
+      item: req.query.item,
       people: req.query.people,
     });
     res.status(200).send(`Created record ${record.id}`);
