@@ -23,12 +23,13 @@ export default function Home() {
   };
   const todos = useSWR("/api/get", fetcher).data;
   return (
-    <div className="dark:text-white dark:bg-black p-10 font-sans">
-      <h1 className="text-5xl font-bold">stay.</h1>
+    <div className="dark:text-white dark:bg-black p-10">
+      <h1 className="text-black text-5xl font-bold">stay.</h1>
+      <br />
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col mx-52 mb-5 p-8 rounded-lg space-y-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+        className="flex flex-col mb-5 p-8 rounded-lg space-y-5 bg-white bg-opacity-80 bg-clip-padding rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
       >
         <div className="mb-6">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -58,7 +59,7 @@ export default function Home() {
           </label>
           <textarea
             rows="3"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="mah future"
             {...register("future", { required: true })}
           ></textarea>
@@ -69,7 +70,7 @@ export default function Home() {
           </label>
           <textarea
             rows="2"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="travel legend amirite"
             {...register("place", { required: true })}
           ></textarea>
@@ -85,17 +86,17 @@ export default function Home() {
 
       <div className="grid sm: grid-cols-1 md: grid-cols-2 lg:grid-cols-3 auto-cols-max">
         {todos?.map((todo) => (
-          <div className=" m-5 p-6 rounded-lg shadow-lg bg-white max-w-sm">
-            <p key={todo.id} className="text-gray-700 text-base text-center">
+          <div className=" m-5 p-6 aspect-video rounded-lg shadow-lg max-w-sm bg-mesh">
+            <p key={todo.id} className="text-neutral-100 text-base text-center">
               {todo.name}
             </p>
-            <p key={todo.id} className="text-gray-700 text-base text-center">
+            <p key={todo.id} className="text-neutral-100 text-base text-center">
               {todo.people}
             </p>
-            <p key={todo.id} className="text-gray-700 text-base text-center">
+            <p key={todo.id} className="text-neutral-100 text-base text-center">
               {todo.future}
             </p>
-            <p key={todo.id} className="text-gray-700 text-base text-center">
+            <p key={todo.id} className="text-neutral-100 text-base text-center">
               {todo.place}
             </p>
           </div>
