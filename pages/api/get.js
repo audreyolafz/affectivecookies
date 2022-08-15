@@ -4,8 +4,8 @@ const airtable = new AirtablePlus({
   baseID: "appE2tkAhTZtrBVKx",
   apiKey: process.env.AIRTABLE_API_KEY,
   tableName: "user_todo",
-  transform: (r) => {
-    return r.fields;
+  transform: (res) => {
+    return res.fields;
   },
 });
 

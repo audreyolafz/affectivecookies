@@ -21,6 +21,7 @@
     "tw-elements": "^1.0.0-alpha12"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.2",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.7"
