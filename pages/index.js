@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
+import Nav from "../components/Nav";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,8 +13,11 @@ export default function Home() {
       "/api/create?name=" +
         data.name +
         `&` +
-        "love=" +
-        data.love +
+        "pic=" +
+        data.pic +
+        // `&` +
+        // "love=" +
+        // data.love +
         `&` +
         "people=" +
         data.people +
@@ -27,9 +31,10 @@ export default function Home() {
   };
   const cards = useSWR("/api/get", fetcher).data;
   return (
-    <div className="dark:text-white dark:bg-black p-10 focus:cursor-auto">
-      <h1 className="text-black text-5xl font-bold">stay.</h1>
-      <br />
+    <div className="dark:text-white dark:bg-black focus:cursor-auto">
+      <Nav />
+      {/* <h1 className="text-black text-5xl font-bold">stay.</h1>
+      <br /> */}
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -119,13 +124,18 @@ export default function Home() {
               >
                 {card.name}
               </p>
-
-              <img
+              {/* <img
                 key={i}
                 id="picture"
                 layout="fill"
                 className="rounded-lg object-contain float-left h-28"
                 src={card.love[0].url}
+              /> */}
+              <img
+                key={i}
+                layout="fill"
+                className="rounded-lg object-contain float-left h-28"
+                src={card.pic}
               />
               <p
                 key={i}

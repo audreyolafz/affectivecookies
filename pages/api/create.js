@@ -9,12 +9,14 @@ const airtable = new AirtablePlus({
 export default async (req, res) => {
   if (
     req.query.name ||
+    req.query.pic ||
     req.query.people ||
     req.query.future ||
     req.query.place
   ) {
     const record = await airtable.create({
       name: req.query.name,
+      pic: req.query.pic,
       people: req.query.people,
       future: req.query.future,
       place: req.query.place,
