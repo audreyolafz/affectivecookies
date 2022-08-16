@@ -5,6 +5,7 @@ import gallery from "../pages/gallery";
 
 const links = [
   { label: "Home", href: "/" },
+  { label: "Form", href: "/form" },
   { label: "Image Gallery", href: "/gallery" },
 ];
 
