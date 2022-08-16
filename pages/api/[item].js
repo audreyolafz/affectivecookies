@@ -10,6 +10,7 @@ const airtable = new AirtablePlus({
 });
 
 export default async (req, res) => {
-  const data = await airtable.read();
-  res.status(200).json(data);
+  const itemID = req.query.item;
+  const readRes = await airtable.find(itemID);
+  res.json(readRes);
 };

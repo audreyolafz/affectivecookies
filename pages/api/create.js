@@ -3,20 +3,18 @@ const AirtablePlus = require("airtable-plus");
 const airtable = new AirtablePlus({
   baseID: "appE2tkAhTZtrBVKx",
   apiKey: process.env.AIRTABLE_API_KEY,
-  tableName: "user_todo",
+  tableName: "user_form",
 });
 
 export default async (req, res) => {
   if (
     req.query.name ||
-    // req.query.love ||
     req.query.people ||
     req.query.future ||
     req.query.place
   ) {
     const record = await airtable.create({
       name: req.query.name,
-      // love: req.query.love,
       people: req.query.people,
       future: req.query.future,
       place: req.query.place,

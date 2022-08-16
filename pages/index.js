@@ -12,9 +12,9 @@ export default function Home() {
       "/api/create?name=" +
         data.name +
         `&` +
-        // "love=" +
-        // data.love +
-        // `&` +
+        "love=" +
+        data.love +
+        `&` +
         "people=" +
         data.people +
         `&` +
@@ -23,9 +23,9 @@ export default function Home() {
         `&` +
         "place=" +
         data.place
-    ).then((r) => console.log(r.data));
+    ).then((res) => console.log("IMGZZZZZ" + res.data));
   };
-  const todos = useSWR("/api/get", fetcher).data;
+  const cards = useSWR("/api/get", fetcher).data;
   return (
     <div className="dark:text-white dark:bg-black p-10 focus:cursor-auto">
       <h1 className="text-black text-5xl font-bold">stay.</h1>
@@ -42,49 +42,25 @@ export default function Home() {
           <input
             className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="whateva u like"
-            required=""
+            required
+            minlength="2"
+            maxlength="20"
             {...register("name", { required: true })}
           />
         </div>
-
-        {/* <div className="flex justify-center items-center w-full">
-          <label
-            for="dropzone-file"
-            className="flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-          >
-            <div className="flex flex-col justify-center items-center pt-5 pb-6">
-              <svg
-                aria-hidden="true"
-                className="mb-3 w-10 h-10 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                ></path>
-              </svg>
-              <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                <span className="font-semibold">Click to upload</span> or drag
-                and drop
-              </p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                SVG, PNG, JPG or GIF (MAX. 800x400px)
-              </p>
-            </div>
-
-            <input
-              id="dropzone-file"
-              type="file"
-              className="hidden"
-              {...register("love", { required: true })}
-            />
+        <div className="mb-6">
+          <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
+            image url
           </label>
-        </div> */}
+          <input
+            className="select-all bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="unsplash + pexels have hq images!"
+            minlength="10"
+            type="url"
+            required
+            {...register("pic", { required: true })}
+          />
+        </div>
 
         <div className="mb-6">
           <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
@@ -93,7 +69,8 @@ export default function Home() {
           <input
             className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="my favorite humaaans"
-            required=""
+            required
+            minlength="2"
             {...register("people", { required: true })}
           />
         </div>
@@ -105,6 +82,8 @@ export default function Home() {
             rows="3"
             className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="mah future"
+            required
+            minlength="2"
             {...register("future", { required: true })}
           ></textarea>
         </div>
@@ -116,6 +95,8 @@ export default function Home() {
             rows="2"
             className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="travel legend amirite"
+            required
+            minlength="2"
             {...register("place", { required: true })}
           ></textarea>
         </div>
@@ -129,61 +110,80 @@ export default function Home() {
       </form>
 
       <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
-        {todos?.map((todo, i) => (
+        {cards?.map((card, i) => (
           <div className="m-5 p-6 aspect-video rounded-lg bg-meshBlue shadow-lg max-w-sm relative preserve-3d hover:my-rotate-y-180 duration-1000">
             <div className="absolute backface-hidden">
               <p
                 key={i}
                 className="text-neutral-100 text-2xl text-center font-bold backface-hidden"
               >
-                {todo.name}
+                {card.name}
               </p>
-              {/* <img
-              key={i}
-              id="picture"
-              layout="fill"
-              className="rounded-lg object-contain self-center h-72"
-              src={todo.love}
-              width={50}
-              height={100}
-            /> */}
+
+              <img
+                key={i}
+                id="picture"
+                layout="fill"
+                className="rounded-lg object-contain float-left h-28"
+                src={card.love[0].url}
+              />
               <p
                 key={i}
-                className="text-neutral-100 text-base text-center backface-hidden"
+                className="text-neutral-100 text-base text-center backface-hidden px-2"
               >
-                🫂 <u>{todo.people}</u> could not have done it without me 🫶
-              </p>
-              <p
-                key={i}
-                className="text-neutral-100 text-base text-center backface-hidden"
-              >
-                🤩 <u>{todo.future}</u> is exciting me and pushing me forward!
+                🫂 <u>{card.people}</u> could not have done it without me 🫶
               </p>
               <p
                 key={i}
-                className="text-neutral-100 text-base text-center backface-hidden"
+                className="text-neutral-100 text-base text-center backface-hidden px-2"
               >
-                🌎 <u>{todo.place}</u> is waiting for me to come.
+                🤩 <u>{card.future}</u> is exciting me and pushing me forward!
+              </p>
+              <p
+                key={i}
+                className="text-neutral-100 text-base text-center backface-hidden px-2"
+              >
+                🌎 <u>{card.place}</u> is waiting for me to come.
               </p>
             </div>
-            <div className="absolute p-3 my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
-              <a className="text-left" href="https://988lifeline.org/">
+            <div className="absolute p-3 pb-2 my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
+              <a
+                className="text-left subpixel-antialiased"
+                href="https://988lifeline.org/"
+                target="_blank"
+              >
                 988 Suicide and Crisis Lifeline
               </a>
               <br />
-              <a className="text-left" href="https://www.crisistextline.org/">
+              <a
+                className="text-left subpixel-antialiased"
+                href="https://www.crisistextline.org/"
+                target="_blank"
+              >
                 Crisis Text Line: text HOME to 741741
               </a>
               <br />
-              <a className="text-left" href="https://www.thetrevorproject.org/">
+              <a
+                className="text-left subpixel-antialiased"
+                href="https://www.thetrevorproject.org/"
+                target="_blank"
+              >
                 The Trevor Project: text START to 678678
               </a>
               <br />
-              <a className="text-left" href="https://www.thehotline.org/">
+              <a
+                className="text-left subpixel-antialiased"
+                href="https://www.thehotline.org/"
+                target="_blank"
+              >
                 National Domestic Violence Hotline: text START to 88788
               </a>
               <br />
-              <a className="text-left" href="https://www.rainn.org/">
+              <a
+                className="text-left subpixel-antialiased"
+                href="https://www.rainn.org/"
+                target="_blank"
+              >
                 National Sexual Assault Hotline: call 800.656.HOPE
               </a>
             </div>
