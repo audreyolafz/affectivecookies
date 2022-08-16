@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
-import Nav from "../components/Nav";
+import Nav from "../components/nav";
 
 export default function Form() {
   const { register, handleSubmit } = useForm();
