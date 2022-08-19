@@ -15,7 +15,7 @@ export default function Home() {
             <div className="absolute backface-hidden">
               <p
                 key={i}
-                className="text-neutral-100 text-2xl text-center font-bold backface-hidden"
+                className="\text-2xl text-center font-bold backface-hidden"
               >
                 {card.name}
               </p>
@@ -27,19 +27,19 @@ export default function Home() {
               />
               <p
                 key={i}
-                className="text-neutral-100 text-base text-center backface-hidden px-2"
+                className="\text-base text-center backface-hidden px-2"
               >
                 🫂 <u>{card.people}</u> could not have done it without me 🫶
               </p>
               <p
                 key={i}
-                className="text-neutral-100 text-base text-center backface-hidden px-2"
+                className="\text-base text-center backface-hidden px-2"
               >
                 🤩 <u>{card.future}</u> is exciting me and pushing me forward!
               </p>
               <p
                 key={i}
-                className="text-neutral-100 text-base text-center backface-hidden px-2"
+                className="\text-base text-center backface-hidden px-2"
               >
                 🌎 <u>{card.place}</u> is waiting for me to come.
               </p>
