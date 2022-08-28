@@ -11,7 +11,7 @@ export default function Form() {
 
   const onSubmit = async (data) => {
     fetch(
-      "/api/create?name=" +
+      "/api/createcard?name=" +
         data.name +
         `&` +
         "pic=" +

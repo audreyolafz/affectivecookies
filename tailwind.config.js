@@ -21,6 +21,7 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   mode: "jit",
+  content: ["./node_modules/flowbite-react/**/*.js"],
   theme: {
     container: {
       center: true,
@@ -33,11 +34,13 @@ module.exports = {
         greenery: "url('../public/greenery.jpg')",
         meshRed: "url('../public/meshRed.png')",
         meshBlue: "url('../public/meshBlue.png')",
+        cookie: "url('../public/cookies.png')",
+        cookieJar: "url('../public/cookieJar.png')",
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [Myclass],
+  plugins: [Myclass, require("flowbite/plugin")],
 };

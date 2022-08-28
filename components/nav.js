@@ -9,6 +9,8 @@ const links = [
   // { label: "Form", href: "/form" },
   // { label: "Login", href: "/login" },
   { label: "Account", href: "/account" },
+  { label: "Cards", href: "/cards" },
+  // { label: "Dashboard", href: "/modal" },
 ];
 
 export default function Nav() {
