@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap");
+
 html.dark {
   color: #ffffff;
   background-color: #000000;
+  font-family: "Poppins", "Inter", "Helvetica Neue", system-ui, -apple-system,
+    Roboto, Oxygen, "Open Sans", sans-serif;
 }

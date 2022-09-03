@@ -27,9 +27,9 @@ module.exports = {
       center: true,
     },
     extend: {
-      fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-      },
+      // fontFamily: {
+      //   sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      // },
       backgroundImage: {
         greenery: "url('../public/greenery.jpg')",
         meshRed: "url('../public/meshRed.png')",

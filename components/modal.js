@@ -40,6 +40,8 @@ export default function CookieModal() {
       >
         + Create Cookie Jar
       </button>
+      <br />
+
       {showModal ? (
         // <div
         //   id="authentication-modal"
@@ -106,11 +108,11 @@ export default function CookieModal() {
       ) : // </div>
       null}
       <br />
-      <div className="grid grid-flow-row-dense lg:grid-cols-5">
-        {titles?.map((title, i) => (
+      <div className="grid grid-flow-row-dense sm: grid-cols-1 md: grid-cols-1 lg:grid-cols-5">
+        {titles?.map((title) => (
           <div>
             <Image type="button" src={cookieJar} width="250px" height="250px" />
-            <h1>{title.title}</h1>
+            <h1 className="text-center">{title.title}</h1>
           </div>
         ))}
       </div>
