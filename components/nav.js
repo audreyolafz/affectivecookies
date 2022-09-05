@@ -49,13 +49,22 @@ export default function Nav() {
         </ul>
         <div className="rounded-lg">
           {session ? (
-            <button className="bg-blue-300 p-3" onClick={() => signOut()}>
-              Log out
+            <button
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              onClick={() => signOut()}
+            >
+              Sign Out
             </button>
           ) : (
-            <button className="bg-teal-300 p-3" onClick={() => signIn()}>
-              Log In
+            <button
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              onClick={() => signIn()}
+            >
+              Sign In
             </button>
+            // <button className="bg-teal-300 p-3" onClick={() => signIn()}>
+            //   Log In
+            // </button>
           )}
         </div>
       </ul>

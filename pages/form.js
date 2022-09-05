@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
+import useSWR from "swr";
+import fetcher from "../lib/fetcher";
 import Nav from "../components/nav";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
 // import Login from "./login";
@@ -28,8 +30,11 @@ export default function Form() {
         `&` +
         "place=" +
         data.place
-    ).then((res) => console.log("IMGZZZZZ" + res.data));
+    ).then((res) => console.log("NEW STUFF " + res.data));
   };
+  const cards = useSWR("/api/getcards", fetcher).data;
+
+  function newestId() {}
   return (
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
       <div>
@@ -111,81 +116,86 @@ export default function Form() {
             generate!
           </button>
         </form>
-        {/* <div className="m-5 p-6 rounded-lg bg-meshBlue shadow-lg max-w-sm relative">
+
+        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
+          {cards?.map((card, i) => (
             <div>
-              <p
-                key={i}
-                className="text-2xl text-center font-bold"
-              >
-                {card.name}
-              </p>
-              <img
-                key={i}
-                layout="fill"
-                className="rounded-lg object-contain float-left h-28"
-                src={card.pic}
-              />
-              <p
-                key={i}
-                className="text-base text-center backface-hidden px-2"
-              >
-                🫂 <u>{card.people}</u> could not have done it without me 🫶
-              </p>
-              <p
-                key={i}
-                className="text-base text-center backface-hidden px-2"
-              >
-                🤩 <u>{card.future}</u> is exciting me and pushing me forward!
-              </p>
-              <p
-                key={i}
-                className="text-base text-center backface-hidden px-2"
-              >
-                🌎 <u>{card.place}</u> is waiting for me to come.
-              </p>
+              <div className="m-5 p-6 rounded-lg bg-meshBlue shadow-lg max-w-sm relative">
+                <div>
+                  <p key={i} className="text-2xl text-center font-bold">
+                    {card.name}
+                  </p>
+                  <img
+                    key={i}
+                    layout="fill"
+                    className="rounded-lg object-contain float-left h-28"
+                    src={card.pic}
+                  />
+                  <p
+                    key={i}
+                    className="text-base text-center backface-hidden px-2"
+                  >
+                    🫂 <u>{card.people}</u> could not have done it without me 🫶
+                  </p>
+                  <p
+                    key={i}
+                    className="text-base text-center backface-hidden px-2"
+                  >
+                    🤩 <u>{card.future}</u> is exciting me and pushing me
+                    forward!
+                  </p>
+                  <p
+                    key={i}
+                    className="text-base text-center backface-hidden px-2"
+                  >
+                    🌎 <u>{card.place}</u> is waiting for me to come.
+                  </p>
+                </div>
+              </div>
+              <div className="m-5 p-6 rounded-lg bg-meshBlue shadow-lg max-w-sm relative">
+                <a
+                  className="text-left subpixel-antialiased"
+                  href="https://988lifeline.org/"
+                  target="_blank"
+                >
+                  988 Suicide and Crisis Lifeline
+                </a>
+                <br />
+                <a
+                  className="text-left subpixel-antialiased"
+                  href="https://www.crisistextline.org/"
+                  target="_blank"
+                >
+                  Crisis Text Line: text HOME to 741741
+                </a>
+                <br />
+                <a
+                  className="text-left subpixel-antialiased"
+                  href="https://www.thetrevorproject.org/"
+                  target="_blank"
+                >
+                  The Trevor Project: text START to 678678
+                </a>
+                <br />
+                <a
+                  className="text-left subpixel-antialiased"
+                  href="https://www.thehotline.org/"
+                  target="_blank"
+                >
+                  National Domestic Violence Hotline: text START to 88788
+                </a>
+                <br />
+                <a
+                  className="text-left subpixel-antialiased"
+                  href="https://www.rainn.org/"
+                  target="_blank"
+                >
+                  National Sexual Assault Hotline: call 800.656.HOPE
+                </a>
+              </div>
             </div>
-            <div className="m-5 p-6 rounded-lg bg-meshBlue shadow-lg max-w-sm relative">
-              <a
-                className="text-left subpixel-antialiased"
-                href="https://988lifeline.org/"
-                target="_blank"
-              >
-                988 Suicide and Crisis Lifeline
-              </a>
-              <br />
-              <a
-                className="text-left subpixel-antialiased"
-                href="https://www.crisistextline.org/"
-                target="_blank"
-              >
-                Crisis Text Line: text HOME to 741741
-              </a>
-              <br />
-              <a
-                className="text-left subpixel-antialiased"
-                href="https://www.thetrevorproject.org/"
-                target="_blank"
-              >
-                The Trevor Project: text START to 678678
-              </a>
-              <br />
-              <a
-                className="text-left subpixel-antialiased"
-                href="https://www.thehotline.org/"
-                target="_blank"
-              >
-                National Domestic Violence Hotline: text START to 88788
-              </a>
-              <br />
-              <a
-                className="text-left subpixel-antialiased"
-                href="https://www.rainn.org/"
-                target="_blank"
-              >
-                National Sexual Assault Hotline: call 800.656.HOPE
-              </a>
-            </div>
-          </div> */}
+          ))}
+        </div>
       </div>
     </div>
   );

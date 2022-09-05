@@ -22,10 +22,11 @@ export default function CookieModal() {
   const titles = useSWR("/api/gettitles", fetcher).data;
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <h1 className="text-3xl text-center font-bold">
         What Cookie Jar Challenge Did You Overcome Today?
       </h1>
+      <br />
       {/* <Image
         type="button"
         src={cookieJar}
@@ -35,7 +36,7 @@ export default function CookieModal() {
       /> */}
       <button
         type="button"
-        className="border border-blue-100 text-gray-800  hover:text-white active:bg-black hover:bg-black flex justify-center items-center gap-2 font-bold px-6 h-12 rounded-md hover:shadow-lg outline-none focus:outline-none"
+        className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
         onClick={() => setShowModal(true)}
       >
         + Create Cookie Jar
@@ -108,7 +109,7 @@ export default function CookieModal() {
       ) : // </div>
       null}
       <br />
-      <div className="grid grid-flow-row-dense sm: grid-cols-1 md: grid-cols-1 lg:grid-cols-5">
+      <div className="grid grid-flow-row-dense sm: grid-cols-1 md: grid-cols-1 lg:grid-cols-4">
         {titles?.map((title) => (
           <div>
             <Image type="button" src={cookieJar} width="250px" height="250px" />

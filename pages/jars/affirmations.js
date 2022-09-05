@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { get as fetch } from "axios";
 import useSWR from "swr";
 import { useState } from "react";
@@ -8,8 +8,8 @@ import Image from "next/image";
 import cookie from "../../public/cookies.png";
 import Nav from "../../components/nav";
 
-export default function Affirmations() {
-  const cookies = useSWR("/api/getcookies", fetcher).data;
+export default function Affirmations({ cookies }) {
+  // const cookies = useSWR("/api/getcookies", fetcher).data;
   return (
     <div>
       {cookies?.map((cookie, i) => (
@@ -20,3 +20,14 @@ export default function Affirmations() {
     </div>
   );
 }
+
+// export async function getStaticProps() {
+//   const cookies = await useSWR("http://localhost:3000/api/getcookies", fetcher)
+//     .data;
+
+//   return {
+//     props: {
+//       cookies,
+//     },
+//   };
+// }

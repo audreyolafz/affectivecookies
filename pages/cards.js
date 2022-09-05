@@ -9,7 +9,7 @@ export default function Cards() {
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
       <Nav />
 
-      <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
+      <div className="grid sm:min-w-fit sm:min-h-fit sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
         {cards?.map((card, i) => (
           <div className="m-5 p-6 aspect-video rounded-lg bg-meshBlue shadow-lg max-w-sm relative preserve-3d hover:my-rotate-y-180 duration-1000">
             <div className="absolute backface-hidden">
