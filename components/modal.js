@@ -22,7 +22,7 @@ export default function CookieModal() {
   const titles = useSWR("/api/gettitles", fetcher).data;
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="mx-auto">
       <h1 className="text-3xl text-center font-bold">
         What Cookie Jar Challenge Did You Overcome Today?
       </h1>
@@ -34,13 +34,15 @@ export default function CookieModal() {
         height="250px"
         onClick={() => setShowModal(true)}
       /> */}
-      <button
-        type="button"
-        className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-        onClick={() => setShowModal(true)}
-      >
-        + Create Cookie Jar
-      </button>
+      <div className="flex justify-center items-center w-screen">
+        <button
+          type="button"
+          className="mx-auto py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          onClick={() => setShowModal(true)}
+        >
+          + Create Cookie Jar
+        </button>
+      </div>
       <br />
 
       {showModal ? (
@@ -109,13 +111,20 @@ export default function CookieModal() {
       ) : // </div>
       null}
       <br />
-      <div className="grid grid-flow-row-dense sm: grid-cols-1 md: grid-cols-1 lg:grid-cols-4">
-        {titles?.map((title) => (
-          <div>
-            <Image type="button" src={cookieJar} width="250px" height="250px" />
-            <h1 className="text-center">{title.title}</h1>
-          </div>
-        ))}
+      <div className="flex flex-col items-center">
+        <div className="grid grid-flow-row-dense sm: grid-cols-1 md: grid-cols-1 lg:grid-cols-4">
+          {titles?.map((title) => (
+            <div>
+              <Image
+                type="button"
+                src={cookieJar}
+                width="250px"
+                height="250px"
+              />
+              <h1 className="text-center">{title.title}</h1>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -41,10 +41,10 @@ export default function Jar({ cookies }) {
         <br /> */}
       {/* {showModal ? ( */}
       <div className="flex justify-center items-center">
-        <div className="py-2.5 px-5 mr-2 mb-2 relative bg-white rounded-lg shadow md:w-full lg:w-1/2 dark:bg-gray-700">
+        <div className="px-auto mx-auto relative bg-white rounded-lg shadow md:w-full lg:w-1/2 dark:bg-gray-700">
           <button
             type="button"
-            className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+            className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 mx-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
             // data-modal-toggle="authentication-modal"
           >
             {/* <svg
