@@ -6,7 +6,7 @@ import { useSession, signIn, signOut, getSession } from "next-auth/react";
 const links = [
   { label: "Home", href: "/" },
   { label: "Image Gallery", href: "/gallery" },
-  // { label: "Form", href: "/form" },
+  { label: "Form", href: "/form" },
   // { label: "Login", href: "/login" },
   { label: "Account", href: "/account" },
   { label: "Cards", href: "/cards" },

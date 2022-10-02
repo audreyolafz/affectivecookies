@@ -6,9 +6,6 @@ import CookieModal from "../components/modal";
 import Image from "next/image";
 
 export default function Home() {
-  const handleClick = () => {
-    alert("hi");
-  };
   return (
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
       <Nav />
