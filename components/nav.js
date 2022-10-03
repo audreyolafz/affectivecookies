@@ -8,8 +8,8 @@ const links = [
   // { label: "Image Gallery", href: "/gallery" },
   { label: "Form", href: "/form" },
   // { label: "Login", href: "/login" },
-  { label: "Account", href: "/account" },
-  { label: "Cards", href: "/cards" },
+  // { label: "Account", href: "/account" },
+  // { label: "Cards", href: "/cards" },
   { label: "Sentiment", href: "/twittersentiment" },
   // { label: "Dashboard", href: "/modal" },
 ];
@@ -26,7 +26,7 @@ export default function Nav() {
             <li className="self-center" key={`${href}${label}`}>
               <Link href={href}>
                 <a
-                  className={`font-inter px-4 py-2 rounded hover:bg-black dark:hover:bg-white hover:bg-opacity-10 dark:hover:bg-opacity-10`}
+                  className={`font-inter px-4 py-2 rounded-lg hover:bg-black dark:hover:bg-white hover:bg-opacity-10 dark:hover:bg-opacity-10`}
                 >
                   {label}
                 </a>
@@ -63,9 +63,6 @@ export default function Nav() {
             >
               Sign In
             </button>
-            // <button className="bg-teal-300 p-3" onClick={() => signIn()}>
-            //   Log In
-            // </button>
           )}
         </div>
       </ul>

@@ -17,7 +17,7 @@ export default function Login() {
       <div>
         <Nav />
         <p className="text-center">
-          You are not logged in! Head to "Login" to Sign in with Google.
+          You are not logged in! Head to "Login" to Sign in with Twitter.
         </p>
       </div>
     );

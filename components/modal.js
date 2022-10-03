@@ -14,6 +14,9 @@ export default function CookieModal() {
   const [showModal, setShowModal] = useState(false);
   const jars = useSWR("/api/gettitles", fetcher).data;
 
+  function handleShowModal() {
+    setShowModal(!showModal);
+  }
   const onSubmit = async (data) => {
     fetch("/api/createtitle?title=" + data.title).then((res) =>
       console.log("IMGZZZZZ" + res.data)
@@ -38,7 +41,7 @@ export default function CookieModal() {
         <button
           type="button"
           className="mx-auto py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-          onClick={() => setShowModal(true)}
+          onClick={handleShowModal}
         >
           + Create Cookie Jar
         </button>
@@ -65,7 +68,7 @@ export default function CookieModal() {
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
-                onClick={() => setShowModal(false)}
+                onClick={handleShowModal}
               >
                 <path
                   fill-rule="evenodd"
@@ -108,8 +111,9 @@ export default function CookieModal() {
             </div>
           </div>
         </div>
-      ) : // </div>
-      null}
+      ) : (
+        <div></div>
+      )}
       <br />
       <div className="flex flex-col items-center">
         <div className="grid grid-flow-row-dense sm: grid-cols-1 md: grid-cols-1 lg:grid-cols-4">

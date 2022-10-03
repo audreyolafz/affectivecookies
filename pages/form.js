@@ -15,9 +15,9 @@ export default function Form() {
     fetch(
       "/api/createcard?name=" +
         data.name +
-        `&` +
-        "pic=" +
-        data.pic +
+        // `&` +
+        // "pic=" +
+        // data.pic +
         // `&` +
         // "love=" +
         // data.love +
@@ -56,7 +56,7 @@ export default function Form() {
               {...register("name", { required: true })}
             />
           </div>
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
               image url
             </label>
@@ -68,7 +68,7 @@ export default function Form() {
               required
               {...register("pic", { required: true })}
             />
-          </div>
+          </div> */}
 
           <div className="mb-6">
             <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
