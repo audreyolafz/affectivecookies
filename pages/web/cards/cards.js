@@ -1,7 +1,7 @@
 import React from "react";
 import useSWR from "swr";
 import fetcher from "../../../lib/fetcher";
-import Nav from "../../components/nav";
+import Nav from "../../../components/nav";
 
 export default function Cards() {
   const cards = useSWR("/api/getcards", fetcher).data;
