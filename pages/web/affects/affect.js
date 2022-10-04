@@ -3,7 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Sentiment from "sentiment";
 import displayUserTweets from "../../api/twitter";
 import Nav from "../../../components/nav";
-import { options } from "./trainData";
+import { options } from "../../../components/trainData";
 
 export default function Affect({ tweets, home }) {
   const { data: session } = useSession();
