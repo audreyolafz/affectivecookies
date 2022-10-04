@@ -42,7 +42,7 @@ export const getServerSideProps = async (context) => {
   } else if (session) {
     return {
       redirect: {
-        destination: "/form",
+        destination: "../cards/form",
       },
     };
   }
