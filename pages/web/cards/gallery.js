@@ -1,8 +1,8 @@
 import React from "react";
 import useSWR from "swr";
-import fetcher from "../lib/fetcher";
+import fetcher from "../../lib/fetcher";
 import Image from "next/image";
-import Nav from "../components/nav";
+import Nav from "../../components/nav";
 
 export default function Gallery() {
   const cards = useSWR("/api/getcards", fetcher).data;

@@ -49,12 +49,6 @@ export default function CookieModal() {
       <br />
 
       {showModal ? (
-        // <div
-        //   id="authentication-modal"
-        //   tabindex="-1"
-        //   aria-hidden="true"
-        //   className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
-        // >
         <div className="flex justify-center items-center">
           <div className="relative bg-white rounded-lg shadow md:w-full lg:w-1/2 dark:bg-gray-700">
             <button

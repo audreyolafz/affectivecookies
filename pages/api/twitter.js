@@ -3,7 +3,7 @@ import { TwitterApi } from "twitter-api-v2";
 export default async function displayUserTweets() {
   try {
     const client = new TwitterApi(process.env.TWITTER_BEARER_TOKEN);
-    const userTweets = await client.v2.userTimeline("80144576", {
+    const userTweets = await client.v2.userTimeline("457661563", {
       exclude: "replies",
     });
     const display = userTweets.data.data;

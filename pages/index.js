@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
       <Nav />
-      <CookieModal />
+      {/* <CookieModal /> */}
     </div>
   );
 }

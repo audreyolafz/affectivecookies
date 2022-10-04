@@ -2,8 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
 import useSWR from "swr";
-import fetcher from "../lib/fetcher";
-import Nav from "../components/nav";
+import fetcher from "../../../lib/fetcher";
+import Nav from "../../../components/nav";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
 // import Login from "./login";
 

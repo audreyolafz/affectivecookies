@@ -5,13 +5,14 @@ import { useSession, signIn, signOut, getSession } from "next-auth/react";
 
 const links = [
   { label: "Home", href: "/" },
-  // { label: "Image Gallery", href: "/gallery" },
-  { label: "Form", href: "/form" },
-  // { label: "Login", href: "/login" },
-  // { label: "Account", href: "/account" },
-  // { label: "Cards", href: "/cards" },
-  { label: "Sentiment", href: "/twittersentiment" },
-  // { label: "Dashboard", href: "/modal" },
+  // { label: "Image Gallery", href: "/web/cards/gallery" },
+  { label: "Card", href: "/web/cards/form" },
+  { label: "Cookie", href: "/web/cookies/jar" },
+  // { label: "Login", href: "/web/auth/login" },
+  // { label: "Account", href: "/web/auth/account" },
+  // { label: "Card Gallery", href: "/web/cards/cards" },
+  { label: "Affect", href: "/web/affects/affect" },
+  // { label: "Dashboard", href: "../../components/modal" },
 ];
 
 export default function Nav() {

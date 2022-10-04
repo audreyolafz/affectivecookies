@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../components/nav";
+import Nav from "../../../components/nav";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
 
 export default function Account() {
