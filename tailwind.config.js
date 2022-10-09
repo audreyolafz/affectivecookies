@@ -23,13 +23,19 @@ module.exports = {
   mode: "jit",
   content: ["./node_modules/flowbite-react/**/*.js"],
   theme: {
+    colors: {
+      transparent: "transparent",
+      mint: "#1DD3B0",
+      golden: "#ECB900",
+    },
     container: {
       center: true,
     },
     extend: {
-      // fontFamily: {
-      //   sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-      // },
+      fontFamily: {
+        // sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        body: ["Inter"],
+      },
       backgroundImage: {
         greenery: "url('../public/greenery.jpg')",
         meshRed: "url('../public/meshRed.png')",

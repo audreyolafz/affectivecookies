@@ -10,8 +10,8 @@ export default async (req, res) => {
   if (req.query.story || req.query.jartitle || req.query.media) {
     const record = await airtable.create({
       story: req.query.story,
-      jartitle: req.query.jartitle,
-      media: req.query.media,
+      // jartitle: req.query.jartitle,
+      // media: req.query.media,
     });
     res.status(200).send(`Created record ${record.id}`);
   } else {

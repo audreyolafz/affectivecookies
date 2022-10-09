@@ -5,14 +5,9 @@ import { useSession, signIn, signOut, getSession } from "next-auth/react";
 
 const links = [
   { label: "Home", href: "/" },
-  // { label: "Image Gallery", href: "/web/cards/gallery" },
   { label: "Card", href: "/web/cards/form" },
   { label: "Cookie", href: "/web/cookies/jar" },
-  // { label: "Login", href: "/web/auth/login" },
-  // { label: "Account", href: "/web/auth/account" },
-  // { label: "Card Gallery", href: "/web/cards/cards" },
   { label: "Affect", href: "/web/affects/affect" },
-  // { label: "Dashboard", href: "../../components/modal" },
 ];
 
 export default function Nav() {
@@ -20,7 +15,7 @@ export default function Nav() {
   const { data: session } = useSession();
 
   return (
-    <nav className="dark:text-white">
+    <nav className="dark:text-white ">
       <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-8 border-lg mt-6 sm:mt-0">
         <ul className={`mx-auto sm:mx-0 flex flex-row space-x-5`}>
           {links.map(({ href, label }) => (
@@ -52,14 +47,14 @@ export default function Nav() {
         <div className="rounded-lg">
           {session ? (
             <button
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              className="text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
               onClick={() => signOut()}
             >
               Sign Out
             </button>
           ) : (
             <button
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              className="text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
               onClick={() => signIn()}
             >
               Sign In
