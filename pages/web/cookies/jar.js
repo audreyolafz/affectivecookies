@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import fetcher from "../../../lib/fetcher";
 import Image from "next/image";
 import cookie from "../../../public/cookies.png";
+import cookieThree from "../../../public/illustrations/cookieThree.png";
+import jar from "../../../public/illustrations/jar.png";
 import Nav from "../../../components/nav";
 
 export default function Jar({ cookies }) {
@@ -28,11 +30,11 @@ export default function Jar({ cookies }) {
       <Nav />
 
       <br />
-      <div className="flex justify-center items-center w-screen">
+      <div className="relative flex justify-center items-center w-screen">
+        <Image src={jar} width="300px" height="300px" />
         <button
           type="button"
-          className="text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
-          // className="mx-auto py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:cursor-pointer hover:bg-gray-100 hover:text-mint focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          className="absolute top-50 text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
           onClick={handleShowModal}
         >
           + Create Cookie
@@ -74,7 +76,7 @@ export default function Jar({ cookies }) {
               >
                 <div>
                   <label
-                    for="text"
+                    htmlFor="text"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Tell your story:
@@ -98,7 +100,7 @@ export default function Jar({ cookies }) {
                   /> */}
                 </div>
                 {/* <label
-                  for="text"
+                  htmlFor="text"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
                   Type
@@ -112,7 +114,7 @@ export default function Jar({ cookies }) {
                   <option value="text">Text</option>
                 </select> */}
                 {/* <label
-                  for="text"
+                  htmlFor="text"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
                   Jar Name
@@ -141,11 +143,17 @@ export default function Jar({ cookies }) {
       )}
       <br />
       <br />
-      <div className="flex flex-col items-center">
-        <div className="grid grid-flow-row-dense gap-7 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4">
+      <div className="flex flex-col items-center mx-auto">
+        <div className="grid grid-flow-row-dense gap-7 justify-items-center sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4">
           {cook?.map((coo, i) => (
             <div>
-              <Image type="button" src={cookie} width="250px" height="250px" />
+              <Image
+                type="button"
+                className="mx-auto"
+                src={cookieThree}
+                width="100px"
+                height="100px"
+              />
               <h1>{coo.story}</h1>
               <br />
             </div>

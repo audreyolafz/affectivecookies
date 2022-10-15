@@ -16,7 +16,7 @@ export default function Creations() {
         one cookie at a time.
       </h1>
       <br />
-      <h3 class="text-3xl font-bold lg:mx-96 text-center dark:text-white">
+      <h3 className="text-3xl font-bold lg:mx-96 text-center dark:text-white">
         That is, harnessing the{" "}
         <span className="text-mint">positivity and strength</span> from yourself
         to find the willpower to <span className="text-mint">persevere</span>.

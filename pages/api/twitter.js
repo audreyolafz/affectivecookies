@@ -1,10 +1,14 @@
 import { TwitterApi } from "twitter-api-v2";
 import { Client, auth } from "twitter-api-sdk";
 
-export default async function displayUserTimeline() {
+export default async function displayUserTimeline(req) {
   try {
     const client = new TwitterApi(process.env.TWITTER_BEARER_TOKEN);
-    const userTweets = await client.v2.userTimeline("457661563", {
+    // const search = useSWR("/api/getsearch", fetcher).data;
+    // const search = req.query
+    // console.log(search);
+    const userToId = await client.v2.userByUsername(req);
+    const userTweets = await client.v2.userTimeline(userToId.data.id, {
       exclude: "replies",
     });
     const display = userTweets.data.data;
@@ -123,3 +127,5 @@ export default async function displayUserTimeline() {
 //     return "Search Tweets error~ " + e;
 //   }
 // }
+
+// export default {displayUserTimeline };

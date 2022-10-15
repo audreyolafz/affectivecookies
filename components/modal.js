@@ -79,7 +79,7 @@ export default function CookieModal() {
               <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                   <label
-                    for="text"
+                    htmlFor="text"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Name Your Cookie Jar:

@@ -1,17 +1,19 @@
 import React from "react";
+import { useState, createContext, useContext } from "react";
+import { useForm } from "react-hook-form";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Sentiment from "sentiment";
 import displayUserTimeline from "../../api/twitter";
 import Nav from "../../../components/nav";
 import { options } from "../../../components/trainData";
+import Searchbar from "../../../components/searchbar";
+import { ReqUser } from "../../../context/state";
 
+// let userReq = "SMAHRTeam";
 export default function Affect({ tweets }) {
-  const { data: session } = useSession();
+  // userReq = ReqUser();
+  // const { data: session } = useSession();
   // console.log(tweets);
-
-  function handleSearch(search) {
-    console.log(search);
-  }
 
   var sentiment = new Sentiment();
 
@@ -51,52 +53,14 @@ export default function Affect({ tweets }) {
   function handleRedCheck() {
     setCheckedRe(!checkedRe);
   }
+
   return (
     <div>
       {/* {session ? ( */}
       <div>
         <Nav />
 
-        <form className="float-right" onSubmit={handleSearch()}>
-          <label
-            for="default-search"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
-          >
-            Search
-          </label>
-          <div className="relative">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-gray-500 dark:text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
-            </div>
-            <input
-              type="search"
-              id="search"
-              className="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search Mockups, Logos..."
-              required=""
-            />
-            <button
-              type="submit"
-              className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Search
-            </button>
-          </div>
-        </form>
+        <Searchbar />
 
         <ul className="float-left ml-5 w-56 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
           <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
@@ -108,7 +72,7 @@ export default function Affect({ tweets }) {
                 className="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
               />
               <label
-                for="green-checkbox"
+                htmlFor="green-checkbox"
                 className="py-3 ml-2 text-sm font-medium text-green-700 dark:text-green-300"
               >
                 Positive
@@ -124,7 +88,7 @@ export default function Affect({ tweets }) {
                 className="w-4 h-4 text-yellow-400 bg-gray-100 rounded border-gray-300 focus:ring-yellow-300 dark:focus:ring-yellow-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
               />
               <label
-                for="yellow-checkbox"
+                htmlFor="yellow-checkbox"
                 className="py-3 ml-2 text-sm font-medium text-yellow-400 dark:text-yellow-100"
               >
                 Neutral
@@ -140,7 +104,7 @@ export default function Affect({ tweets }) {
                 className="w-4 h-4 text-orange-500 bg-gray-100 rounded border-gray-300 focus:ring-orange-400 dark:focus:ring-orange-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
               />
               <label
-                for="green-checkbox"
+                htmlFor="green-checkbox"
                 className="py-3 ml-2 text-sm font-medium text-orange-500 dark:text-orange-300"
               >
                 Mental Health Sensitive
@@ -156,7 +120,7 @@ export default function Affect({ tweets }) {
                 className="w-4 h-4 text-red-600 bg-gray-100 rounded border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
               />
               <label
-                for="red-checkbox"
+                htmlFor="red-checkbox"
                 className="py-3 ml-2 text-sm font-medium text-red-700 dark:text-red-200"
               >
                 Negative
@@ -268,19 +232,16 @@ export default function Affect({ tweets }) {
           <div></div>
         )}
       </div>
-      {/* ) : (
-        <div>
-          <Nav />
-        </div>
-      )} */}
     </div>
   );
 }
 
-export async function getServerSideProps({ req, res }) {
+let userReq = "taylorswift13";
+
+export async function getServerSideProps(req) {
   return {
     props: {
-      tweets: await displayUserTimeline(req, res),
+      tweets: await displayUserTimeline(userReq), //"SMAHRTeam",  req, res
       // tweets: await displayHomeTimeline(req, res),
       // tweets: await searchTweets(req, res),
     },

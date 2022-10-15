@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
+import { AppWrapper } from "../context/state";
 
 export default function MyApp({
   Component,
@@ -10,6 +11,7 @@ export default function MyApp({
     <SessionProvider session={session}>
       <ThemeProvider defaultTheme="system" attribute="class">
         <Component {...pageProps} />
+        {/* <AppWrapper /> */}
       </ThemeProvider>
     </SessionProvider>
   );

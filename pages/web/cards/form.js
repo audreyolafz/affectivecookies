@@ -5,6 +5,9 @@ import useSWR from "swr";
 import fetcher from "../../../lib/fetcher";
 import Nav from "../../../components/nav";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
+import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
+import Image from "next/image";
+
 // import Login from "./login";
 
 export default function Form() {
@@ -122,36 +125,43 @@ export default function Form() {
         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
           {cards?.map((card, i) => (
             <div>
-              <div className="m-5 p-6 rounded-lg bg-meshBlue shadow-lg max-w-sm relative">
+              <div className="m-5 pl-0 pr-3 py-3 rounded-lg bg-meshBlue shadow-lg aspect-video max-w-sm relative">
                 <div>
                   <p key={i} className="text-2xl text-center font-bold">
                     {card.name}
                   </p>
-                  <img
-                    key={i}
-                    layout="fill"
-                    className="rounded-lg object-contain float-left h-28"
-                    src={card.pic}
-                  />
-                  <p
-                    key={i}
-                    className="text-base text-center backface-hidden px-2"
-                  >
-                    🫂 <u>{card.people}</u> could not have done it without me 🫶
-                  </p>
-                  <p
-                    key={i}
-                    className="text-base text-center backface-hidden px-2"
-                  >
-                    🤩 <u>{card.future}</u> is exciting me and pushing me
-                    forward!
-                  </p>
-                  <p
-                    key={i}
-                    className="text-base text-center backface-hidden px-2"
-                  >
-                    🌎 <u>{card.place}</u> is waiting for me to come.
-                  </p>
+                  <br />
+                  <div className="relative">
+                    <div className="float-left max-h-10">
+                      <Image
+                        key={i}
+                        // layout="fill"
+                        className="object-contain"
+                        height="100%"
+                        width="100%"
+                        src={lilyLeaf}
+                      />
+                    </div>
+                    <p
+                      key={i}
+                      className="text-base text-right backface-hidden pl-7 pr-2"
+                    >
+                      🫂 <u>{card.people}</u> could not have done it without me
+                      🫶
+                    </p>
+                    <p
+                      key={i}
+                      className="text-base text-right backface-hidden pl-5 pr-2"
+                    >
+                      🤩 <u>{card.future}</u> is pushing me forward!
+                    </p>
+                    <p
+                      key={i}
+                      className="text-base text-right backface-hidden pl-5 pr-2"
+                    >
+                      🌎 <u>{card.place}</u> is waiting for me.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="m-5 p-6 rounded-lg bg-meshBlue shadow-lg max-w-sm relative">
