@@ -11,40 +11,46 @@ export default function Cards() {
 
       <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
         {cards?.map((card, i) => (
-          <div className="max-w-sm m-5 p-6 aspect-video rounded-lg bg-meshBlue shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
-            <div className="absolute backface-hidden">
-              <p
-                key={i}
-                className="text-2xl text-center font-bold backface-hidden"
-              >
-                {card.name}
-              </p>
-              <img
-                key={i}
-                layout="fill"
-                className="rounded-lg object-contain float-left h-28"
-                src={card.pic}
-              />
-              <p
-                key={i}
-                className="\text-base text-center backface-hidden px-2"
-              >
-                🫂 <u>{card.people}</u> could not have done it without me 🫶
-              </p>
-              <p
-                key={i}
-                className="\text-base text-center backface-hidden px-2"
-              >
-                🤩 <u>{card.future}</u> is exciting me and pushing me forward!
-              </p>
-              <p
-                key={i}
-                className="\text-base text-center backface-hidden px-2"
-              >
-                🌎 <u>{card.place}</u> is waiting for me to come.
-              </p>
+          <div>
+            <div className="m-5 pl-0 pr-3 py-3 rounded-lg bg-meshBlue shadow-lg aspect-video max-w-sm relative">
+              <div>
+                <p key={i} className="text-2xl text-center font-bold">
+                  {card.name}
+                </p>
+                <br />
+                <div className="relative">
+                  <div className="float-left max-h-10">
+                    <Image
+                      key={i}
+                      // layout="fill"
+                      className="object-contain"
+                      height="100%"
+                      width="100%"
+                      src={lilyLeaf}
+                    />
+                  </div>
+                  <p
+                    key={i}
+                    className="text-base text-right backface-hidden pl-7 pr-2"
+                  >
+                    🫂 <u>{card.people}</u> could not have done it without me 🫶
+                  </p>
+                  <p
+                    key={i}
+                    className="text-base text-right backface-hidden pl-5 pr-2"
+                  >
+                    🤩 <u>{card.future}</u> is pushing me forward!
+                  </p>
+                  <p
+                    key={i}
+                    className="text-base text-right backface-hidden pl-5 pr-2"
+                  >
+                    🌎 <u>{card.place}</u> is waiting for me.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="absolute p-3 pb-2 my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
+            <div className="m-5 p-6 rounded-lg bg-meshBlue shadow-lg max-w-sm relative">
               <a
                 className="text-left subpixel-antialiased"
                 href="https://988lifeline.org/"

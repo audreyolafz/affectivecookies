@@ -7,7 +7,6 @@ import Nav from "../../../components/nav";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
 import Image from "next/image";
-
 // import Login from "./login";
 
 export default function Form() {
@@ -18,12 +17,6 @@ export default function Form() {
     fetch(
       "/api/createcard?name=" +
         data.name +
-        // `&` +
-        // "pic=" +
-        // data.pic +
-        // `&` +
-        // "love=" +
-        // data.love +
         `&` +
         "people=" +
         data.people +
@@ -37,7 +30,6 @@ export default function Form() {
   };
   const cards = useSWR("/api/getcards", fetcher).data;
 
-  function newestId() {}
   return (
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
       <div>
@@ -51,7 +43,6 @@ export default function Form() {
               your preferred name
             </label>
             <input
-              // className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="anything you like!"
               required
@@ -60,26 +51,12 @@ export default function Form() {
               {...register("name", { required: true })}
             />
           </div>
-          {/* <div className="mb-6">
-            <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
-              image url
-            </label>
-            <input
-              className="select-all bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
-              placeholder="unsplash + pexels have hq images!"
-              minLength="10"
-              type="url"
-              required
-              {...register("pic", { required: true })}
-            />
-          </div> */}
 
           <div className="mb-6">
             <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
               who cannot live without me?
             </label>
             <input
-              // className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my favorite humaaans"
               required
@@ -124,47 +101,46 @@ export default function Form() {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
           {cards?.map((card, i) => (
-            <div>
-              <div className="m-5 pl-0 pr-3 py-3 rounded-lg bg-meshBlue shadow-lg aspect-video max-w-sm relative">
-                <div>
-                  <p key={i} className="text-2xl text-center font-bold">
-                    {card.name}
-                  </p>
-                  <br />
-                  <div className="relative">
-                    <div className="float-left max-h-10">
-                      <Image
-                        key={i}
-                        // layout="fill"
-                        className="object-contain"
-                        height="100%"
-                        width="100%"
-                        src={lilyLeaf}
-                      />
-                    </div>
-                    <p
+            <div className="max-w-sm m-5 pl-0 pt-6 aspect-video rounded-lg bg-meshBlue shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
+              <div className="absolute backface-hidden">
+                <p
+                  key={i}
+                  className="text-2xl text-center font-bold backface-hidden"
+                >
+                  {card.name}
+                </p>
+                <div className="relative">
+                  <div className="float-left max-h-10">
+                    <Image
                       key={i}
-                      className="text-base text-right backface-hidden pl-7 pr-2"
-                    >
-                      🫂 <u>{card.people}</u> could not have done it without me
-                      🫶
-                    </p>
-                    <p
-                      key={i}
-                      className="text-base text-right backface-hidden pl-5 pr-2"
-                    >
-                      🤩 <u>{card.future}</u> is pushing me forward!
-                    </p>
-                    <p
-                      key={i}
-                      className="text-base text-right backface-hidden pl-5 pr-2"
-                    >
-                      🌎 <u>{card.place}</u> is waiting for me.
-                    </p>
+                      // layout="fill"
+                      className="object-contain"
+                      height="100%"
+                      width="100%"
+                      src={lilyLeaf}
+                    />
                   </div>
+                  <p
+                    key={i}
+                    className="text-base text-right backface-hidden pl-7 pr-2"
+                  >
+                    🫂 <u>{card.people}</u> could not have done it without me 🫶
+                  </p>
+                  <p
+                    key={i}
+                    className="text-base text-right backface-hidden pl-5 pr-2"
+                  >
+                    🤩 <u>{card.future}</u> is pushing me forward!
+                  </p>
+                  <p
+                    key={i}
+                    className="text-base text-right backface-hidden pl-5 pr-2"
+                  >
+                    🌎 <u>{card.place}</u> is waiting for me.
+                  </p>
                 </div>
               </div>
-              <div className="m-5 p-6 rounded-lg bg-meshBlue shadow-lg max-w-sm relative">
+              <div className="absolute p-3 pb-2 my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
                 <a
                   className="text-left subpixel-antialiased"
                   href="https://988lifeline.org/"

@@ -5,7 +5,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import fetcher from "../../../lib/fetcher";
 import Image from "next/image";
-import cookie from "../../../public/cookies.png";
+import random from "../../../lib/random";
+import cookieOne from "../../../public/illustrations/cookieOne.png";
+import cookieTwo from "../../../public/illustrations/cookieTwo.png";
 import cookieThree from "../../../public/illustrations/cookieThree.png";
 import jar from "../../../public/illustrations/jar.png";
 import Nav from "../../../components/nav";
@@ -89,44 +91,7 @@ export default function Jar({ cookies }) {
                     minLength="2"
                     {...register("story", { required: true })}
                   ></textarea>
-                  {/* <input
-                    type="text"
-                    name="text"
-                    id="text"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    placeholder="Gratitude"
-                    required
-                    {...register("story", { required: true })}
-                  /> */}
                 </div>
-                {/* <label
-                  htmlFor="text"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Type
-                </label> */}
-                {/* <select
-                  name="media"
-                  id="media"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  {...register("media", { required: true })}
-                >
-                  <option value="text">Text</option>
-                </select> */}
-                {/* <label
-                  htmlFor="text"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Jar Name
-                </label> */}
-                {/* <select
-                  name="jartitle"
-                  id="jartitle"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  {...register("jartitle", { required: true })}
-                >
-                  <option value="Gratitude">Gratitude</option>
-                </select> */}
                 <button
                   type="submit"
                   value="submit"
@@ -151,8 +116,8 @@ export default function Jar({ cookies }) {
                 type="button"
                 className="mx-auto"
                 src={cookieThree}
-                width="100px"
-                height="100px"
+                width="150px"
+                height="150px"
               />
               <h1>{coo.story}</h1>
               <br />

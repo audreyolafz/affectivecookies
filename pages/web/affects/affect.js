@@ -36,7 +36,7 @@ export default function Affect({ tweets }) {
     }
   }
 
-  const [checkedGr, setCheckedGr] = React.useState(false);
+  const [checkedGr, setCheckedGr] = React.useState(true);
   const [checkedYe, setCheckedYe] = React.useState(false);
   const [checkedOr, setCheckedOr] = React.useState(false);
   const [checkedRe, setCheckedRe] = React.useState(false);
@@ -60,7 +60,8 @@ export default function Affect({ tweets }) {
       <div>
         <Nav />
 
-        <Searchbar />
+        {/* <Searchbar /> */}
+        <br />
 
         <ul className="float-left ml-5 w-56 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
           <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
@@ -69,6 +70,7 @@ export default function Affect({ tweets }) {
                 id="green-checkbox"
                 type="checkbox"
                 onClick={handleGreenCheck}
+                checked={checkedGr}
                 className="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
               />
               <label
@@ -85,6 +87,7 @@ export default function Affect({ tweets }) {
                 id="yellow-checkbox"
                 type="checkbox"
                 onClick={handleYellowCheck}
+                checked={checkedYe}
                 className="w-4 h-4 text-yellow-400 bg-gray-100 rounded border-gray-300 focus:ring-yellow-300 dark:focus:ring-yellow-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
               />
               <label
@@ -101,6 +104,8 @@ export default function Affect({ tweets }) {
                 id="orange-checkbox"
                 type="checkbox"
                 onClick={handleOrangeCheck}
+                checked={checkedOr}
+                data-modal-toggle="popup-modal"
                 className="w-4 h-4 text-orange-500 bg-gray-100 rounded border-gray-300 focus:ring-orange-400 dark:focus:ring-orange-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
               />
               <label
@@ -117,6 +122,7 @@ export default function Affect({ tweets }) {
                 id="red-checkbox"
                 type="checkbox"
                 onClick={handleRedCheck}
+                checked={checkedRe}
                 className="w-4 h-4 text-red-600 bg-gray-100 rounded border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
               />
               <label
@@ -128,7 +134,9 @@ export default function Affect({ tweets }) {
             </div>
           </li>
         </ul>
+
         <br />
+
         {checkedGr ? (
           <div className="p-5 mb-4 sm:ml-4 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
             <h1 className="text-lg font-semibold text-green-800 dark:text-white">
@@ -236,9 +244,9 @@ export default function Affect({ tweets }) {
   );
 }
 
-let userReq = "taylorswift13";
+let userReq = "SMAHRTeam";
 
-export async function getServerSideProps(req) {
+export async function getServerSideProps() {
   return {
     props: {
       tweets: await displayUserTimeline(userReq), //"SMAHRTeam",  req, res
