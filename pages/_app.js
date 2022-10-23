@@ -10,8 +10,8 @@ export default function MyApp({
   return (
     <SessionProvider session={session}>
       <ThemeProvider defaultTheme="system" attribute="class">
-        <Component {...pageProps} />
         {/* <AppWrapper /> */}
+        <Component {...pageProps} />
       </ThemeProvider>
     </SessionProvider>
   );

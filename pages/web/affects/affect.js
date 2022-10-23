@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Sentiment from "sentiment";
 import displayUserTimeline from "../../api/twitter";
+import displaySearchTweets from "../../api/twitter";
 import Nav from "../../../components/nav";
 import { options } from "../../../components/trainData";
 import Searchbar from "../../../components/searchbar";
-import { ReqUser } from "../../../context/state";
+import { Axios } from "axios";
 
-// let userReq = "SMAHRTeam";
 export default function Affect({ tweets }) {
   // userReq = ReqUser();
   // const { data: session } = useSession();
@@ -56,11 +56,8 @@ export default function Affect({ tweets }) {
 
   return (
     <div>
-      {/* {session ? ( */}
       <div>
         <Nav />
-
-        {/* <Searchbar /> */}
         <br />
 
         <ul className="float-left ml-5 w-56 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
@@ -77,7 +74,7 @@ export default function Affect({ tweets }) {
                 htmlFor="green-checkbox"
                 className="py-3 ml-2 text-sm font-medium text-green-700 dark:text-green-300"
               >
-                Positive
+                Positive 😀
               </label>
             </div>
           </li>
@@ -94,7 +91,7 @@ export default function Affect({ tweets }) {
                 htmlFor="yellow-checkbox"
                 className="py-3 ml-2 text-sm font-medium text-yellow-400 dark:text-yellow-100"
               >
-                Neutral
+                Neutral 😐
               </label>
             </div>
           </li>
@@ -112,7 +109,7 @@ export default function Affect({ tweets }) {
                 htmlFor="green-checkbox"
                 className="py-3 ml-2 text-sm font-medium text-orange-500 dark:text-orange-300"
               >
-                Mental Health Sensitive
+                Mental Health Sensitive 🧠
               </label>
             </div>
           </li>
@@ -129,13 +126,11 @@ export default function Affect({ tweets }) {
                 htmlFor="red-checkbox"
                 className="py-3 ml-2 text-sm font-medium text-red-700 dark:text-red-200"
               >
-                Negative
+                Negative 😟
               </label>
             </div>
           </li>
         </ul>
-
-        <br />
 
         {checkedGr ? (
           <div className="p-5 mb-4 sm:ml-4 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
@@ -244,14 +239,13 @@ export default function Affect({ tweets }) {
   );
 }
 
-let userReq = "SMAHRTeam";
-
 export async function getServerSideProps() {
+  // const { search } = context;
   return {
     props: {
-      tweets: await displayUserTimeline(userReq), //"SMAHRTeam",  req, res
-      // tweets: await displayHomeTimeline(req, res),
-      // tweets: await searchTweets(req, res),
+      // tweets: await displayUserTimeline(search),
+      // tweets: await displayHomeTimeline(),
+      tweets: await displaySearchTweets("anxiety"),
     },
   };
 }

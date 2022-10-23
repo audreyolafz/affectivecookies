@@ -24,30 +24,9 @@ import { ReqUser } from "../context/state";
 
 export default function Searchbar() {
   const [search, setSearch] = useState("");
-  const router = useRouter();
-
-  // const userSearch = fetch(`http://localhost:3000/api/twitter`, {
-  //   method: "post",
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify(search),
-  // }); //.then((response) => response.json());
-
-  // const onSearch = async (data) => {
-  //   fetch("/api/createsearch?search=" + data.search).then((res) =>
-  //     console.log("NEW STUFF " + res.data)
-  //   );
-  // };
-  // const userSearch = useSWR("/api/getsearch", fetcher).data;
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
-
-    // router.push({
-    //   pathname: "../../api/twitter",
-    //   query: { q: search },
-    // });
   };
 
   const logValue = () => {
@@ -80,7 +59,7 @@ export default function Searchbar() {
               ></path>
             </svg>
           </div>
-          <ReqUser search={search} />
+          {/* <ReqUser search={search} /> */}
 
           <input
             type="text"
