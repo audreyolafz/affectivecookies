@@ -1,18 +1,13 @@
 import React from "react";
-import { useState, createContext, useContext } from "react";
-import { useForm } from "react-hook-form";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Sentiment from "sentiment";
-import displayUserTimeline from "../../api/twitter";
 import displaySearchTweets from "../../api/twitter";
 import Nav from "../../../components/nav";
 import { options } from "../../../components/trainData";
-import Searchbar from "../../../components/searchbar";
-import { Axios } from "axios";
 
 export default function Affect({ tweets }) {
   // userReq = ReqUser();
-  // const { data: session } = useSession();
+  const { data: session } = useSession();
   // console.log(tweets);
 
   var sentiment = new Sentiment();
@@ -59,79 +54,81 @@ export default function Affect({ tweets }) {
       <div>
         <Nav />
         <br />
-
-        <ul className="float-left ml-5 w-56 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-          <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
-            <div className="flex items-center pl-3">
-              <input
-                id="green-checkbox"
-                type="checkbox"
-                onClick={handleGreenCheck}
-                checked={checkedGr}
-                className="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-              />
-              <label
-                htmlFor="green-checkbox"
-                className="py-3 ml-2 text-sm font-medium text-green-700 dark:text-green-300"
-              >
-                Positive 😀
-              </label>
-            </div>
-          </li>
-          <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
-            <div className="flex items-center pl-3">
-              <input
-                id="yellow-checkbox"
-                type="checkbox"
-                onClick={handleYellowCheck}
-                checked={checkedYe}
-                className="w-4 h-4 text-yellow-400 bg-gray-100 rounded border-gray-300 focus:ring-yellow-300 dark:focus:ring-yellow-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-              />
-              <label
-                htmlFor="yellow-checkbox"
-                className="py-3 ml-2 text-sm font-medium text-yellow-400 dark:text-yellow-100"
-              >
-                Neutral 😐
-              </label>
-            </div>
-          </li>
-          <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
-            <div className="flex items-center pl-3">
-              <input
-                id="orange-checkbox"
-                type="checkbox"
-                onClick={handleOrangeCheck}
-                checked={checkedOr}
-                data-modal-toggle="popup-modal"
-                className="w-4 h-4 text-orange-500 bg-gray-100 rounded border-gray-300 focus:ring-orange-400 dark:focus:ring-orange-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-              />
-              <label
-                htmlFor="green-checkbox"
-                className="py-3 ml-2 text-sm font-medium text-orange-500 dark:text-orange-300"
-              >
-                Mental Health Sensitive 🧠
-              </label>
-            </div>
-          </li>
-          <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
-            <div className="flex items-center pl-3">
-              <input
-                id="red-checkbox"
-                type="checkbox"
-                onClick={handleRedCheck}
-                checked={checkedRe}
-                className="w-4 h-4 text-red-600 bg-gray-100 rounded border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-              />
-              <label
-                htmlFor="red-checkbox"
-                className="py-3 ml-2 text-sm font-medium text-red-700 dark:text-red-200"
-              >
-                Negative 😟
-              </label>
-            </div>
-          </li>
-        </ul>
-
+        {session ? (
+          <ul className="float-left ml-5 w-56 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
+              <div className="flex items-center pl-3">
+                <input
+                  id="green-checkbox"
+                  type="checkbox"
+                  onClick={handleGreenCheck}
+                  checked={checkedGr}
+                  className="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  htmlFor="green-checkbox"
+                  className="py-3 ml-2 text-sm font-medium text-green-700 dark:text-green-300"
+                >
+                  Positive 😀
+                </label>
+              </div>
+            </li>
+            <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
+              <div className="flex items-center pl-3">
+                <input
+                  id="yellow-checkbox"
+                  type="checkbox"
+                  onClick={handleYellowCheck}
+                  checked={checkedYe}
+                  className="w-4 h-4 text-yellow-400 bg-gray-100 rounded border-gray-300 focus:ring-yellow-300 dark:focus:ring-yellow-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  htmlFor="yellow-checkbox"
+                  className="py-3 ml-2 text-sm font-medium text-yellow-400 dark:text-yellow-100"
+                >
+                  Neutral 😐
+                </label>
+              </div>
+            </li>
+            <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
+              <div className="flex items-center pl-3">
+                <input
+                  id="orange-checkbox"
+                  type="checkbox"
+                  onClick={handleOrangeCheck}
+                  checked={checkedOr}
+                  data-modal-toggle="popup-modal"
+                  className="w-4 h-4 text-orange-500 bg-gray-100 rounded border-gray-300 focus:ring-orange-400 dark:focus:ring-orange-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  htmlFor="green-checkbox"
+                  className="py-3 ml-2 text-sm font-medium text-orange-500 dark:text-orange-300"
+                >
+                  Mental Health Sensitive 🧠
+                </label>
+              </div>
+            </li>
+            <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
+              <div className="flex items-center pl-3">
+                <input
+                  id="red-checkbox"
+                  type="checkbox"
+                  onClick={handleRedCheck}
+                  checked={checkedRe}
+                  className="w-4 h-4 text-red-600 bg-gray-100 rounded border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  htmlFor="red-checkbox"
+                  className="py-3 ml-2 text-sm font-medium text-red-700 dark:text-red-200"
+                >
+                  Negative 😟
+                </label>
+              </div>
+            </li>
+          </ul>
+        ) : (
+          <div></div>
+        )}
         {checkedGr ? (
           <div className="p-5 mb-4 sm:ml-4 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
             <h1 className="text-lg font-semibold text-green-800 dark:text-white">

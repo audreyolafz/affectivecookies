@@ -12,11 +12,15 @@ import Nav from "../../../components/nav";
 export default function Jar({ cookies }) {
   const { register, handleSubmit } = useForm();
   const [showModal, setShowModal] = useState(false);
+  const [showCookies, setShowCookies] = useState(false);
 
   function handleShowModal() {
     setShowModal(!showModal);
   }
 
+  function handleShowCookies() {
+    setShowCookies(!showCookies);
+  }
   const onCreate = async (data) => {
     fetch("/api/createcookie?story=" + data.story).then((res) =>
       console.log("YUMTUM " + res.data)
@@ -105,50 +109,38 @@ export default function Jar({ cookies }) {
       )}
       <br />
       <br />
-      <div className="flex flex-col items-center mx-auto">
-        <div className="grid grid-flow-row-dense gap-7 justify-items-center sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4">
-          {cook?.map((coo, i) => (
-            <div>
-              <Image
-                type="button"
-                className="mx-auto"
-                src={cookieThree}
-                width="150px"
-                height="150px"
-              />
-              <h1>{coo.story}</h1>
-              <br />
-            </div>
-          ))}
-        </div>
+      <div className="relative flex justify-center items-center w-screen">
+        <button
+          type="button"
+          className="absolute top-50 text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+          onClick={handleShowCookies}
+        >
+          Generate a random cookie!
+        </button>
       </div>
+      {showCookies ? (
+        <div className="flex flex-col items-center mx-auto">
+          <div className="grid grid-flow-row-dense gap-7 justify-items-center grid-cols-1">
+            {cook?.map((coo, i) => (
+              <div>
+                <br />
+                <br />
+                <Image
+                  type="button"
+                  className="mx-auto"
+                  src={cookieThree}
+                  width="150px"
+                  height="150px"
+                />
+                <h1>{coo.story}</h1>
+                <br />
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }
-
-// export async function getStaticProps({ params }) {
-//   const cookies = useSWR(
-//     `http://localhost:3000/api/gettitles?title=${params.title}`,
-//     fetcher
-//   ).data;
-//   return {
-//     props: {
-//       cookie: cookies,
-//     },
-//   };
-// }
-
-// export async function getStaticPaths() {
-//   const jarName = await fetch("http://localhost:3000/api/gettitles", fetcher)
-//     .data;
-//   return {
-//     paths: jarName.map((cookie) => {
-//       return {
-//         params: {
-//           jarId: cookie.name,
-//         },
-//       };
-//     }),
-//     fallback: false,
-//   };
-// }
