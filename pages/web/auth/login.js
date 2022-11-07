@@ -16,8 +16,9 @@ export default function Login() {
     return (
       <div>
         <Nav />
-        <p className="text-center">
-          You are not logged in! Head to "Login" to Sign in with Twitter.
+        <p className="text-center text-xl lg:mx-96">
+          You are not logged in! Head to the Sign In button to Sign in with
+          Twitter.
         </p>
       </div>
     );

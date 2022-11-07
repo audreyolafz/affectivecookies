@@ -2,6 +2,9 @@ import React from "react";
 import useSWR from "swr";
 import fetcher from "../../../lib/fetcher";
 import Nav from "../../../components/nav";
+import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
+import exotic from "../../../public/illustrations/exotic.png";
+import Image from "next/image";
 
 export default function Cards() {
   const cards = useSWR("/api/getcards", fetcher).data;
@@ -9,7 +12,10 @@ export default function Cards() {
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
       <Nav />
 
-      <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
+      <h1 className="mb-4 text-center text-xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-5xl lg:mx-80 dark:text-white">
+        Cards Gallery
+      </h1>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
         {cards?.map((card, i) => (
           <div>
             <div className="m-5 pl-0 pr-3 py-3 rounded-lg bg-meshBlue shadow-lg aspect-video max-w-sm relative">
@@ -21,28 +27,28 @@ export default function Cards() {
                 <div className="relative">
                   <div className="float-left max-h-10">
                     <Image
-                      key={i}
+                      // key={i}
                       // layout="fill"
                       className="object-contain"
-                      height="100%"
-                      width="100%"
-                      src={lilyLeaf}
+                      height="90%"
+                      width="90%"
+                      src={exotic}
                     />
                   </div>
                   <p
-                    key={i}
+                    // key={i}
                     className="text-base text-right backface-hidden pl-7 pr-2"
                   >
                     🫂 <u>{card.people}</u> could not have done it without me 🫶
                   </p>
                   <p
-                    key={i}
+                    // key={i}
                     className="text-base text-right backface-hidden pl-5 pr-2"
                   >
                     🤩 <u>{card.future}</u> is pushing me forward!
                   </p>
                   <p
-                    key={i}
+                    // key={i}
                     className="text-base text-right backface-hidden pl-5 pr-2"
                   >
                     🌎 <u>{card.place}</u> is waiting for me.

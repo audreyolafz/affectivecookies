@@ -4,14 +4,15 @@ import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "../../../lib/fetcher";
 import Nav from "../../../components/nav";
-import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
+import exotic from "../../../public/illustrations/exotic.png";
 import Image from "next/image";
-// import Login from "./login";
 
 export default function Form() {
   const { register, handleSubmit } = useForm();
-  // const { session, status } = useSession({ required: true });
+
+  let graphicList = [lilyLeaf, exotic];
+  let randVal = Math.floor(Math.random() * 2);
 
   const onSubmit = async (data) => {
     fetch(
@@ -25,7 +26,10 @@ export default function Form() {
         data.future +
         `&` +
         "place=" +
-        data.place
+        data.place //+
+      // `&` +
+      // "color=" +
+      // data.color
     ).then((res) => console.log("NEW STUFF " + res.data));
   };
   const cards = useSWR("/api/getcards", fetcher).data;
@@ -90,6 +94,24 @@ export default function Form() {
               {...register("place", { required: true })}
             ></textarea>
           </div>
+
+          {/* <label
+            for="color"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+          >
+            Select your color
+          </label>
+          <select
+            id="color"
+            class="bg-gray-50 border border-mint text-gray-900 text-sm rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+            {...register("color", { required: true })}
+          >
+            <option>Orange</option>
+            <option>Yellow</option>
+            <option>Green</option>
+            <option>Blue</option>
+          </select> */}
+
           <button
             type="submit"
             value="submit"
@@ -101,10 +123,10 @@ export default function Form() {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
           {cards?.map((card, i) => (
-            <div className="max-w-sm m-5 pl-0 pt-6 aspect-video rounded-lg bg-meshBlue shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
+            <div className="max-w-sm m-5 pl-0 pt-6 bg-meshGreen aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
               <div className="absolute backface-hidden">
                 <p
-                  key={i}
+                  // key={i}
                   className="text-2xl text-center font-bold backface-hidden"
                 >
                   {card.name}
@@ -112,28 +134,27 @@ export default function Form() {
                 <div className="relative">
                   <div className="float-left max-h-10">
                     <Image
-                      key={i}
-                      // layout="fill"
+                      // key={i}
                       className="object-contain"
-                      height="100%"
-                      width="100%"
-                      src={lilyLeaf}
+                      height="90%"
+                      width="90%"
+                      src={graphicList[randVal]}
                     />
                   </div>
                   <p
-                    key={i}
+                    // key={i}
                     className="text-base text-right backface-hidden pl-7 pr-2"
                   >
                     🫂 <u>{card.people}</u> could not have done it without me 🫶
                   </p>
                   <p
-                    key={i}
+                    // key={i}
                     className="text-base text-right backface-hidden pl-5 pr-2"
                   >
                     🤩 <u>{card.future}</u> is pushing me forward!
                   </p>
                   <p
-                    key={i}
+                    // key={i}
                     className="text-base text-right backface-hidden pl-5 pr-2"
                   >
                     🌎 <u>{card.place}</u> is waiting for me.

@@ -8,6 +8,7 @@ const links = [
   { label: "Card", href: "/web/cards/form" },
   { label: "Cookie", href: "/web/cookies/jar" },
   { label: "Affect", href: "/web/affects/affect" },
+  { label: "Account", href: "/web/auth/account" },
 ];
 
 export default function Nav() {
@@ -15,7 +16,7 @@ export default function Nav() {
   const { data: session } = useSession();
 
   return (
-    <nav className="dark:text-white ">
+    <nav className="bg-white sticky top-0 dark:text-white dark:bg-black">
       <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-8 border-lg mt-6 sm:mt-0">
         <ul className={`mx-auto sm:mx-0 flex flex-row space-x-5`}>
           {links.map(({ href, label }) => (
@@ -47,14 +48,14 @@ export default function Nav() {
         <div className="rounded-lg">
           {session ? (
             <button
-              className="text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+              className="text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
               onClick={() => signOut()}
             >
               Sign Out
             </button>
           ) : (
             <button
-              className="text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+              className="text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
               onClick={() => signIn()}
             >
               Sign In

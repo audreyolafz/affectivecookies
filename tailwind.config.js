@@ -33,12 +33,15 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        // sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        body: ["Inter"],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        // body: ["Inter"],
       },
       backgroundImage: {
         greenery: "url('../public/greenery.jpg')",
         meshRed: "url('../public/meshRed.png')",
+        meshOrange: "url('../public/meshOrange.png')",
+        meshYellow: "url('../public/meshYellow.png')",
+        meshGreen: "url('../public/meshGreen.png')",
         meshBlue: "url('../public/meshBlue.png')",
         cookie: "url('../public/cookies.png')",
         cookieJar: "url('../public/cookieJar.png')",

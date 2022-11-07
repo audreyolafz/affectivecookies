@@ -31,7 +31,7 @@ export default function Affect({ tweets }) {
     }
   }
 
-  const [checkedGr, setCheckedGr] = React.useState(true);
+  const [checkedGr, setCheckedGr] = React.useState(false);
   const [checkedYe, setCheckedYe] = React.useState(false);
   const [checkedOr, setCheckedOr] = React.useState(false);
   const [checkedRe, setCheckedRe] = React.useState(false);
@@ -127,7 +127,11 @@ export default function Affect({ tweets }) {
             </li>
           </ul>
         ) : (
-          <div></div>
+          <div>
+            <h1 className="mb-4 text-center text-md tracking-tight leading-none text-gray-900 md:text-3xl lg:text-xl lg:mx-80 dark:text-white">
+              Oops! Please sign in with Twitter.
+            </h1>
+          </div>
         )}
         {checkedGr ? (
           <div className="p-5 mb-4 sm:ml-4 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
@@ -240,9 +244,7 @@ export async function getServerSideProps() {
   // const { search } = context;
   return {
     props: {
-      // tweets: await displayUserTimeline(search),
-      // tweets: await displayHomeTimeline(),
-      tweets: await displaySearchTweets("anxiety"),
+      tweets: await displaySearchTweets("mental health"),
     },
   };
 }
