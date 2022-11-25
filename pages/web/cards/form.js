@@ -28,6 +28,10 @@ export default function Form() {
         "place=" +
         data.place //+
       // `&` +
+      // "graphic=" +
+      // data.graphic
+      //+
+      // `&` +
       // "color=" +
       // data.color
     ).then((res) => console.log("NEW STUFF " + res.data));
@@ -96,26 +100,24 @@ export default function Form() {
           </div>
 
           {/* <label
-            for="color"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+            for="graphic"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
           >
-            Select your color
+            Select your graphic
           </label>
           <select
-            id="color"
-            class="bg-gray-50 border border-mint text-gray-900 text-sm rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
-            {...register("color", { required: true })}
+            id="graphic"
+            className="bg-gray-50 border border-mint text-gray-900 text-sm rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+            {...register("graphic", { required: true })}
           >
-            <option>Orange</option>
-            <option>Yellow</option>
-            <option>Green</option>
-            <option>Blue</option>
+            <option>exotic</option>
+            <option>lilyLeaf</option>
           </select> */}
 
           <button
             type="submit"
             value="submit"
-            className="text-white bg-mint border-mint border-solid border-2 hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+            className="text-black bg-mint border-mint border-solid border-2 hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover: text-white hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
           >
             generate!
           </button>
@@ -140,6 +142,13 @@ export default function Form() {
                       width="90%"
                       src={graphicList[randVal]}
                     />
+                    {/* <Image
+                      key={i}
+                      className="object-contain"
+                      height="90%"
+                      width="90%"
+                      src={card.graphic}
+                    /> */}
                   </div>
                   <p
                     // key={i}

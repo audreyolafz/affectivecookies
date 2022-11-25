@@ -22,9 +22,9 @@ export default function Jar({ cookies }) {
     setShowCookies(!showCookies);
   }
   const onCreate = async (data) => {
-    fetch("/api/createcookie?story=" + data.story).then((res) =>
-      console.log("YUMTUM " + res.data)
-    );
+    fetch(
+      "/api/createcookie?story=" + data.story + `&` + "Created=" + data.Created
+    ).then((res) => console.log("YUMTUM " + res.data));
   };
   const cook = useSWR("../../api/getcookies", fetcher).data;
 
@@ -33,11 +33,14 @@ export default function Jar({ cookies }) {
       <Nav />
 
       <br />
+      <h1 className="mb-4 text-center text-lg font-bold text-gray-900 md:text-lg lg:text-2xl lg:mx-80 dark:text-white">
+        Cookies for Contentment
+      </h1>
       <div className="relative flex justify-center items-center w-screen">
         <Image src={jar} width="300px" height="300px" />
         <button
           type="button"
-          className="absolute top-50 text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+          className="absolute top-50 bg-mint text-black border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover: text-white hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark: text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
           onClick={handleShowModal}
         >
           + Create Cookie
@@ -96,7 +99,7 @@ export default function Jar({ cookies }) {
                 <button
                   type="submit"
                   value="submit"
-                  className="text-white bg-mint border-mint border-solid border-2 hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+                  className="top-50 bg-mint text-black border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover: text-white hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark: text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
                 >
                   Create!
                 </button>
@@ -112,7 +115,7 @@ export default function Jar({ cookies }) {
       <div className="relative flex justify-center items-center w-screen">
         <button
           type="button"
-          className="absolute top-50 text-white bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+          className="absolute top-50 bg-mint text-black border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover: text-white hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark: text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
           onClick={handleShowCookies}
         >
           Generate a random cookie!
@@ -133,6 +136,9 @@ export default function Jar({ cookies }) {
                   height="150px"
                 />
                 <h1>{coo.story}</h1>
+                <h2>{coo.Created}</h2>
+                <br />
+                <br />
                 <br />
               </div>
             ))}

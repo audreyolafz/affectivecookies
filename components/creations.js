@@ -6,11 +6,11 @@ import jar from "../public/illustrations/jar.png";
 
 export default function Creations() {
   return (
-    <div className="my-3 relative">
+    <div className="sm:my-1 md:my-2 lg:my-3 relative">
       <Image src={imposterThree} width="250px" height="250px" />
 
       <h1 className="mb-4 text-center text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-5xl lg:mx-80 dark:text-white">
-        redefining{" "}
+        Redefining{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-golden from-mint">
           mental health
         </span>{" "}
@@ -18,7 +18,8 @@ export default function Creations() {
       </h1>
       <br />
       <h3 className="text-3xl font-bold lg:mx-96 text-center dark:text-white">
-        That is, harnessing the{" "}
+        We are <span className="text-mint">engineering empathy</span>. That is,
+        harnessing the{" "}
         <span className="text-mint">positivity and strength</span> from yourself
         to find the willpower to <span className="text-mint">persevere</span>.
         Everyone has a cookie jar, or times in your life when you{" "}
@@ -35,17 +36,26 @@ export default function Creations() {
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
-      <div className="relative flex justify-center items-center w-screen">
-        <div>
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 sm: gap-1 md:gap-2 lg:gap-3">
+        <div className="opacity-50">
           <Image src={jar} width="300px" height="300px" />
           <h1 className="absolute top-50 bg-mint p-3 ml-20 text-center rounded-lg font-medium dark:text-white">
             Manifestation
           </h1>
         </div>
-        <div>
+        <div className="opacity-50">
           <Image src={jar} width="300px" height="300px" />
-          <h1 className="absolute top-50 bg-mint p-3 ml-20 text-center rounded-lg font-medium dark:text-white">
+          <h1 className="absolute top-50 bg-mint p-3 ml-24 text-center rounded-lg font-medium dark:text-white">
             Gratitude
           </h1>
         </div>
@@ -55,15 +65,15 @@ export default function Creations() {
             Achievements
           </h1>
         </div>
-        <div>
+        <div className="opacity-50">
           <Image src={jar} width="300px" height="300px" />
-          <h1 className="absolute top-50 bg-mint p-3 ml-20 text-center rounded-lg font-medium dark:text-white">
+          <h1 className="absolute top-50 bg-mint p-3 ml-24 text-center rounded-lg font-medium dark:text-white">
             Memories
           </h1>
         </div>
-        <div>
+        <div className="opacity-50">
           <Image src={jar} width="300px" height="300px" />
-          <h1 className="absolute top-50 bg-mint p-3 ml-20 text-center rounded-lg font-medium dark:text-white">
+          <h1 className="absolute top-50 bg-mint p-3 ml-24 text-center rounded-lg font-medium dark:text-white">
             Hype Songs
           </h1>
         </div>
@@ -74,3 +84,5 @@ export default function Creations() {
     </div>
   );
 }
+
+//relative flex justify-center items-center w-screen

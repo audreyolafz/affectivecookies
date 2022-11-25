@@ -12,6 +12,8 @@ export default async (req, res) => {
     req.query.people ||
     req.query.future ||
     req.query.place //||
+    // req.query.graphic
+    //||
     // req.query.color
   ) {
     const record = await airtable.create({
@@ -19,6 +21,7 @@ export default async (req, res) => {
       people: req.query.people,
       future: req.query.future,
       place: req.query.place,
+      // graphic: req.query.graphic,
       // color: req.query.color,
     });
     res.status(200).send(`Created record ${record.id}`);
