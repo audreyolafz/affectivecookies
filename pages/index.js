@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "../components/nav";
 import Creations from "../components/creations";
-import Spline from "@splinetool/react-spline";
 
 export default function Home() {
   return (
