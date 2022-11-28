@@ -3,7 +3,6 @@ import Image from "next/image";
 import imposterThree from "../public/illustrations/imposterThree.png";
 import meditation from "../public/illustrations/meditation.png";
 import jar from "../public/illustrations/jar.png";
-import Spline from "@splinetool/react-spline";
 
 export default function Creations() {
   return (
@@ -49,9 +48,6 @@ export default function Creations() {
         Meet your new <span className="text-mint">best friend</span>: A Cookie
         Jar.
       </h3>
-      {/* <Suspense fallback={<div>Loading...</div>}> */}
-      {/* <Spline scene="https://prod.spline.design/Q7ePNsqH7H3M7Gu4/scene.splinecode" /> */}
-      {/* </Suspense> */}
       <h3 className="text-3xl font-bold lg:mx-96 text-center dark:text-white">
         The Cookie Jar will guide you through creating and{" "}
         <span className="text-mint">finding memories</span> to find confidence
