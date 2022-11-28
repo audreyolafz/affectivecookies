@@ -37,16 +37,6 @@ export default async function displayHomeTimeline() {
       accessSecret: process.env.TWITTER_TOKEN_SECRET,
     });
     const homeTimeline = await client.v2.homeTimeline({ exclude: "replies" });
-
-    // console.log(homeTimeline.tweets.length, "fetched.");
-    // const nextHomePage = await homeTimeline.next();
-    // console.log(
-    //   "Fetched tweet IDs in next page:",
-    //   nextHomePage.tweets.map((tweet) => tweet.id_str)
-    // );
-    // const appOnly = await client.appLogin();
-
-    console.log("LOOK AT ME: " + homeTimeline);
     const display = homeTimeline.data.data;
     return display;
   } catch (e) {

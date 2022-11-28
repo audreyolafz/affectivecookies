@@ -3,6 +3,7 @@ import Image from "next/image";
 import imposterThree from "../public/illustrations/imposterThree.png";
 import meditation from "../public/illustrations/meditation.png";
 import jar from "../public/illustrations/jar.png";
+import Spline from "@splinetool/react-spline";
 
 export default function Creations() {
   return (
@@ -43,46 +44,20 @@ export default function Creations() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
 
-      <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 sm: gap-1 md:gap-2 lg:gap-3">
-        <div className="opacity-50">
-          <Image src={jar} width="300px" height="300px" />
-          <h1 className="absolute top-50 bg-mint p-3 ml-20 text-center rounded-lg font-medium dark:text-white">
-            Manifestation
-          </h1>
-        </div>
-        <div className="opacity-50">
-          <Image src={jar} width="300px" height="300px" />
-          <h1 className="absolute top-50 bg-mint p-3 ml-24 text-center rounded-lg font-medium dark:text-white">
-            Gratitude
-          </h1>
-        </div>
-        <div>
-          <Image src={jar} width="300px" height="300px" />
-          <h1 className="absolute top-50 bg-mint p-3 ml-20 text-center rounded-lg font-medium dark:text-white">
-            Achievements
-          </h1>
-        </div>
-        <div className="opacity-50">
-          <Image src={jar} width="300px" height="300px" />
-          <h1 className="absolute top-50 bg-mint p-3 ml-24 text-center rounded-lg font-medium dark:text-white">
-            Memories
-          </h1>
-        </div>
-        <div className="opacity-50">
-          <Image src={jar} width="300px" height="300px" />
-          <h1 className="absolute top-50 bg-mint p-3 ml-24 text-center rounded-lg font-medium dark:text-white">
-            Hype Songs
-          </h1>
-        </div>
-      </div>
+      <h3 className="text-3xl font-bold lg:mx-96 text-center dark:text-white">
+        Meet your new <span className="text-mint">best friend</span>: A Cookie
+        Jar.
+      </h3>
+      <Spline scene="https://prod.spline.design/Q7ePNsqH7H3M7Gu4/scene.splinecode" />
+      <h3 className="text-3xl font-bold lg:mx-96 text-center dark:text-white">
+        The Cookie Jar will guide you through creating and{" "}
+        <span className="text-mint">finding memories</span> to find confidence
+        to be your <span className="text-mint">best</span> self.
+      </h3>
       <br />
       <br />
       <br />
     </div>
   );
 }
-
-//relative flex justify-center items-center w-screen

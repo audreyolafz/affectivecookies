@@ -1,13 +1,11 @@
 import React from "react";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Sentiment from "sentiment";
-import displaySearchTweets from "../../api/twitter";
 import displayHomeTimeline from "../../api/twitter";
 import Nav from "../../../components/nav";
 import { options } from "../../../components/trainData";
 
 export default function Affect({ tweets }) {
-  // userReq = ReqUser();
   const { data: session } = useSession();
   console.log(tweets);
 
@@ -242,10 +240,8 @@ export default function Affect({ tweets }) {
 }
 
 export async function getServerSideProps() {
-  // const { search } = context;
   return {
     props: {
-      // tweets: await displaySearchTweets("mental health"),
       tweets: await displayHomeTimeline(),
     },
   };
