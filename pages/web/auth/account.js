@@ -21,7 +21,7 @@ export default function Account() {
         </p>
         <br />
         <br />
-        <p className="text-center text-xl lg:mx-96">
+        <p className="text-center text-xl sm:mx-3 md:mx-10 lg:mx-96">
           <u>Here is an overview:</u>
           <br />
           <br />

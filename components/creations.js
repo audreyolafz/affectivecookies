@@ -6,7 +6,7 @@ import jar from "../public/illustrations/jar.png";
 
 export default function Creations() {
   return (
-    <div className="sm:my-1 md:my-2 lg:my-3 relative">
+    <div className="sm:mx-3 sm:my-1 md:my-2 lg:my-3 relative">
       <Image src={imposterThree} width="250px" height="250px" />
 
       <h1 className="mb-4 text-center text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-5xl lg:mx-80 dark:text-white">

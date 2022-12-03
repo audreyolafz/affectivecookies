@@ -132,6 +132,7 @@ export default function Affect({ tweets }) {
             </h1>
           </div>
         )}
+        <div className="sm:mb-48 md:mb-48 lg:mb-0"></div>
         {checkedGr ? (
           <div className="p-5 mb-4 sm:ml-4 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
             <h1 className="text-lg font-semibold text-green-800 dark:text-white">
