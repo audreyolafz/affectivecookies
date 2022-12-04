@@ -7,6 +7,7 @@ import Nav from "../../../components/nav";
 import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
 import exotic from "../../../public/illustrations/exotic.png";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Form() {
   const { register, handleSubmit } = useForm();
@@ -26,20 +27,18 @@ export default function Form() {
         data.future +
         `&` +
         "place=" +
-        data.place //+
-      // `&` +
-      // "graphic=" +
-      // data.graphic
-      //+
-      // `&` +
-      // "color=" +
-      // data.color
+        data.place
     ).then((res) => console.log("NEW STUFF " + res.data));
   };
   const cards = useSWR("/api/getcards", fetcher).data;
 
   return (
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
+      <Head>
+        <title>Card</title>
+        {/* <meta name="description" content={"Card profile"} />
+        <meta property="og:title" content={cards.name} /> */}
+      </Head>
       <div>
         <Nav />
         <form
@@ -99,21 +98,6 @@ export default function Form() {
             ></textarea>
           </div>
 
-          {/* <label
-            for="graphic"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-          >
-            Select your graphic
-          </label>
-          <select
-            id="graphic"
-            className="bg-gray-50 border border-mint text-gray-900 text-sm rounded-lg focus:ring-mint focus:border-mint block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
-            {...register("graphic", { required: true })}
-          >
-            <option>exotic</option>
-            <option>lilyLeaf</option>
-          </select> */}
-
           <button
             type="submit"
             value="submit"
@@ -142,13 +126,6 @@ export default function Form() {
                       width="90%"
                       src={graphicList[randVal]}
                     />
-                    {/* <Image
-                      key={i}
-                      className="object-contain"
-                      height="90%"
-                      width="90%"
-                      src={card.graphic}
-                    /> */}
                   </div>
                   <p
                     // key={i}

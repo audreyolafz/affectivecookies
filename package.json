@@ -10,6 +10,7 @@
   "dependencies": {
     "airtable-plus": "^1.0.4",
     "axios": "^0.27.2",
+    "cloudinary": "^1.32.0",
     "eslint": "^8.22.0",
     "flowbite": "^1.5.2",
     "flowbite-react": "^0.1.10",
@@ -17,6 +18,7 @@
     "next": "^12.2.3",
     "next-auth": "^4.10.3",
     "next-themes": "^0.2.0",
+    "openai": "^3.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.1",

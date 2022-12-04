@@ -5,11 +5,16 @@ import Nav from "../../../components/nav";
 import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
 import exotic from "../../../public/illustrations/exotic.png";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Cards() {
   const cards = useSWR("/api/getcards", fetcher).data;
   return (
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
+      <Head>
+        <title>Cards</title>
+      </Head>
+
       <Nav />
 
       <h1 className="mb-4 text-center text-xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-5xl lg:mx-80 dark:text-white">

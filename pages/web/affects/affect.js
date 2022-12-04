@@ -4,6 +4,7 @@ import Sentiment from "sentiment";
 import displayHomeTimeline from "../../api/twitter";
 import Nav from "../../../components/nav";
 import { options } from "../../../components/trainData";
+import Head from "next/head";
 
 export default function Affect({ tweets }) {
   const { data: session } = useSession();
@@ -51,6 +52,10 @@ export default function Affect({ tweets }) {
   return (
     <div>
       <div>
+        <Head>
+          <title>Affective Twitter</title>
+        </Head>
+
         <Nav />
         <br />
         {session ? (

@@ -7,11 +7,15 @@ import fetcher from "../../../lib/fetcher";
 import Image from "next/image";
 import cookie from "../../../public/cookies.png";
 import Nav from "../../../components/nav";
+import Head from "next/head";
 
 export default function Affirmations({ c }) {
   const displayCookies = useSWR("/api/getcookies", fetcher).data;
   return (
     <div>
+      <Head>
+        <title>Affirmations</title>
+      </Head>
       {displayCookies?.map((c, i) => (
         <div>
           <Image type="button" src={cookie} width="250px" height="250px" />

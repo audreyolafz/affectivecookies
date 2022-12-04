@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
     return config;
+  },
+  images: {
+    domains: ["res.cloudinary.com", "avatars.githubusercontent.com"],
   },
   async headers() {
     return [
@@ -27,5 +30,3 @@ const nextConfig = {
     ];
   },
 };
-
-module.exports = nextConfig;

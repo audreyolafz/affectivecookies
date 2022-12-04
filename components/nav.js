@@ -8,6 +8,7 @@ const links = [
   { label: "Card", href: "/web/cards/form" },
   { label: "Cookie", href: "/web/cookies/jar" },
   { label: "Affect", href: "/web/affects/affect" },
+  { label: "Inclusion", href: "/web/inclusion/inclusively" },
   { label: "Account", href: "/web/auth/account" },
 ];
 

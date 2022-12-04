@@ -8,6 +8,7 @@ import Image from "next/image";
 import cookieThree from "../../../public/illustrations/cookieThree.png";
 import jar from "../../../public/illustrations/jar.png";
 import Nav from "../../../components/nav";
+import Head from "next/head";
 
 export default function Jar({ cookies }) {
   const { register, handleSubmit } = useForm();
@@ -30,6 +31,9 @@ export default function Jar({ cookies }) {
 
   return (
     <div className="mx-auto">
+      <Head>
+        <title>Cookie Jar</title>
+      </Head>
       <Nav />
 
       <br />

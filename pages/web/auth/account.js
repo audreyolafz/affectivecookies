@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../../../components/nav";
 import Image from "next/image";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
+import Head from "next/head";
 
 export default function Account() {
   const { data: session, status } = useSession({ required: true });
@@ -9,6 +10,10 @@ export default function Account() {
   if (status === "authenticated") {
     return (
       <div>
+        <Head>
+          <title>Account</title>
+        </Head>
+
         <Nav />
         <img
           width="5%"
@@ -47,7 +52,7 @@ export const getServerSideProps = async (context) => {
   if (!session) {
     return {
       redirect: {
-        destination: "../auth/login",
+        destination: "../../web/auth/login",
       },
     };
   }
