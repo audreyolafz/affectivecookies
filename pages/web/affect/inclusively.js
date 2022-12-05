@@ -82,7 +82,9 @@ export default function Inclusively() {
           {loading && <div>Loading...</div>}
           {answer && (
             <>
-              <h2 className="font-medium text-lg">Result:</h2>
+              <h2 className="font-medium text-lg">
+                Feel free to copy the generated text below!
+              </h2>
               <div className="flex space-x-3">
                 <div
                   className={`p-3 rounded-lg border border-gray-400 ${sentimentColor}-100 dark:${sentimentColor}-600`}

@@ -33,6 +33,7 @@ export default function Creations() {
       <div className="relative float-right mr-10">
         <Image src={meditation} width="250px" height="250px" />
       </div>
+      {/* <br />
       <br />
       <br />
       <br />
@@ -42,8 +43,6 @@ export default function Creations() {
       <br />
       <br />
       <br />
-      <br />
-
       <h3 className="text-3xl font-bold lg:mx-96 text-center dark:text-white">
         Meet your new <span className="text-mint">best friend</span>: A Cookie
         Jar.
@@ -52,7 +51,7 @@ export default function Creations() {
         The Cookie Jar will guide you through creating and{" "}
         <span className="text-mint">finding memories</span> to find confidence
         to be your <span className="text-mint">best</span> self.
-      </h3>
+      </h3> */}
       <br />
       <br />
       <br />

@@ -85,16 +85,16 @@ export default function Gallery({ images }) {
         </form>
 
         <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max">
-          {images.map((image) => {
+          {images?.map((image) => {
             return (
               <li key={image.id}>
                 <a href={image.link} rel="noreferrer">
-                  <div className="m-5">
+                  <div className="m-5 sm:max-w-sm">
                     <Image
                       width={image.width}
                       height={image.height}
                       src={image.image}
-                      className="rounded-lg sm:max-w-sm"
+                      className="rounded-lg"
                     />
                   </div>
                 </a>
