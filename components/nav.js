@@ -6,9 +6,10 @@ import { useSession, signIn, signOut, getSession } from "next-auth/react";
 const links = [
   { label: "Home", href: "/" },
   { label: "Card", href: "/web/cards/form" },
+  { label: "Upload", href: "/web/cards/gallery" },
   { label: "Cookie", href: "/web/cookies/jar" },
-  { label: "Affect", href: "/web/affects/affect" },
-  { label: "Inclusion", href: "/web/inclusion/inclusively" },
+  { label: "Affect", href: "/web/affect/affect" },
+  { label: "Inclusion", href: "/web/affect/inclusively" },
   { label: "Account", href: "/web/auth/account" },
 ];
 

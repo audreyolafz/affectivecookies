@@ -8,7 +8,7 @@ import Head from "next/head";
 
 export default function Affect({ tweets }) {
   const { data: session } = useSession();
-  console.log(tweets);
+  // console.log(tweets);
 
   var sentiment = new Sentiment();
 
@@ -139,7 +139,7 @@ export default function Affect({ tweets }) {
         )}
         <div className="sm:mb-48 md:mb-48 lg:mb-0"></div>
         {checkedGr ? (
-          <div className="p-5 mb-4 sm:ml-4 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
+          <div className="p-5 mb-4 sm:mx-4 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
             <h1 className="text-lg font-semibold text-green-800 dark:text-white">
               Positive
             </h1>

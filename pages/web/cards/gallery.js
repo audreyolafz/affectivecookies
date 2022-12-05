@@ -53,52 +53,50 @@ export default function Gallery({ images }) {
     <div>
       <Head>
         <title>Image Uploader</title>
-        <meta name="description" content="Upload your image to Cloudinary!" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Nav />
       <div className="text-center">
         <h1 className="text-2xl">Image Uploader</h1>
 
         <form
-          className="border-2 border-mint"
+          className="m-10"
           method="post"
           onChange={handleOnChange}
           onSubmit={handleOnSubmit}
         >
-          <p>
-            <input type="file" name="file" />
+          <p className="mx-80">
+            <input
+              className="block text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              id="file_input"
+              name="file"
+              type="file"
+            />
           </p>
-
           <img src={imageSrc} />
 
           {imageSrc && !uploadData && (
             <p>
-              <button className="rounded-lg">Upload Files</button>
+              <button className="text-black bg-mint border-mint border-solid border-2 hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover: text-white hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint">
+                Upload Files
+              </button>
             </p>
           )}
-
-          {/* {uploadData && (
-            <code>
-              <pre>{JSON.stringify(uploadData, null, 2)}</pre>
-            </code>
-          )} */}
         </form>
 
-        <ul className="flex">
+        <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max">
           {images.map((image) => {
             return (
               <li key={image.id}>
                 <a href={image.link} rel="noreferrer">
-                  <div className="rounded-lg">
+                  <div className="m-5">
                     <Image
                       width={image.width}
                       height={image.height}
                       src={image.image}
-                      alt=""
+                      className="rounded-lg sm:max-w-sm"
                     />
                   </div>
-                  {/* <h3 className="text-lg">{image.title}</h3> */}
                 </a>
               </li>
             );
