@@ -26,6 +26,7 @@ export default function Inclusively() {
   if (result.score > 1) {
     sentimentColor = "bg-green";
   } else if (result.score <= 1 && result.score >= -1) {
+    // sentimentColor = "bg-amber";
     sentimentColor = "bg-yellow";
   } else if (result.score < -1 && result.score >= -10) {
     sentimentColor = "bg-orange";
@@ -89,11 +90,7 @@ export default function Inclusively() {
                 <div
                   className={`p-3 rounded-lg border border-gray-400 ${sentimentColor}-100 dark:${sentimentColor}-600`}
                 >
-                  <div
-                    class="hi"
-                    className="text-gray-800 dark:text-gray-100"
-                    id="copyme"
-                  >
+                  <div className="text-gray-800 dark:text-gray-100" id="copyme">
                     {answer}
                   </div>
                 </div>
@@ -101,10 +98,10 @@ export default function Inclusively() {
                 <div
                   id="tooltip-default"
                   role="tooltip"
-                  class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+                  className="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-mint rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
                 >
                   Tooltip content
-                  <div class="tooltip-arrow" data-popper-arrow></div>
+                  <div className="tooltip-arrow" data-popper-arrow></div>
                 </div>
 
                 {document.queryCommandSupported("copy") && (
@@ -113,7 +110,7 @@ export default function Inclusively() {
                     data-tooltip-target="tooltip-copy"
                     data-tooltip-placement="top"
                     onClick={copyToClipboard}
-                    className="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-lg border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-mint focus:outline-none dark:focus:ring-mint"
+                    className="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-mint rounded-lg border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-600 focus:ring-4 focus:ring-mint focus:outline-none dark:focus:ring-mint"
                   >
                     <svg
                       aria-hidden="true"

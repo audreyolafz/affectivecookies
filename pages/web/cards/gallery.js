@@ -41,7 +41,11 @@ export default function Gallery({ images }) {
         method: "POST",
         body: formData,
       }
-    ).then((r) => r.json());
+    )
+      .then((r) => r.json())
+      .catch((err) => {
+        console.log(err);
+      }, []);
 
     setImageSrc(data.secure_url);
     setUploadData(data);
@@ -109,7 +113,7 @@ export default function Gallery({ images }) {
 
 export async function getStaticProps() {
   const results = await fetch(
-    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/resources/image/`,
+    "https://api.cloudinary.com/v1_1/audreyolaf/resources/image/",
     {
       headers: {
         Authorization: `Basic ${Buffer.from(
@@ -122,17 +126,20 @@ export async function getStaticProps() {
   ).then((r) => r.json());
   const { resources } = results;
 
-  const images = resources?.map((resource) => {
-    const { width, height } = resource;
+  const images = resources?.map((resources) => {
+    const { width, height } = resources;
     return {
-      id: resource.asset_id,
-      title: resource.public_id,
-      image: resource.secure_url,
+      id: resources.asset_id,
+      title: resources.public_id,
+      image: resources.secure_url,
       width,
       height,
     };
   });
 
+  if (!images) {
+    return null;
+  }
   return {
     props: {
       images,

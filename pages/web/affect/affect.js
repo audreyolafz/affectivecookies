@@ -139,7 +139,7 @@ export default function Affect({ tweets }) {
         )}
         <div className="sm:mb-48 md:mb-48 lg:mb-0"></div>
         {checkedGr ? (
-          <div className="p-5 mb-4 sm:mx-4 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
+          <div className="p-5 mb-4 sm:mx-10 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
             <h1 className="text-lg font-semibold text-green-800 dark:text-white">
               Positive
             </h1>
@@ -164,7 +164,7 @@ export default function Affect({ tweets }) {
           <div></div>
         )}
         {checkedYe ? (
-          <div className="p-5 mb-4 sm:mx-4 lg:mx-96 bg-yellow-100 rounded-lg border border-yellow-400 dark:bg-yellow-400 dark:border-yellow-50">
+          <div className="p-5 mb-4 sm:mx-10 lg:mx-96 bg-yellow-100 rounded-lg border border-yellow-400 dark:bg-yellow-600 dark:border-yellow-50">
             <h1 className="text-lg font-semibold text-yellow-400 dark:text-white">
               Neutral
             </h1>
@@ -173,7 +173,7 @@ export default function Affect({ tweets }) {
                 <li>
                   <a
                     href="#"
-                    className="block items-center p-3 rounded-lg sm:flex hover:bg-yellow-200 dark:hover:bg-yellow-500"
+                    className="block items-center p-3 rounded-lg sm:flex hover:bg-yellow-200 dark:hover:bg-yellow-600"
                   >
                     <div className="text-gray-800 dark:text-gray-100">
                       <div className="text-base font-normal">
@@ -190,7 +190,7 @@ export default function Affect({ tweets }) {
         )}
 
         {checkedOr ? (
-          <div className="p-5 mb-4 sm:mx-4 lg:mx-96 bg-orange-100 rounded-lg border border-red-600 dark:bg-orange-600 dark:border-orange-50">
+          <div className="p-5 mb-4 sm:mx-10 lg:mx-96 bg-orange-100 rounded-lg border border-red-600 dark:bg-orange-600 dark:border-orange-50">
             <h1 className="text-lg font-semibold text-orange-500 dark:text-white">
               Mental Health Sensitive
             </h1>

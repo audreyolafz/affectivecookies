@@ -18,10 +18,14 @@ const Myclass = plugin(function ({ addUtilities }) {
   });
 });
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite-react/**/*.js",
+  ],
   darkMode: "class",
-  mode: "jit",
-  content: ["./node_modules/flowbite-react/**/*.js"],
+  // mode: "jit",
+  // content: [],
   theme: {
     colors: {
       transparent: "transparent",
