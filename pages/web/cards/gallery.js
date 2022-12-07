@@ -65,14 +65,14 @@ export default function Gallery({ images }) {
           onChange={handleOnChange}
           onSubmit={handleOnSubmit}
         >
-          <p className="mx-80">
+          <div className="grid place-content-center">
             <input
-              className="block text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              className="block text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-300 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
               id="file_input"
               name="file"
               type="file"
             />
-          </p>
+          </div>
           <img src={imageSrc} />
 
           {imageSrc && !uploadData && (
@@ -84,17 +84,17 @@ export default function Gallery({ images }) {
           )}
         </form>
 
-        <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max">
+        <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max justify-items-center">
           {images?.map((image) => {
             return (
               <li key={image.id}>
                 <a href={image.link} rel="noreferrer">
-                  <div className="m-5 sm:max-w-sm">
+                  <div className="m-5 max-w-sm">
                     <Image
                       width={image.width}
                       height={image.height}
                       src={image.image}
-                      className="rounded-lg"
+                      className="rounded-lg object-scale-down w-10"
                     />
                   </div>
                 </a>
@@ -122,7 +122,7 @@ export async function getStaticProps() {
   ).then((r) => r.json());
   const { resources } = results;
 
-  const images = resources.map((resource) => {
+  const images = resources?.map((resource) => {
     const { width, height } = resource;
     return {
       id: resource.asset_id,

@@ -107,7 +107,7 @@ export default function Form() {
           </button>
         </form>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max bg-transparent group perspective">
+        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max sm:mx-auto bg-transparent group perspective">
           {cards?.map((card, i) => (
             <div className="max-w-sm m-5 pl-0 pt-6 bg-meshGreen aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
               <div className="absolute backface-hidden">
