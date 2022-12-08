@@ -4,16 +4,16 @@ import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "../../../lib/fetcher";
 import Nav from "../../../components/nav";
-import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
-import exotic from "../../../public/illustrations/exotic.png";
+// import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
+// import exotic from "../../../public/illustrations/exotic.png";
 import Image from "next/image";
 import Head from "next/head";
 
 export default function Form() {
   const { register, handleSubmit } = useForm();
 
-  let graphicList = [lilyLeaf, exotic];
-  let randVal = Math.floor(Math.random() * 2);
+  // let graphicList = [lilyLeaf, exotic];
+  // let randVal = Math.floor(Math.random() * 2);
 
   const onSubmit = async (data) => {
     fetch(
@@ -109,8 +109,8 @@ export default function Form() {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max sm:mx-auto bg-transparent group perspective">
           {cards?.map((card, i) => (
-            <div className="max-w-sm m-5 pl-0 pt-6 bg-meshGreen aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
-              <div className="absolute backface-hidden">
+            <div className="max-w-sm m-5 pl-0 pt-5 aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
+              <div className="pt-5 absolute bg-accard bg-cover overflow-hidden aspect-video rounded-lg">
                 <p
                   // key={i}
                   className="text-2xl text-center font-bold backface-hidden"
@@ -118,7 +118,7 @@ export default function Form() {
                   {card.name}
                 </p>
                 <div className="relative">
-                  <div className="float-left max-h-10">
+                  {/* <div className="float-left max-h-10">
                     <Image
                       // key={i}
                       className="object-contain"
@@ -126,30 +126,21 @@ export default function Form() {
                       width="90%"
                       src={graphicList[randVal]}
                     />
-                  </div>
+                  </div> */}
                   <p
                     // key={i}
-                    className="text-base text-right backface-hidden pl-7 pr-2"
+                    className="text-base text-right backface-hidden ml-20 pl-20 pr-3"
                   >
                     🫂 <u>{card.people}</u> could not have done it without me 🫶
-                  </p>
-                  <p
-                    // key={i}
-                    className="text-base text-right backface-hidden pl-5 pr-2"
-                  >
-                    🤩 <u>{card.future}</u> is pushing me forward!
-                  </p>
-                  <p
-                    // key={i}
-                    className="text-base text-right backface-hidden pl-5 pr-2"
-                  >
+                    <br />
+                    🤩 <u>{card.future}</u> is pushing me forward! <br />
                     🌎 <u>{card.place}</u> is waiting for me.
                   </p>
                 </div>
               </div>
-              <div className="absolute p-3 pb-2 my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
+              <div className="pt-7 absolute bg-meshGreen bg-cover my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
                 <a
-                  className="text-left subpixel-antialiased"
+                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://988lifeline.org/"
                   target="_blank"
                 >
@@ -157,7 +148,7 @@ export default function Form() {
                 </a>
                 <br />
                 <a
-                  className="text-left subpixel-antialiased"
+                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://www.crisistextline.org/"
                   target="_blank"
                 >
@@ -165,7 +156,7 @@ export default function Form() {
                 </a>
                 <br />
                 <a
-                  className="text-left subpixel-antialiased"
+                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://www.thetrevorproject.org/"
                   target="_blank"
                 >
@@ -173,7 +164,7 @@ export default function Form() {
                 </a>
                 <br />
                 <a
-                  className="text-left subpixel-antialiased"
+                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://www.thehotline.org/"
                   target="_blank"
                 >
@@ -181,7 +172,7 @@ export default function Form() {
                 </a>
                 <br />
                 <a
-                  className="text-left subpixel-antialiased"
+                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://www.rainn.org/"
                   target="_blank"
                 >
@@ -190,6 +181,7 @@ export default function Form() {
               </div>
             </div>
           ))}
+          <br />
         </div>
       </div>
     </div>

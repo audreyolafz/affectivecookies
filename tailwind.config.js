@@ -41,7 +41,7 @@ module.exports = {
         // body: ["Inter"],
       },
       backgroundImage: {
-        greenery: "url('../public/greenery.jpg')",
+        accard: "url('../public/ACCard.png')",
         meshRed: "url('../public/meshRed.png')",
         meshOrange: "url('../public/meshOrange.png')",
         meshYellow: "url('../public/meshYellow.png')",
