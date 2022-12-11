@@ -43,7 +43,7 @@ export default function Form() {
         <Nav />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col lg:mx-96 mb-5 p-8 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          className="flex flex-col sm:mx-10 md:mx-48 lg:mx-96 mb-5 p-8 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
         >
           <div className="mb-6">
             <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
@@ -107,7 +107,7 @@ export default function Form() {
           </button>
         </form>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max sm:mx-auto bg-transparent group perspective">
+        <div className="grid sm:my-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max sm:mx-auto bg-transparent group perspective">
           {cards?.map((card, i) => (
             <div className="max-w-sm m-5 pl-0 pt-5 aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
               <div className="pt-5 absolute bg-accard bg-cover overflow-hidden aspect-video rounded-lg">

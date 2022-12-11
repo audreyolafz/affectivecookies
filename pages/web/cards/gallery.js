@@ -128,6 +128,7 @@ export default function Gallery() {
 //       },
 //     }
 //   ).then((r) => r.json());
+//   let resources = [];
 //   const { resources } = results;
 
 //   const images = resources?.map((resources) => {
