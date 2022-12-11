@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
 //import { Modal, Button, Label, TextInput, Checkbox } from "flowbite-react";
-import cookies from "../public/cookies.png";
-import cookieJar from "../public/cookieJar.png";
+import cookies from "/public/cookies.png";
+import cookieJar from "/public/cookieJar.png";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
 import useSWR from "swr";
-import fetcher from "../lib/fetcher";
+import fetcher from "/lib/fetcher";
 
 export default function CookieModal() {
   const { register, handleSubmit } = useForm();

@@ -3,11 +3,11 @@ import { get as fetch } from "axios";
 import useSWR from "swr";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import fetcher from "../../../lib/fetcher";
+import fetcher from "/lib/fetcher";
 import Image from "next/image";
-import cookieThree from "../../../public/illustrations/cookieThree.png";
-import jar from "../../../public/illustrations/jar.png";
-import Nav from "../../../components/nav";
+import cookieThree from "/public/illustrations/cookieThree.png";
+import jar from "/public/illustrations/jar.png";
+import Nav from "/components/nav";
 import Head from "next/head";
 
 export default function Jar({ cookies }) {
@@ -93,7 +93,7 @@ export default function Jar({ cookies }) {
                   </label>
                   <textarea
                     rows="2"
-                    className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+                    className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
                     placeholder="deliver a good story"
                     required
                     minLength="2"

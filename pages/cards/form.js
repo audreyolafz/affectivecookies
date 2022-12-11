@@ -2,18 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
 import useSWR from "swr";
-import fetcher from "../../../lib/fetcher";
-import Nav from "../../../components/nav";
-// import lilyLeaf from "../../../public/illustrations/lilyLeaf.png";
-// import exotic from "../../../public/illustrations/exotic.png";
+import fetcher from "/lib/fetcher";
+import Nav from "/components/nav";
 import Image from "next/image";
 import Head from "next/head";
 
 export default function Form() {
   const { register, handleSubmit } = useForm();
-
-  // let graphicList = [lilyLeaf, exotic];
-  // let randVal = Math.floor(Math.random() * 2);
 
   const onSubmit = async (data) => {
     fetch(
@@ -46,11 +41,11 @@ export default function Form() {
           className="flex flex-col sm:mx-10 md:mx-48 lg:mx-96 mb-5 p-8 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
         >
           <div className="mb-6">
-            <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
+            <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
               your preferred name
             </label>
             <input
-              className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="anything you like!"
               required
               minLength="2"
@@ -60,11 +55,11 @@ export default function Form() {
           </div>
 
           <div className="mb-6">
-            <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
+            <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
               who cannot live without me?
             </label>
             <input
-              className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my favorite humaaans"
               required
               minLength="2"
@@ -72,12 +67,12 @@ export default function Form() {
             />
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
+            <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
               where do I see myself in 5 years?
             </label>
             <textarea
               rows="3"
-              className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my future :)"
               required
               minLength="2"
@@ -85,12 +80,12 @@ export default function Form() {
             ></textarea>
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300">
+            <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
               what places do I still want to go?
             </label>
             <textarea
               rows="2"
-              className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="it's a big world..."
               required
               minLength="2"
@@ -107,10 +102,10 @@ export default function Form() {
           </button>
         </form>
 
-        <div className="grid sm:my-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-cols-max sm:mx-auto bg-transparent group perspective">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max sm:mx-auto bg-transparent group perspective">
           {cards?.map((card, i) => (
             <div className="max-w-sm m-5 pl-0 pt-5 aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
-              <div className="pt-5 absolute bg-accard bg-cover overflow-hidden aspect-video rounded-lg">
+              <div className="sm:mb-24 pt-5 absolute bg-accard bg-cover overflow-hidden aspect-video rounded-lg">
                 <p
                   // key={i}
                   className="text-2xl text-center font-bold backface-hidden"
@@ -118,15 +113,6 @@ export default function Form() {
                   {card.name}
                 </p>
                 <div className="relative">
-                  {/* <div className="float-left max-h-10">
-                    <Image
-                      // key={i}
-                      className="object-contain"
-                      height="90%"
-                      width="90%"
-                      src={graphicList[randVal]}
-                    />
-                  </div> */}
                   <p
                     // key={i}
                     className="text-base text-right backface-hidden ml-20 pl-20 pr-3"

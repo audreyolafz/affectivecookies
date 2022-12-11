@@ -1,9 +1,9 @@
 import React from "react";
 import { useSession } from "next-auth/react";
 import Sentiment from "sentiment";
-import displayHomeTimeline from "../../api/twitter";
-import Nav from "../../../components/nav";
-import { options } from "../../../components/trainData";
+import displayHomeTimeline from "../api/twitter";
+import Nav from "/components/nav";
+import { options } from "/components/trainData";
 import Head from "next/head";
 
 export default function Affect({ tweets }) {
@@ -19,7 +19,6 @@ export default function Affect({ tweets }) {
 
   for (const tweet of tweets) {
     let result = sentiment.analyze(tweet.text, options);
-    // console.log(`${result.score}`);
     if (result.score > 1) {
       green_result.push(tweet.text);
     } else if (result.score <= 1 && result.score >= -1) {
@@ -132,7 +131,7 @@ export default function Affect({ tweets }) {
           </ul>
         ) : (
           <div>
-            <h1 className="mb-4 text-center text-md tracking-tight leading-none text-gray-900 md:text-3xl lg:text-xl lg:mx-80 dark:text-white">
+            <h1 className="mb-4 text-center text-base tracking-tight leading-none text-gray-900 md:text-3xl lg:text-xl lg:mx-80 dark:text-white">
               Oops! Please sign in with Twitter.
             </h1>
           </div>

@@ -1,15 +1,15 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
-import imposterThree from "../public/illustrations/imposterThree.png";
-import meditation from "../public/illustrations/meditation.png";
-import jar from "../public/illustrations/jar.png";
+import imposterThree from "/public/illustrations/imposterThree.png";
+import meditation from "/public/illustrations/meditation.png";
+import jar from "/public/illustrations/jar.png";
 
 export default function Creations() {
   return (
     <div className="sm:mx-3 sm:my-1 md:my-2 lg:my-3 relative">
       <Image src={imposterThree} width="250px" height="250px" />
 
-      <h1 className="mb-4 text-center text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-5xl lg:mx-80 dark:text-white">
+      <h1 className="mb-4 text-center text-2xl font-bold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-5xl lg:mx-80 dark:text-white">
         Redefining{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-golden from-mint">
           mental health
@@ -17,7 +17,7 @@ export default function Creations() {
         one cookie at a time.
       </h1>
       <br />
-      <h3 className="text-3xl font-bold lg:mx-96 text-center dark:text-white">
+      <h3 className="text-3xl font-semibold lg:mx-96 text-center dark:text-white">
         We are <span className="text-mint">engineering empathy</span>. That is,
         harnessing the{" "}
         <span className="text-mint">positivity and strength</span> from yourself

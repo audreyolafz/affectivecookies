@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import Sentiment from "sentiment";
-import { options } from "../../../components/trainData";
+import { options } from "/components/trainData";
 import { useState } from "react";
-import Nav from "../../../components/nav";
+import Nav from "/components/nav";
 
 export default function Inclusively() {
   const [input, setInput] = useState("");
@@ -69,7 +69,7 @@ export default function Inclusively() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               rows="2"
-              className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder=":)"
               required
               minLength="2"

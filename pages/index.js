@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../components/nav";
-import Creations from "../components/creations";
+import Nav from "/components/nav";
+import Creations from "/components/creations";
 import Head from "next/head";
 
 export default function Home() {

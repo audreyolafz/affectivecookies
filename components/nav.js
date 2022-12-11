@@ -53,14 +53,14 @@ export default function Nav() {
           <div className="flex md:order-2">
             {session ? (
               <button
-                className="mt-2 text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-md px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+                className="mt-2 text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
                 onClick={() => signOut()}
               >
                 Sign Out
               </button>
             ) : (
               <button
-                className="mt-2 text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-md px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+                className="mt-2 text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
                 onClick={() => signIn()}
               >
                 Sign In
@@ -70,7 +70,7 @@ export default function Nav() {
               data-collapse-toggle="true"
               // data-toggle="dropdown"
               type="button"
-              className="inline-flex items-center p-2 text-md text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 text-base text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-sticky"
               aria-expanded="true"
               // id="triggerEl"
@@ -111,7 +111,7 @@ export default function Nav() {
             <ul className="flex flex-col p-4 mt-4 font-semibold rounded-lg md:flex-row md:space-x-8 md:mt-0">
               <li>
                 <a
-                  href="/web/cards/form"
+                  href="/cards/form"
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                   aria-current="page"
                 >
@@ -120,7 +120,7 @@ export default function Nav() {
               </li>
               <li>
                 <a
-                  href="/web/cookies/jar"
+                  href="/cookies/jar"
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                 >
                   Cookie
@@ -128,7 +128,7 @@ export default function Nav() {
               </li>
               <li>
                 <a
-                  href="/web/affect/affect"
+                  href="/affect/affect"
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                 >
                   Affect
@@ -136,7 +136,7 @@ export default function Nav() {
               </li>
               <li>
                 <a
-                  href="/web/affect/inclusively"
+                  href="/affect/inclusively"
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                 >
                   Inclusion
@@ -144,7 +144,7 @@ export default function Nav() {
               </li>
               <li>
                 <a
-                  href="/web/auth/account"
+                  href="/auth/account"
                   className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                 >
                   Account
@@ -193,14 +193,14 @@ export default function Nav() {
     //         <div className="rounded-lg">
     //           {session ? (
     //             <button
-    //               className="text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-golden hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-md px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+    //               className="text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-golden hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
     //               onClick={() => signOut()}
     //             >
     //               Sign Out
     //             </button>
     //           ) : (
     //             <button
-    //               className="text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-golden hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-md px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+    //               className="text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-golden hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
     //               onClick={() => signIn()}
     //             >
     //               Sign In

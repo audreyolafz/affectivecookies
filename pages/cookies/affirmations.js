@@ -3,10 +3,10 @@ import { get as fetch } from "axios";
 import useSWR from "swr";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import fetcher from "../../../lib/fetcher";
+import fetcher from "/lib/fetcher";
 import Image from "next/image";
-import cookie from "../../../public/cookies.png";
-import Nav from "../../../components/nav";
+import cookie from "/public/cookies.png";
+import Nav from "/components/nav";
 import Head from "next/head";
 
 export default function Affirmations({ c }) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Nav from "../../../components/nav";
+import Nav from "/components/nav";
 import Link from "next/link";
 
 export default function Gallery() {

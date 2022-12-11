@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../../../components/nav";
+import Nav from "/components/nav";
 import Image from "next/image";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import Head from "next/head";
@@ -52,7 +52,7 @@ export const getServerSideProps = async (context) => {
   if (!session) {
     return {
       redirect: {
-        destination: "../../web/auth/login",
+        destination: "/auth/login",
       },
     };
   }
