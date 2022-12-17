@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
-import { AppWrapper } from "../context/state";
+import { CounterProvider } from "../context/state";
 
 export default function MyApp({
   Component,
@@ -10,8 +10,9 @@ export default function MyApp({
   return (
     <SessionProvider session={session}>
       <ThemeProvider defaultTheme="system" attribute="class">
-        {/* <AppWrapper /> */}
-        <Component {...pageProps} />
+        <CounterProvider>
+          <Component {...pageProps} />
+        </CounterProvider>
       </ThemeProvider>
     </SessionProvider>
   );

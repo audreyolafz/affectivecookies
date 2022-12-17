@@ -8,7 +8,6 @@ import Head from "next/head";
 
 export default function Affect({ tweets }) {
   const { data: session } = useSession();
-  // console.log(tweets);
 
   var sentiment = new Sentiment();
 
@@ -52,7 +51,8 @@ export default function Affect({ tweets }) {
     <div>
       <div>
         <Head>
-          <title>Affective Twitter</title>
+          <title>Affective Cookies | Mental Health Feed</title>
+          <link rel="icon" href="/illustrations/cookieOne.png" />
         </Head>
 
         <Nav />

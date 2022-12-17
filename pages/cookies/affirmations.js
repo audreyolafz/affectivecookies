@@ -14,7 +14,8 @@ export default function Affirmations({ c }) {
   return (
     <div>
       <Head>
-        <title>Affirmations</title>
+        <title>Affective Cookies | Affirmations</title>
+        <link rel="icon" href="/illustrations/cookieOne.png" />
       </Head>
       {displayCookies?.map((c, i) => (
         <div>

@@ -11,7 +11,8 @@ export default function Account() {
     return (
       <div>
         <Head>
-          <title>Account</title>
+          <title>Affective Cookies | Account</title>
+          <link rel="icon" href="/illustrations/cookieOne.png" />
         </Head>
 
         <Nav />
@@ -33,6 +34,7 @@ export default function Account() {
           <b>Card</b> | Fill in the fields to create a custom mental health
           card! Check out the card gallery below. <br />
           <br />
+          <br />
           <b>Cookie</b> | Write a short story about a time when you overcame
           something challenging, or wonderful things others have said about you.
           When you are feeling down, check out the random cookie generator to
@@ -41,6 +43,10 @@ export default function Account() {
           <br />
           <b>Affect</b> | Since you are signed in, you can view your Twitter
           feed filtered with mental health in mind.
+          <br />
+          <br />
+          <b>Inclusively</b> | Your words matter. Make your words count by
+          ensuring they use kinder and more inclusive phrases.
         </p>
       </div>
     );

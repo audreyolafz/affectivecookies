@@ -32,7 +32,8 @@ export default function Jar({ cookies }) {
   return (
     <div className="mx-auto">
       <Head>
-        <title>Cookie Jar</title>
+        <title>Affective Cookies | Cookie Jar</title>
+        <link rel="icon" href="/illustrations/cookieOne.png" />
       </Head>
       <Nav />
 

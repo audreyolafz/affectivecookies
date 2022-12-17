@@ -30,7 +30,8 @@ export default function Form() {
   return (
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
       <Head>
-        <title>Card</title>
+        <title>Affective Cookies | Card</title>
+        <link rel="icon" href="/illustrations/cookieOne.png" />
         {/* <meta name="description" content={"Card profile"} />
         <meta property="og:title" content={cards.name} /> */}
       </Head>
@@ -154,7 +155,7 @@ export default function Form() {
                   href="https://www.thehotline.org/"
                   target="_blank"
                 >
-                  National Domestic Violence Hotline: text START to 88788
+                  Domestic Violence Hotline: text START to 88788
                 </a>
                 <br />
                 <a
@@ -162,7 +163,7 @@ export default function Form() {
                   href="https://www.rainn.org/"
                   target="_blank"
                 >
-                  National Sexual Assault Hotline: call 800.656.HOPE
+                  Sexual Assault Hotline: call 800.656.HOPE
                 </a>
               </div>
             </div>

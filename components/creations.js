@@ -9,7 +9,7 @@ export default function Creations() {
     <div className="sm:mx-3 sm:my-1 md:my-2 lg:my-3 relative">
       <Image src={imposterThree} width="250px" height="250px" />
 
-      <h1 className="mb-4 text-center text-2xl font-bold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-5xl lg:mx-80 dark:text-white">
+      <h1 className="mb-4 text-center text-5xl font-bold tracking-tight leading-none text-gray-900 lg:mx-80 dark:text-white">
         Redefining{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-golden from-mint">
           mental health

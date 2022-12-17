@@ -2,43 +2,23 @@ import Link from "next/link";
 import { CgDarkMode, CgExpand } from "react-icons/cg";
 import { useTheme } from "next-themes";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
-import { useState } from "react";
-
-// const links = [
-//   { label: "Home", href: "/" },
-//   { label: "Card", href: "/web/cards/form" },
-//   // { label: "Upload", href: "/web/cards/gallery" },
-//   { label: "Cookie", href: "/web/cookies/jar" },
-//   { label: "Affect", href: "/web/affect/affect" },
-//   { label: "Inclusion", href: "/web/affect/inclusively" },
-//   { label: "Account", href: "/web/auth/account" },
-// ];
+import { useContext, useState, createContext } from "react";
+import Image from "next/image";
+import jar from "/public/illustrations/jar.png";
+import { get as fetch } from "axios";
+import useSWR from "swr";
+import fetcher from "/lib/fetcher";
+import { useCounterContext } from "../context/state";
 
 export default function Nav() {
   const { theme, setTheme } = useTheme();
   const { data: session } = useSession();
-  const [open, setOpen] = useState(false);
-  // function openHamburger() {
-  //   open
-  // }
+  const [counter, setCounter] = useCounterContext();
 
-  // const targetEl = document.getElementById("targetEl");
-  // const options = {
-  //   triggerEl: triggerEl,
-  //   onCollapse: () => {
-  //     console.log("element has been collapsed");
-  //     collapse.collapse();
-  //   },
-  //   onExpand: () => {
-  //     console.log("element has been expanded");
-  //     collapse.expand();
-  //   },
-  //   onToggle: () => {
-  //     console.log("element has been toggled");
-  //     collapse.toggle();
-  //   },
-  // };
-  // const collapse = new Collapse(targetEl, options);
+  function increment() {
+    setCounter(counter + 1);
+  }
+
   return (
     <div>
       <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
@@ -66,6 +46,17 @@ export default function Nav() {
                 Sign In
               </button>
             )}
+
+            <Image
+              // onClick={increment}
+              src={jar}
+              width="56px"
+              height="28px"
+              className="cursor-auto"
+            />
+            <span className="inline-flex justify-center items-center w-6 h-6 -translate-x-10 translate-y-6 text-sm font-semibold text-black bg-mint rounded-full dark:text-white">
+              {counter}
+            </span>
             <button
               data-collapse-toggle="true"
               // data-toggle="dropdown"
@@ -160,54 +151,5 @@ export default function Nav() {
       <br />
       <br />
     </div>
-
-    //     <nav className="bg-white sticky top-0 dark:text-white dark:bg-black">
-    //       <ul className="flex flex-wrap sm:justify-between items-start sm:items-center p-8 border-lg mt-6 sm:mt-0">
-    //         <ul className={`mx-auto sm:mx-0 flex flex-row space-x-5`}>
-    //           {links.map(({ href, label }) => (
-    //             <li className="self-center" key={`${href}${label}`}>
-    //               <Link href={href}>
-    //                 <a
-    //                   className={`px-4 py-2 rounded-lg hover:bg-black dark:hover:bg-white hover:bg-opacity-10 dark:hover:bg-opacity-10`}
-    //                 >
-    //                   {label}
-    //                 </a>
-    //               </Link>
-    //             </li>
-    //           ))}
-    //           <li>
-    //             <button
-    //               onClick={() => {
-    //                 setTheme(theme === "dark" ? "light" : "dark");
-    //                 document
-    //                   .querySelector("#theme_toggle")
-    //                   .classList.toggle("rotate-180");
-    //               }}
-    //               className="p-2 rounded-full hover:bg-black dark:hover:bg-white hover:bg-opacity-10 dark:hover:bg-opacity-10 transform duration-200"
-    //               id="theme_toggle"
-    //             >
-    //               <CgDarkMode size={24} />
-    //             </button>
-    //           </li>
-    //         </ul>
-    //         <div className="rounded-lg">
-    //           {session ? (
-    //             <button
-    //               className="text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-golden hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
-    //               onClick={() => signOut()}
-    //             >
-    //               Sign Out
-    //             </button>
-    //           ) : (
-    //             <button
-    //               className="text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-golden hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
-    //               onClick={() => signIn()}
-    //             >
-    //               Sign In
-    //             </button>
-    //           )}
-    //         </div>
-    //       </ul>
-    //     </nav>
   );
 }

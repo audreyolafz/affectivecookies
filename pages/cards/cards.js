@@ -12,7 +12,8 @@ export default function Cards() {
   return (
     <div className="dark:text-white dark:bg-black focus:cursor-auto">
       <Head>
-        <title>Cards</title>
+        <title>Affective Cookies | Cards</title>
+        <link rel="icon" href="/illustrations/cookieOne.png" />
       </Head>
 
       <Nav />
