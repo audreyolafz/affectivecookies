@@ -4,13 +4,15 @@ import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "/lib/fetcher";
 import Nav from "/components/nav";
-import Image from "next/image";
 import Head from "next/head";
+import { useCounterContext } from "/context/state";
 
 export default function Form() {
   const { register, handleSubmit } = useForm();
+  const [counter, setCounter] = useCounterContext();
 
   const onSubmit = async (data) => {
+    setCounter(counter + 1);
     fetch(
       "/api/createcard?name=" +
         data.name +
@@ -125,7 +127,7 @@ export default function Form() {
                   </p>
                 </div>
               </div>
-              <div className="pt-7 absolute bg-meshGreen bg-cover my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
+              <div className="sm:mb-24 m-0 p-5 pt-7 absolute bg-meshGreen bg-cover my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
                 <a
                   className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://988lifeline.org/"

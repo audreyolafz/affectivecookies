@@ -1,23 +1,34 @@
+import React from "react";
 import Link from "next/link";
 import { CgDarkMode, CgExpand } from "react-icons/cg";
 import { useTheme } from "next-themes";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
-import { useContext, useState, createContext } from "react";
+import { useContext, useState, createContext, useEffect } from "react";
 import Image from "next/image";
 import jar from "/public/illustrations/jar.png";
+import { useCounterContext } from "../context/state";
 import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "/lib/fetcher";
-import { useCounterContext } from "../context/state";
 
 export default function Nav() {
   const { theme, setTheme } = useTheme();
   const { data: session } = useSession();
-  const [counter, setCounter] = useCounterContext();
+  const [counter] = useCounterContext();
+  const [active, setActive] = useState(false);
 
-  function increment() {
-    setCounter(counter + 1);
+  function handleClick() {
+    setActive(!active);
   }
+
+  // useEffect(() => {
+  //   async function getNum() {
+  //     const count = await useSWR("/api/getcount", fetcher).data;
+  //     console.log("hm " + count);
+  //     setCounter(count);
+  //   }
+  //   getNum();
+  // }, []);
 
   return (
     <div>
@@ -57,15 +68,16 @@ export default function Nav() {
             <span className="inline-flex justify-center items-center w-6 h-6 -translate-x-10 translate-y-6 text-sm font-semibold text-black bg-mint rounded-full dark:text-white">
               {counter}
             </span>
+
             <button
               data-collapse-toggle="true"
               // data-toggle="dropdown"
               type="button"
-              className="inline-flex items-center p-2 text-base text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 text-base text-gray-500 rounded-lg md:hidden lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-sticky"
               aria-expanded="true"
               // id="triggerEl"
-              // onClick={() => console.log("hi")}
+              onClick={() => handleClick()}
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -82,6 +94,7 @@ export default function Nav() {
                 ></path>
               </svg>
             </button>
+
             <button
               onClick={() => {
                 setTheme(theme === "dark" ? "light" : "dark");
@@ -96,52 +109,57 @@ export default function Nav() {
             </button>
           </div>
           <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-            id="navbar-sticky"
+            className={`${
+              active ? "" : "hidden"
+            }   items-center justify-between md:inline-flex md:w-auto`}
           >
-            <ul className="flex flex-col p-4 mt-4 font-semibold rounded-lg md:flex-row md:space-x-8 md:mt-0">
-              <li>
-                <a
-                  href="/cards/form"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
-                  aria-current="page"
-                >
-                  Card
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/cookies/jar"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
-                >
-                  Cookie
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/affect/affect"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
-                >
-                  Affect
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/affect/inclusively"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
-                >
-                  Inclusion
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/auth/account"
-                  className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
-                >
-                  Account
-                </a>
-              </li>
-            </ul>
+            <div
+              className="items-center justify-between w-full md:flex md:w-auto md:order-1"
+              id="navbar-sticky"
+            >
+              <ul className="flex flex-col p-4 mt-4 font-semibold rounded-lg md:flex-row md:space-x-8 md:mt-0">
+                <li>
+                  <a
+                    href="/cards/form"
+                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                  >
+                    Card
+                  </a>
+                </li>
+                {/* <li>
+                  <a
+                    href="/cookies/jar"
+                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                  >
+                    Cookie
+                  </a>
+                </li> */}
+                <li>
+                  <a
+                    href="/affect/affect"
+                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                  >
+                    Affect
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/affect/inclusively"
+                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                  >
+                    Inclusion
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/auth/account"
+                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                  >
+                    Account
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>

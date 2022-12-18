@@ -144,17 +144,17 @@ export default function Affect({ tweets }) {
             </h1>
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
               {green_result.map((i) => (
-                <li>
-                  <a
+                <li className="block items-center p-3 rounded-lg sm:flex hover:bg-green-200 dark:hover:bg-green-700">
+                  {/* <a
                     href="#"
                     className="block items-center p-3 rounded-lg sm:flex hover:bg-green-200 dark:hover:bg-green-700"
-                  >
-                    <div className="text-gray-800 dark:text-gray-100">
-                      <div className="text-base font-normal">
-                        <h2>{i}</h2>
-                      </div>
+                  > */}
+                  <div className="text-gray-800 dark:text-gray-100">
+                    <div className="text-base font-normal">
+                      <h2>{i}</h2>
                     </div>
-                  </a>
+                  </div>
+                  {/* </a> */}
                 </li>
               ))}
             </ol>
@@ -169,17 +169,17 @@ export default function Affect({ tweets }) {
             </h1>
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
               {yellow_result.map((i) => (
-                <li>
-                  <a
+                <li className="block items-center p-3 rounded-lg sm:flex hover:bg-yellow-200 dark:hover:bg-yellow-600">
+                  {/* <a
                     href="#"
                     className="block items-center p-3 rounded-lg sm:flex hover:bg-yellow-200 dark:hover:bg-yellow-600"
-                  >
-                    <div className="text-gray-800 dark:text-gray-100">
-                      <div className="text-base font-normal">
-                        <h2>{i}</h2>
-                      </div>
+                  > */}
+                  <div className="text-gray-800 dark:text-gray-100">
+                    <div className="text-base font-normal">
+                      <h2>{i}</h2>
                     </div>
-                  </a>
+                  </div>
+                  {/* </a> */}
                 </li>
               ))}
             </ol>
@@ -195,17 +195,17 @@ export default function Affect({ tweets }) {
             </h1>
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
               {orange_result.map((i) => (
-                <li>
-                  <a
+                <li className="block items-center p-3 rounded-lg sm:flex hover:bg-orange-200 dark:hover:bg-orange-700">
+                  {/* <a
                     href="#"
                     className="block items-center p-3 rounded-lg sm:flex hover:bg-orange-200 dark:hover:bg-orange-700"
-                  >
-                    <div className="text-gray-800 dark:text-gray-100">
-                      <div className="text-base font-normal">
-                        <h2>{i}</h2>
-                      </div>
+                  > */}
+                  <div className="text-gray-800 dark:text-gray-100">
+                    <div className="text-base font-normal">
+                      <h2>{i}</h2>
                     </div>
-                  </a>
+                  </div>
+                  {/* </a> */}
                 </li>
               ))}
             </ol>
@@ -221,17 +221,17 @@ export default function Affect({ tweets }) {
             </h1>
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
               {red_result.map((i) => (
-                <li>
-                  <a
+                <li className="block items-center p-3 rounded-lg sm:flex hover:bg-red-200 dark:hover:bg-red-700">
+                  {/* <a
                     href="#"
                     className="block items-center p-3 rounded-lg sm:flex hover:bg-red-200 dark:hover:bg-red-700"
-                  >
-                    <div className="text-gray-800 dark:text-gray-100">
-                      <div className="text-base font-normal">
-                        <h2>{i}</h2>
-                      </div>
+                  > */}
+                  <div className="text-gray-800 dark:text-gray-100">
+                    <div className="text-base font-normal">
+                      <h2>{i}</h2>
                     </div>
-                  </a>
+                  </div>
+                  {/* </a> */}
                 </li>
               ))}
             </ol>

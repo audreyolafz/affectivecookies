@@ -10,6 +10,6 @@ const airtable = new AirtablePlus({
 });
 
 export default async (req, res) => {
-  const data = await airtable.read(); //{ maxRecords: 1 }
+  const data = await airtable.read({ maxRecords: 1 });
   res.status(200).json(data);
 };

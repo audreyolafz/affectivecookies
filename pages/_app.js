@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
 import { CounterProvider } from "../context/state";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function MyApp({
   Component,
@@ -12,6 +13,7 @@ export default function MyApp({
       <ThemeProvider defaultTheme="system" attribute="class">
         <CounterProvider>
           <Component {...pageProps} />
+          <Analytics />
         </CounterProvider>
       </ThemeProvider>
     </SessionProvider>

@@ -8,7 +8,7 @@ const airtable = new AirtablePlus({
 
 export default async (req, res) => {
   if (req.query.count) {
-    const record = await airtable.update("count", { num: num++ });
+    const record = await airtable.update("count", { num: req.query.count });
     res.status(200).send(`Increased count`);
   } else {
     res.status(400).send(`Couldn't increase count.`);

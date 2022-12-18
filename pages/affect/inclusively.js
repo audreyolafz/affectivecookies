@@ -29,6 +29,7 @@ export default function Inclusively() {
     sentimentColor = "bg-green";
   } else if (result.score <= 1 && result.score >= -1) {
     sentimentColor = "bg-yellow";
+    // setCounter(counter + 1);
   } else if (result.score < -1 && result.score >= -10) {
     sentimentColor = "bg-orange";
   } else if (result.score < -10) {
