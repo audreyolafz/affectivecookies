@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { CgDarkMode, CgExpand } from "react-icons/cg";
+import { CgDarkMode } from "react-icons/cg";
 import { useTheme } from "next-themes";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import { useContext, useState, createContext, useEffect } from "react";
@@ -148,6 +148,14 @@ export default function Nav() {
                     className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                   >
                     Inclusion
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/cards/gallery"
+                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                  >
+                    Gallery
                   </a>
                 </li>
                 <li>
