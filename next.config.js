@@ -7,7 +7,12 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ["res.cloudinary.com", "avatars.githubusercontent.com"],
+    domains: [
+      "res.cloudinary.com",
+      "avatars.githubusercontent.com",
+      "replicate.com",
+      "replicate.delivery",
+    ],
   },
   async headers() {
     return [

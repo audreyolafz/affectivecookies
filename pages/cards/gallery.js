@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Nav from "/components/nav";
+import Link from "next/link";
 
 export default function Gallery({ images }) {
   const [imageSrc, setImageSrc] = useState();
   const [uploadData, setUploadData] = useState();
+  const [alt, setAlt] = useState("");
+  let altList = [];
+
+  // useEffect(() => {
+  //   async function fetchAlt() {
+  //     for (const phrase of images) {
+  //       const res = await fetch(`/api/generate?imageUrl=${phrase.url}`);
+  //       console.log(res.url);
+  //       altList.push(res.url);
+  //       // console.log(altList[0]);
+  //     }
+  //   }
+  //   fetchAlt();
+  // }, []);
 
   function handleOnChange(changeEvent) {
     const reader = new FileReader();
@@ -14,7 +29,6 @@ export default function Gallery({ images }) {
       setImageSrc(onLoadEvent.target.result);
       setUploadData(undefined);
     };
-
     reader.readAsDataURL(changeEvent.target.files[0]);
   }
 
@@ -26,11 +40,9 @@ export default function Gallery({ images }) {
     );
 
     const formData = new FormData();
-
     for (const file of fileInput.files) {
       formData.append("file", file);
     }
-
     formData.append("upload_preset", "my-uploads");
 
     const data = await fetch(
@@ -47,9 +59,6 @@ export default function Gallery({ images }) {
 
     setImageSrc(data.secure_url);
     setUploadData(data);
-
-    console.log("data: ", data);
-    console.log("images", images);
   }
   return (
     <div>
@@ -92,7 +101,7 @@ export default function Gallery({ images }) {
             {images.map((image) => {
               return (
                 <li key={image.id}>
-                  <a href={image.link} rel="noreferrer">
+                  <a href={`/api/generate?imageUrl=${image.url}`}>
                     <div className="m-5 max-w-sm">
                       <Image
                         width={image.width}
@@ -138,6 +147,7 @@ export async function getStaticProps() {
       id: resources.asset_id,
       title: resources.public_id,
       image: resources.secure_url,
+      url: resources.url,
       width,
       height,
     };
@@ -149,7 +159,7 @@ export async function getStaticProps() {
   // }
   return {
     props: {
-      images,
+      images: images,
     },
   };
 }
