@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Nav from "/components/nav";
 import Link from "next/link";
+import { get } from "axios";
 
 export default function Gallery({ images }) {
   const [imageSrc, setImageSrc] = useState();
@@ -10,17 +11,18 @@ export default function Gallery({ images }) {
   const [alt, setAlt] = useState("");
   let altList = [];
 
-  // useEffect(() => {
-  //   async function fetchAlt() {
-  //     for (const phrase of images) {
-  //       const res = await fetch(`/api/generate?imageUrl=${phrase.url}`);
-  //       console.log(res.url);
-  //       altList.push(res.url);
-  //       // console.log(altList[0]);
-  //     }
-  //   }
-  //   fetchAlt();
-  // }, []);
+  useEffect(() => {
+    async function fetchAlt() {
+      for (const phrase of images) {
+        const res = await get(`/api/generate?imageUrl=${phrase.url}`);
+        // console.log(res.data);
+        // altList.push(res.data);
+        setAlt(res.data);
+      }
+    }
+    fetchAlt();
+  }, []);
+  // console.log("here " + altList);
 
   function handleOnChange(changeEvent) {
     const reader = new FileReader();
@@ -109,6 +111,10 @@ export default function Gallery({ images }) {
                         src={image.image}
                         className="rounded-lg object-scale-down w-10"
                       />
+                      {/* {altList.map((i) => {
+                        return <div>{i}</div>;
+                      })} */}
+                      <h2>{alt}</h2>
                     </div>
                   </a>
                 </li>
@@ -125,8 +131,8 @@ export default function Gallery({ images }) {
 
 export async function getStaticProps() {
   const results = await fetch(
-    // "https://api.cloudinary.com/v1_1/audreyolaf/resources/image/",
-    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/resources/image/`,
+    "https://api.cloudinary.com/v1_1/audreyolaf/resources/image/",
+    // `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/resources/image/`,
     {
       headers: {
         Authorization: `Basic ${Buffer.from(
@@ -137,10 +143,8 @@ export async function getStaticProps() {
       },
     }
   ).then((r) => r.json());
-  // let resources = [];
   const { resources } = results;
 
-  // if (resources !== undefined && resources !== null) {
   const images = resources?.map((resources) => {
     const { width, height } = resources;
     return {
@@ -152,14 +156,9 @@ export async function getStaticProps() {
       height,
     };
   });
-
-  if (!images) {
-    return null;
-  }
-  // }
   return {
     props: {
-      images: images,
+      images,
     },
   };
 }

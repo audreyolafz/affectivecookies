@@ -27,7 +27,7 @@ export default function Jar({ cookies }) {
       "/api/createcookie?story=" + data.story + `&` + "Created=" + data.Created
     ).then((res) => console.log("YUMTUM " + res.data));
   };
-  const cook = useSWR("../../api/getcookies", fetcher).data;
+  const cook = useSWR("/api/getcookies", fetcher).data;
 
   return (
     <div className="mx-auto">

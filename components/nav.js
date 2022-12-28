@@ -6,7 +6,7 @@ import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import { useContext, useState, createContext, useEffect } from "react";
 import Image from "next/image";
 import jar from "/public/illustrations/jar.png";
-import { useCounterContext } from "../context/state";
+import { useCounterContext } from "/context/state";
 import { get as fetch } from "axios";
 import useSWR from "swr";
 import fetcher from "/lib/fetcher";
