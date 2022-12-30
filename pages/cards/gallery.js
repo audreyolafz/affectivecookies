@@ -2,27 +2,24 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Nav from "/components/nav";
-import Link from "next/link";
 import { get } from "axios";
 
 export default function Gallery({ images }) {
   const [imageSrc, setImageSrc] = useState();
   const [uploadData, setUploadData] = useState();
-  const [alt, setAlt] = useState("");
+  const [alt, setAlt] = useState([]);
   let altList = [];
 
   useEffect(() => {
     async function fetchAlt() {
       for (const phrase of images) {
         const res = await get(`/api/generate?imageUrl=${phrase.url}`);
-        // console.log(res.data);
-        // altList.push(res.data);
-        setAlt(res.data);
+        altList.push(res.data);
       }
     }
     fetchAlt();
   }, []);
-  // console.log("here " + altList);
+  console.log(alt);
 
   function handleOnChange(changeEvent) {
     const reader = new FileReader();
@@ -55,9 +52,6 @@ export default function Gallery({ images }) {
         body: formData,
       }
     ).then((r) => r.json());
-    // .catch((err) => {
-    //   console.log(err);
-    // }, []);
 
     setImageSrc(data.secure_url);
     setUploadData(data);
@@ -111,10 +105,6 @@ export default function Gallery({ images }) {
                         src={image.image}
                         className="rounded-lg object-scale-down w-10"
                       />
-                      {/* {altList.map((i) => {
-                        return <div>{i}</div>;
-                      })} */}
-                      <h2>{alt}</h2>
                     </div>
                   </a>
                 </li>

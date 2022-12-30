@@ -1,7 +1,7 @@
 import React from "react";
 import { useSession } from "next-auth/react";
 import Sentiment from "sentiment";
-import displayHomeTimeline from "/api/twitter";
+import displayHomeTimeline from "../api/twitter";
 import Nav from "/components/nav";
 import { options } from "/components/trainData";
 import Head from "next/head";
