@@ -8,8 +8,10 @@ import { get } from "axios";
 export default function Gallery({ images }) {
   const [imageSrc, setImageSrc] = useState();
   const [uploadData, setUploadData] = useState();
-  const [alt, setAlt] = useState([]);
+  // const [alt, setAlt] = useState([]);
   let altList = [];
+
+  console.log("images", images);
 
   useEffect(() => {
     async function fetchAlt() {
@@ -17,12 +19,11 @@ export default function Gallery({ images }) {
         const res = await get(`/api/generate?imageUrl=${phrase.url}`);
         altList.push(res.data);
         console.log(res.data);
-        setAlt(res.data);
+        // setAlt(res.data);
       }
     }
     fetchAlt();
   }, []);
-  console.log(alt);
 
   function handleOnChange(changeEvent) {
     const reader = new FileReader();
@@ -134,8 +135,8 @@ export async function getStaticProps() {
       },
     }
   ).then((r) => r.json());
-  const { resources } = results;
 
+  const { resources } = results;
   const images = resources?.map((resource) => {
     const { width, height } = resource;
     return {

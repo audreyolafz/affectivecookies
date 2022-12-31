@@ -11,8 +11,8 @@ import { useCounterContext } from "/context/state";
 export default function Nav() {
   const { theme, setTheme } = useTheme();
   const { data: session } = useSession();
-  // const [counter, setCounter] = useCounterContext();
-  const { state, dispatch } = useCounterContext();
+  const [counter, setCounter] = useCounterContext();
+  // const { state, dispatch } = useCounterContext();
   const [active, setActive] = useState(false);
 
   function handleClick() {
@@ -58,9 +58,9 @@ export default function Nav() {
               height="28px"
               className="cursor-auto"
             />
-            {/* <span className="inline-flex justify-center items-center w-6 h-6 -translate-x-10 translate-y-6 text-sm font-semibold text-black bg-mint rounded-full dark:text-white">
+            <span className="inline-flex justify-center items-center w-6 h-6 -translate-x-10 translate-y-6 text-sm font-semibold text-black bg-mint rounded-full dark:text-white">
               {counter}
-            </span> */}
+            </span>
 
             <button
               data-collapse-toggle="true"

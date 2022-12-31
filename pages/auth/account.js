@@ -27,26 +27,22 @@ export default function Account() {
         </p>
         <br />
         <br />
-        <p className="text-center text-xl sm:mx-3 md:mx-10 lg:mx-96">
+        <br />
+        <p className="text-center leading-loose text-xl sm:mx-3 md:mx-10 lg:mx-96">
           <u>Here is an overview:</u>
           <br />
           <br />
           <b>Card</b> | Fill in the fields to create a custom mental health
-          card! Check out the card gallery below. <br />
-          <br />
-          <br />
-          <b>Cookie</b> | Write a short story about a time when you overcame
-          something challenging, or wonderful things others have said about you.
-          When you are feeling down, check out the random cookie generator to
-          boost your self-esteem!
-          <br />
+          card! Check out the card gallery below.
           <br />
           <b>Affect</b> | Since you are signed in, you can view your Twitter
           feed filtered with mental health in mind.
           <br />
-          <br />
           <b>Inclusively</b> | Your words matter. Make your words count by
           ensuring they use kinder and more inclusive phrases.
+          <br />
+          <b>Gallery</b> | You can find the alt text to your image with a quick
+          upload, to make your content more accessible.
         </p>
       </div>
     );
