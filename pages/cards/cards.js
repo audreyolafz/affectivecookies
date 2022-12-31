@@ -1,9 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import useSWR from "swr";
 import fetcher from "/lib/fetcher";
 import Nav from "/components/nav";
-import lilyLeaf from "/public/illustrations/lilyLeaf.png";
-import exotic from "/public/illustrations/exotic.png";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -44,45 +43,45 @@ export default function Cards() {
               </div>
             </div>
             <div className="m-5 p-6 rounded-lg bg-meshGreen bg-cover shadow-lg max-w-sm relative">
-              <a
+              <Link
                 className="text-left subpixel-antialiased"
                 href="https://988lifeline.org/"
                 target="_blank"
               >
                 988 Suicide and Crisis Lifeline
-              </a>
+              </Link>
               <br />
-              <a
+              <Link
                 className="text-left subpixel-antialiased"
                 href="https://www.crisistextline.org/"
                 target="_blank"
               >
                 Crisis Text Line: text HOME to 741741
-              </a>
+              </Link>
               <br />
-              <a
+              <Link
                 className="text-left subpixel-antialiased"
                 href="https://www.thetrevorproject.org/"
                 target="_blank"
               >
                 The Trevor Project: text START to 678678
-              </a>
+              </Link>
               <br />
-              <a
+              <Link
                 className="text-left subpixel-antialiased"
                 href="https://www.thehotline.org/"
                 target="_blank"
               >
                 National Domestic Violence Hotline: text START to 88788
-              </a>
+              </Link>
               <br />
-              <a
+              <Link
                 className="text-left subpixel-antialiased"
                 href="https://www.rainn.org/"
                 target="_blank"
               >
                 National Sexual Assault Hotline: call 800.656.HOPE
-              </a>
+              </Link>
             </div>
           </div>
         ))}

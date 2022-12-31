@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Nav from "/components/nav";
 import { get } from "axios";
 
@@ -15,6 +16,8 @@ export default function Gallery({ images }) {
       for (const phrase of images) {
         const res = await get(`/api/generate?imageUrl=${phrase.url}`);
         altList.push(res.data);
+        console.log(res.data);
+        setAlt(res.data);
       }
     }
     fetchAlt();
@@ -46,7 +49,6 @@ export default function Gallery({ images }) {
 
     const data = await fetch(
       "https://api.cloudinary.com/v1_1/audreyolaf/image/upload",
-      // `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload`,
       {
         method: "POST",
         body: formData,
@@ -59,13 +61,13 @@ export default function Gallery({ images }) {
   return (
     <div>
       <Head>
-        <title>Affective Cookies | Image Uploader</title>
+        <title>Affective Cookies | Alt Text Gallery</title>
         <link rel="icon" href="/illustrations/cookieOne.png" />
       </Head>
 
       <Nav />
       <div className="text-center">
-        <h1 className="text-2xl">Image Uploader</h1>
+        <h1 className="text-2xl">Alt Text Gallery</h1>
 
         <form
           className="m-10"
@@ -97,7 +99,7 @@ export default function Gallery({ images }) {
             {images.map((image) => {
               return (
                 <li key={image.id}>
-                  <a href={`/api/generate?imageUrl=${image.url}`}>
+                  <Link href={`/api/generate?imageUrl=${image.url}`}>
                     <div className="m-5 max-w-sm">
                       <Image
                         width={image.width}
@@ -106,7 +108,7 @@ export default function Gallery({ images }) {
                         className="rounded-lg object-scale-down w-10"
                       />
                     </div>
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -121,8 +123,7 @@ export default function Gallery({ images }) {
 
 export async function getStaticProps() {
   const results = await fetch(
-    "https://api.cloudinary.com/v1_1/audreyolaf/resources/image/",
-    // `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/resources/image/`,
+    `https://api.cloudinary.com/v1_1/audreyolaf/resources/image`,
     {
       headers: {
         Authorization: `Basic ${Buffer.from(
@@ -135,13 +136,13 @@ export async function getStaticProps() {
   ).then((r) => r.json());
   const { resources } = results;
 
-  const images = resources?.map((resources) => {
-    const { width, height } = resources;
+  const images = resources?.map((resource) => {
+    const { width, height } = resource;
     return {
-      id: resources.asset_id,
-      title: resources.public_id,
-      image: resources.secure_url,
-      url: resources.url,
+      id: resource.asset_id,
+      title: resource.public_id,
+      image: resource.secure_url,
+      url: resource.url,
       width,
       height,
     };

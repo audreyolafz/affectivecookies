@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { get as fetch } from "axios";
 import useSWR from "swr";
@@ -128,45 +129,45 @@ export default function Form() {
                 </div>
               </div>
               <div className="sm:mb-24 m-0 p-5 pt-7 absolute bg-meshGreen bg-cover my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
-                <a
+                <Link
                   className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://988lifeline.org/"
                   target="_blank"
                 >
                   988 Suicide and Crisis Lifeline
-                </a>
+                </Link>
                 <br />
-                <a
+                <Link
                   className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://www.crisistextline.org/"
                   target="_blank"
                 >
                   Crisis Text Line: text HOME to 741741
-                </a>
+                </Link>
                 <br />
-                <a
+                <Link
                   className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://www.thetrevorproject.org/"
                   target="_blank"
                 >
                   The Trevor Project: text START to 678678
-                </a>
+                </Link>
                 <br />
-                <a
+                <Link
                   className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://www.thehotline.org/"
                   target="_blank"
                 >
                   Domestic Violence Hotline: text START to 88788
-                </a>
+                </Link>
                 <br />
-                <a
+                <Link
                   className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://www.rainn.org/"
                   target="_blank"
                 >
                   Sexual Assault Hotline: call 800.656.HOPE
-                </a>
+                </Link>
               </div>
             </div>
           ))}

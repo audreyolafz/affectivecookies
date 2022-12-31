@@ -2,44 +2,37 @@ import React from "react";
 import Link from "next/link";
 import { CgDarkMode } from "react-icons/cg";
 import { useTheme } from "next-themes";
-import { useSession, signIn, signOut, getSession } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { useContext, useState, createContext, useEffect } from "react";
 import Image from "next/image";
 import jar from "/public/illustrations/jar.png";
 import { useCounterContext } from "/context/state";
-import { get as fetch } from "axios";
-import useSWR from "swr";
-import fetcher from "/lib/fetcher";
 
 export default function Nav() {
   const { theme, setTheme } = useTheme();
   const { data: session } = useSession();
-  const [counter] = useCounterContext();
+  // const [counter, setCounter] = useCounterContext();
+  const { state, dispatch } = useCounterContext();
   const [active, setActive] = useState(false);
 
   function handleClick() {
     setActive(!active);
   }
 
-  // useEffect(() => {
-  //   async function getNum() {
-  //     const count = await useSWR("/api/getcount", fetcher).data;
-  //     console.log("hm " + count);
-  //     setCounter(count);
-  //   }
-  //   getNum();
-  // }, []);
+  // const { number } = state;
+  // dispatch({ type: "add_number", value: 3 });
+  // console.log(number);
 
   return (
     <div>
       <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
       <nav className="bg-white px-2 mb-8 sm:px-4 py-2.5 dark:bg-black fixed w-full z-20 top-0 left-0 border-gray-200 dark:border-gray-600 cursor-auto">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <span className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
               Affective Cookies
             </span>
-          </a>
+          </Link>
 
           <div className="flex md:order-2">
             {session ? (
@@ -65,9 +58,9 @@ export default function Nav() {
               height="28px"
               className="cursor-auto"
             />
-            <span className="inline-flex justify-center items-center w-6 h-6 -translate-x-10 translate-y-6 text-sm font-semibold text-black bg-mint rounded-full dark:text-white">
+            {/* <span className="inline-flex justify-center items-center w-6 h-6 -translate-x-10 translate-y-6 text-sm font-semibold text-black bg-mint rounded-full dark:text-white">
               {counter}
-            </span>
+            </span> */}
 
             <button
               data-collapse-toggle="true"
@@ -119,52 +112,52 @@ export default function Nav() {
             >
               <ul className="flex flex-col p-4 mt-4 font-semibold rounded-lg md:flex-row md:space-x-8 md:mt-0">
                 <li>
-                  <a
+                  <Link
                     href="/cards/form"
                     className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                   >
                     Card
-                  </a>
+                  </Link>
                 </li>
                 {/* <li>
-                  <a
+                  <Link
                     href="/cookies/jar"
                     className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                   >
                     Cookie
-                  </a>
+                  </Link>
                 </li> */}
                 <li>
-                  <a
+                  <Link
                     href="/affect/affect"
                     className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                   >
                     Affect
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/affect/inclusively"
                     className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                   >
                     Inclusion
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/cards/gallery"
                     className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                   >
                     Gallery
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/auth/account"
                     className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
                   >
                     Account
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
