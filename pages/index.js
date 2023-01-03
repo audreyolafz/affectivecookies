@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="dark:text-white dark:bg-black focus:cursor-auto">
+    <div className="focus:cursor-auto">
       <Head>
         <title>Affective Cookies | Home</title>
         <link rel="icon" href="/illustrations/cookieOne.png" />

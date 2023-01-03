@@ -29,17 +29,22 @@ module.exports = {
   theme: {
     colors: {
       transparent: "transparent",
-      mint: "#1DD3B0",
+      sand: "#FEF1E8",
       golden: "#ECB900",
+      mint: "#1DD3B0",
+      darkBlue: "#243266",
+      navy: "#20253A",
+
+      coolGray: "#384C66",
     },
     container: {
       center: true,
     },
     extend: {
-      fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        // body: ["Inter"],
-      },
+      // fontFamily: {
+      //   sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      //   // body: ["Inter"],
+      // },
       backgroundImage: {
         accard: "url('../public/ACCard.png')",
         meshRed: "url('../public/meshRed.png')",

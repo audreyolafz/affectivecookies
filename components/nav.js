@@ -26,7 +26,7 @@ export default function Nav() {
   return (
     <div>
       <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
-      <nav className="bg-white px-2 mb-8 sm:px-4 py-2.5 dark:bg-black fixed w-full z-20 top-0 left-0 border-gray-200 dark:border-gray-600 cursor-auto">
+      <nav className="px-2 mb-8 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 cursor-auto">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link href="/" className="flex items-center">
             <span className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
@@ -37,14 +37,14 @@ export default function Nav() {
           <div className="flex md:order-2">
             {session ? (
               <button
-                className="mt-2 text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+                className="mt-2 text-black bg-mint border-navy dark:border-sand border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-full text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
                 onClick={() => signOut()}
               >
                 Sign Out
               </button>
             ) : (
               <button
-                className="mt-2 text-black bg-mint border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+                className="mt-2 text-black bg-mint border-navy dark:border-sand border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-full text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
                 onClick={() => signIn()}
               >
                 Sign In
@@ -114,7 +114,7 @@ export default function Nav() {
                 <li>
                   <Link
                     href="/cards/form"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
                   >
                     Card
                   </Link>
@@ -122,15 +122,14 @@ export default function Nav() {
                 {/* <li>
                   <Link
                     href="/cookies/jar"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
-                  >
+                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
                     Cookie
                   </Link>
                 </li> */}
                 <li>
                   <Link
                     href="/affect/affect"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
                   >
                     Affect
                   </Link>
@@ -138,23 +137,22 @@ export default function Nav() {
                 <li>
                   <Link
                     href="/affect/inclusively"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
                   >
                     Inclusion
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/cards/gallery"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
-                  >
+                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
                     Gallery
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     href="/auth/account"
-                    className="block py-2 pl-3 pr-4 text-gray-700 rounded md:hover:bg-transparent md:hover:text-golden md:p-0 dark:hover:text-golden dark:text-gray-400"
+                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
                   >
                     Account
                   </Link>

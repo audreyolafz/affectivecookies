@@ -31,7 +31,7 @@ export default function Form() {
   const cards = useSWR("/api/getcards", fetcher).data;
 
   return (
-    <div className="dark:text-white dark:bg-black focus:cursor-auto">
+    <div className="focus:cursor-auto">
       <Head>
         <title>Affective Cookies | Card</title>
         <link rel="icon" href="/illustrations/cookieOne.png" />
@@ -42,14 +42,14 @@ export default function Form() {
         <Nav />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col sm:mx-10 md:mx-48 lg:mx-96 mb-5 p-8 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          className="flex flex-col sm:mx-10 md:mx-48 lg:mx-96 mb-5 p-8 border-navy dark:border-sand border-2 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg dark:bg-gray-800 dark:border-gray-700"
         >
           <div className="mb-6">
             <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
               your preferred name
             </label>
             <input
-              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="anything you like!"
               required
               minLength="2"
@@ -63,7 +63,7 @@ export default function Form() {
               who cannot live without me?
             </label>
             <input
-              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my favorite humaaans"
               required
               minLength="2"
@@ -76,7 +76,7 @@ export default function Form() {
             </label>
             <textarea
               rows="3"
-              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my future :)"
               required
               minLength="2"
@@ -89,7 +89,7 @@ export default function Form() {
             </label>
             <textarea
               rows="2"
-              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="it's a big world..."
               required
               minLength="2"
@@ -100,7 +100,7 @@ export default function Form() {
           <button
             type="submit"
             value="submit"
-            className="text-black bg-mint border-mint border-solid border-2 hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 border-mint border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover: text-white hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+            className="mt-2 self-center text-black bg-mint border-navy dark:border-sand border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-full text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
           >
             generate!
           </button>

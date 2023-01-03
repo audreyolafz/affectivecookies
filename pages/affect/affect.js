@@ -58,7 +58,7 @@ export default function Affect({ tweets }) {
         <Nav />
         <br />
         {session ? (
-          <ul className="float-left ml-5 w-56 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+          <ul className="float-left ml-5 w-56 text-sm font-medium text-gray-900 bg-white rounded-lg border-navy dark:border-sand border-solid border-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
             <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
               <div className="flex items-center pl-3">
                 <input
@@ -66,7 +66,7 @@ export default function Affect({ tweets }) {
                   type="checkbox"
                   onClick={handleGreenCheck}
                   checked={checkedGr}
-                  className="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-green-600 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                 />
                 <label
                   htmlFor="green-checkbox"
@@ -83,7 +83,7 @@ export default function Affect({ tweets }) {
                   type="checkbox"
                   onClick={handleYellowCheck}
                   checked={checkedYe}
-                  className="w-4 h-4 text-yellow-400 bg-gray-100 rounded border-gray-300 focus:ring-yellow-300 dark:focus:ring-yellow-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-yellow-400 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-yellow-300 dark:focus:ring-yellow-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                 />
                 <label
                   htmlFor="yellow-checkbox"
@@ -101,7 +101,7 @@ export default function Affect({ tweets }) {
                   onClick={handleOrangeCheck}
                   checked={checkedOr}
                   data-modal-toggle="popup-modal"
-                  className="w-4 h-4 text-orange-500 bg-gray-100 rounded border-gray-300 focus:ring-orange-400 dark:focus:ring-orange-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-orange-500 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-orange-400 dark:focus:ring-orange-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                 />
                 <label
                   htmlFor="green-checkbox"
@@ -118,7 +118,7 @@ export default function Affect({ tweets }) {
                   type="checkbox"
                   onClick={handleRedCheck}
                   checked={checkedRe}
-                  className="w-4 h-4 text-red-600 bg-gray-100 rounded border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-red-600 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                 />
                 <label
                   htmlFor="red-checkbox"
@@ -145,16 +145,11 @@ export default function Affect({ tweets }) {
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
               {green_result.map((i) => (
                 <li className="block items-center p-3 rounded-lg sm:flex hover:bg-green-200 dark:hover:bg-green-700">
-                  {/* <a
-                    href="#"
-                    className="block items-center p-3 rounded-lg sm:flex hover:bg-green-200 dark:hover:bg-green-700"
-                  > */}
                   <div className="text-gray-800 dark:text-gray-100">
                     <div className="text-base font-normal">
                       <h2>{i}</h2>
                     </div>
                   </div>
-                  {/* </a> */}
                 </li>
               ))}
             </ol>
@@ -170,16 +165,11 @@ export default function Affect({ tweets }) {
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
               {yellow_result.map((i) => (
                 <li className="block items-center p-3 rounded-lg sm:flex hover:bg-yellow-200 dark:hover:bg-yellow-600">
-                  {/* <a
-                    href="#"
-                    className="block items-center p-3 rounded-lg sm:flex hover:bg-yellow-200 dark:hover:bg-yellow-600"
-                  > */}
                   <div className="text-gray-800 dark:text-gray-100">
                     <div className="text-base font-normal">
                       <h2>{i}</h2>
                     </div>
                   </div>
-                  {/* </a> */}
                 </li>
               ))}
             </ol>
@@ -196,16 +186,11 @@ export default function Affect({ tweets }) {
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
               {orange_result.map((i) => (
                 <li className="block items-center p-3 rounded-lg sm:flex hover:bg-orange-200 dark:hover:bg-orange-700">
-                  {/* <a
-                    href="#"
-                    className="block items-center p-3 rounded-lg sm:flex hover:bg-orange-200 dark:hover:bg-orange-700"
-                  > */}
                   <div className="text-gray-800 dark:text-gray-100">
                     <div className="text-base font-normal">
                       <h2>{i}</h2>
                     </div>
                   </div>
-                  {/* </a> */}
                 </li>
               ))}
             </ol>
@@ -222,16 +207,11 @@ export default function Affect({ tweets }) {
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
               {red_result.map((i) => (
                 <li className="block items-center p-3 rounded-lg sm:flex hover:bg-red-200 dark:hover:bg-red-700">
-                  {/* <a
-                    href="#"
-                    className="block items-center p-3 rounded-lg sm:flex hover:bg-red-200 dark:hover:bg-red-700"
-                  > */}
                   <div className="text-gray-800 dark:text-gray-100">
                     <div className="text-base font-normal">
                       <h2>{i}</h2>
                     </div>
                   </div>
-                  {/* </a> */}
                 </li>
               ))}
             </ol>

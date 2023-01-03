@@ -2,17 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;600&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap");
 @layer base {
+  /* @font-face {
+    font-family: "DM Sans";
+    font-weight: 400;
+    src: url();
+  } */
+
   html {
+    color: #20253a;
+    background-color: #fef1e8;
+    font-family: "Poppins", "Inter", "Helvetica Neue", system-ui, -apple-system,
+      Roboto, Oxygen, "Open Sans", sans-serif;
     font-family: "Inter", "Poppins", system-ui, sans-serif;
   }
 }
 
 html.dark {
-  color: #ffffff;
-  background-color: #000000;
+  color: #fef1e8;
+  background-color: #20253a;
   font-family: "Poppins", "Inter", "Helvetica Neue", system-ui, -apple-system,
     Roboto, Oxygen, "Open Sans", sans-serif;
 }

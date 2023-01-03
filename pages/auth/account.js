@@ -19,7 +19,7 @@ export default function Account() {
         <img
           width="5%"
           height="5%"
-          className="mx-auto rounded-lg mb-2"
+          className="mx-auto rounded-lg mb-2 border-navy dark:border-sand"
           src={session.user.image}
         />
         <p className="text-3xl text-mint text-center font-semibold">
