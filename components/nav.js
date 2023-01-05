@@ -66,7 +66,7 @@ export default function Nav() {
               data-collapse-toggle="true"
               // data-toggle="dropdown"
               type="button"
-              className="inline-flex items-center p-2 text-base text-gray-500 rounded-lg md:hidden lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 text-lg text-gray-500 rounded-lg md:hidden lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-sticky"
               aria-expanded="true"
               // id="triggerEl"
@@ -131,7 +131,7 @@ export default function Nav() {
                     href="/affect/affect"
                     className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
                   >
-                    Affect
+                    Feed
                   </Link>
                 </li>
                 <li>

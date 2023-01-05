@@ -11,7 +11,7 @@ import { CounterReducer, initialState } from "./reducer";
 const CounterContext = createContext(0);
 
 export function CounterProvider({ children }) {
-  const [counter, setCounter] = useState(8);
+  const [counter, setCounter] = useState(0);
   // const { state, dispatch } = useReducer(CounterReducer, initialState);
   // const contextValue = useMemo(() => {
   //   return { state, dispatch };

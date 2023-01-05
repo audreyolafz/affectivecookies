@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "/components/nav";
-import { useSession, signIn, signOut } from "next-auth/react";
-import Account from "./account";
+import { useSession } from "next-auth/react";
+import PrivacyPolicy from "../privacypolicy";
 
 export default function Login() {
   const { data: session } = useSession();
@@ -9,7 +9,7 @@ export default function Login() {
   if (session) {
     return (
       <div>
-        <Account />
+        <PrivacyPolicy />
       </div>
     );
   } else {

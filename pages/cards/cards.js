@@ -9,7 +9,7 @@ import Head from "next/head";
 export default function Cards() {
   const cards = useSWR("/api/getcards", fetcher).data;
   return (
-    <div className="dark:text-white dark:bg-black focus:cursor-auto">
+    <div className="focus:cursor-auto">
       <Head>
         <title>Affective Cookies | Cards</title>
         <link rel="icon" href="/illustrations/cookieOne.png" />

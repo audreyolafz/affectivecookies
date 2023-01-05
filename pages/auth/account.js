@@ -35,14 +35,11 @@ export default function Account() {
           <b>Card</b> | Fill in the fields to create a custom mental health
           card! Check out the card gallery below.
           <br />
-          <b>Affect</b> | Since you are signed in, you can view your Twitter
-          feed filtered with mental health in mind.
+          <b>Feed</b> | Since you are signed in, you can view your Twitter feed
+          filtered with mental health in mind.
           <br />
           <b>Inclusively</b> | Your words matter. Make your words count by
           ensuring they use kinder and more inclusive phrases.
-          <br />
-          <b>Gallery</b> | You can find the alt text to your image with a quick
-          upload, to make your content more accessible.
         </p>
       </div>
     );

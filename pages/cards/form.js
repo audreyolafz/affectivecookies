@@ -26,7 +26,7 @@ export default function Form() {
         `&` +
         "place=" +
         data.place
-    ).then((res) => console.log("NEW STUFF " + res.data));
+    ).then((res) => alert("Card generated! Check the gallery below <3"));
   };
   const cards = useSWR("/api/getcards", fetcher).data;
 
@@ -40,16 +40,22 @@ export default function Form() {
       </Head>
       <div>
         <Nav />
+        <h3 className="text-2xl text-center font-semibold">
+          Take a moment to think about your{" "}
+          <span className="text-mint">gratitude</span> and{" "}
+          <span className="text-mint">aspirations</span>.
+        </h3>
+        <br />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col sm:mx-10 md:mx-48 lg:mx-96 mb-5 p-8 border-navy dark:border-sand border-2 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg dark:bg-gray-800 dark:border-gray-700"
+          className="flex flex-col self-center sm:mx-10 md:mx-48 lg:mx-96 mb-5 p-8 border-navy dark:border-sand border-2 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg dark:bg-gray-800 dark:border-gray-700"
         >
           <div className="mb-6">
-            <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
+            <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-300">
               your preferred name
             </label>
             <input
-              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="anything you like!"
               required
               minLength="2"
@@ -59,11 +65,11 @@ export default function Form() {
           </div>
 
           <div className="mb-6">
-            <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
+            <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-300">
               who cannot live without me?
             </label>
             <input
-              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my favorite humaaans"
               required
               minLength="2"
@@ -71,12 +77,12 @@ export default function Form() {
             />
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
+            <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-300">
               where do I see myself in 5 years?
             </label>
             <textarea
               rows="3"
-              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my future :)"
               required
               minLength="2"
@@ -84,12 +90,12 @@ export default function Form() {
             ></textarea>
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300">
+            <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-300">
               what places do I still want to go?
             </label>
             <textarea
               rows="2"
-              className="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="it's a big world..."
               required
               minLength="2"
@@ -100,12 +106,22 @@ export default function Form() {
           <button
             type="submit"
             value="submit"
-            className="mt-2 self-center text-black bg-mint border-navy dark:border-sand border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-full text-base px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
+            className="mt-2 self-center text-black bg-mint border-navy dark:border-sand border-solid border-2 transition duration-150 hover:duration-150 hover:bg-transparent hover:text-black hover:border-solid hover:border-2 focus:ring-4 focus:ring-mint font-medium rounded-full text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-mint dark:text-white dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-mint"
           >
             generate!
           </button>
         </form>
-
+        <br />
+        <h3 className="text-xl text-center font-semibold">
+          Note: If you are on a mobile device, the animated card gallery is not
+          working yet. Please check out the
+          <Link href="./cards">
+            <h3 className="text-golden cursor-auto">
+              static card gallery here!
+            </h3>
+          </Link>
+        </h3>
+        <br />
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max sm:mx-auto bg-transparent group perspective">
           {cards?.map((card, i) => (
             <div className="max-w-sm m-5 pl-0 pt-5 aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
@@ -128,7 +144,7 @@ export default function Form() {
                   </p>
                 </div>
               </div>
-              <div className="sm:mb-24 m-0 p-5 pt-7 absolute bg-meshGreen bg-cover my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
+              <div className="sm:mb-48 m-0 p-5 pt-7 pb-48 absolute bg-meshGreen bg-cover my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
                 <Link
                   className="ml-3 text-left subpixel-antialiased hover:text-golden"
                   href="https://988lifeline.org/"
@@ -174,6 +190,8 @@ export default function Form() {
           <br />
         </div>
       </div>
+      <br />
+      <br />
     </div>
   );
 }

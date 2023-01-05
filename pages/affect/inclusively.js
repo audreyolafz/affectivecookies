@@ -67,7 +67,7 @@ export default function Inclusively() {
             onSubmit={handleSubmit}
             className="flex justify-center flex-col gap-5"
           >
-            <label className="block text-lg font-medium text-gray-900 dark:text-white">
+            <label className="block text-xl font-medium text-gray-900 dark:text-white">
               Enter text that you want to make more inclusive.
             </label>
             <textarea

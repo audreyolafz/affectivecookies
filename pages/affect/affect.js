@@ -58,7 +58,11 @@ export default function Affect({ tweets }) {
         <Nav />
         <br />
         {session ? (
-          <ul className="float-left ml-5 w-56 text-sm font-medium text-gray-900 bg-white rounded-lg border-navy dark:border-sand border-solid border-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+          <ul className="float-left ml-5 w-56 text-lg font-medium text-gray-900 bg-white rounded-lg border-navy dark:border-sand border-solid border-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <h3 className="text-lg text-center m-2">
+              Check or uncheck the boxes to view your Twitter feed
+              sentimentally.
+            </h3>
             <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
               <div className="flex items-center pl-3">
                 <input
@@ -70,7 +74,7 @@ export default function Affect({ tweets }) {
                 />
                 <label
                   htmlFor="green-checkbox"
-                  className="py-3 ml-2 text-sm font-medium text-green-700 dark:text-green-300"
+                  className="py-3 ml-2 text-lg font-medium text-green-700 dark:text-green-300"
                 >
                   Positive 😀
                 </label>
@@ -87,7 +91,7 @@ export default function Affect({ tweets }) {
                 />
                 <label
                   htmlFor="yellow-checkbox"
-                  className="py-3 ml-2 text-sm font-medium text-yellow-400 dark:text-yellow-100"
+                  className="py-3 ml-2 text-lg font-medium text-yellow-400 dark:text-yellow-100"
                 >
                   Neutral 😐
                 </label>
@@ -105,7 +109,7 @@ export default function Affect({ tweets }) {
                 />
                 <label
                   htmlFor="green-checkbox"
-                  className="py-3 ml-2 text-sm font-medium text-orange-500 dark:text-orange-300"
+                  className="py-3 ml-2 text-lg font-medium text-orange-500 dark:text-orange-300"
                 >
                   Mental Health Sensitive 🧠
                 </label>
@@ -122,7 +126,7 @@ export default function Affect({ tweets }) {
                 />
                 <label
                   htmlFor="red-checkbox"
-                  className="py-3 ml-2 text-sm font-medium text-red-700 dark:text-red-200"
+                  className="py-3 ml-2 text-lg font-medium text-red-700 dark:text-red-200"
                 >
                   Negative 😟
                 </label>
