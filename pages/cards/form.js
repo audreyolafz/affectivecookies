@@ -48,14 +48,14 @@ export default function Form() {
         <br />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col self-center sm:mx-10 md:mx-48 lg:mx-96 mb-5 p-8 border-navy dark:border-sand border-2 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg dark:bg-gray-800 dark:border-gray-700"
+          className="flex flex-col self-center sm:mx-10 md:mx-48 lg:mx-96 mb-5 p-8 border-navy dark:border-sand border-2 rounded-lg space-y-5 bg-meshRed bg-cover bg-no-repeat bg-opacity-80 bg-clip-padding rounded-lg dark:bg-gray-800"
         >
           <div className="mb-6">
             <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-300">
               your preferred name
             </label>
             <input
-              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="anything you like!"
               required
               minLength="2"
@@ -69,7 +69,7 @@ export default function Form() {
               who cannot live without me?
             </label>
             <input
-              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my favorite humaaans"
               required
               minLength="2"
@@ -82,7 +82,7 @@ export default function Form() {
             </label>
             <textarea
               rows="3"
-              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="my future :)"
               required
               minLength="2"
@@ -95,7 +95,7 @@ export default function Form() {
             </label>
             <textarea
               rows="2"
-              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border-navy dark:border-sand border-2 focus:ring-mint focus:border-mint dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mint dark:focus:border-mint"
               placeholder="it's a big world..."
               required
               minLength="2"
@@ -122,10 +122,10 @@ export default function Form() {
           </Link>
         </h3>
         <br />
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max sm:mx-auto bg-transparent group perspective">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-cols-max sm:mx-auto aspect-video rounded-lg  bg-transparent group perspective">
           {cards?.map((card, i) => (
-            <div className="max-w-sm m-5 pl-0 pt-5 aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
-              <div className="sm:mb-24 pt-5 absolute bg-accard bg-cover overflow-hidden aspect-video rounded-lg">
+            <div className="mb-36 max-w-sm m-5 pl-0 pt-5 aspect-video rounded-lg shadow-lg relative preserve-3d hover:my-rotate-y-180 duration-1000">
+              <div className="pt-5 absolute dark:text-black bg-accard bg-cover overflow-hidden aspect-video rounded-lg">
                 <p
                   // key={i}
                   className="text-2xl text-center font-bold backface-hidden"
@@ -135,7 +135,7 @@ export default function Form() {
                 <div className="relative">
                   <p
                     // key={i}
-                    className="text-base text-right backface-hidden ml-20 pl-20 pr-3"
+                    className="text-base text-right backface-hidden ml-14 pl-14 pr-3"
                   >
                     🫂 <u>{card.people}</u> could not have done it without me 🫶
                     <br />
@@ -146,7 +146,7 @@ export default function Form() {
               </div>
               <div className="sm:mb-48 m-0 p-5 pt-7 pb-48 absolute bg-meshGreen bg-cover my-rotate-y-180 backface-hidden overflow-hidden aspect-video rounded-lg">
                 <Link
-                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
+                  className="ml-3 text-left subpixel-antialiased dark:text-black hover:text-golden"
                   href="https://988lifeline.org/"
                   target="_blank"
                 >
@@ -154,7 +154,7 @@ export default function Form() {
                 </Link>
                 <br />
                 <Link
-                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
+                  className="ml-3 text-left subpixel-antialiased dark:text-black hover:text-golden"
                   href="https://www.crisistextline.org/"
                   target="_blank"
                 >
@@ -162,7 +162,7 @@ export default function Form() {
                 </Link>
                 <br />
                 <Link
-                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
+                  className="ml-3 text-left subpixel-antialiased dark:text-black hover:text-golden"
                   href="https://www.thetrevorproject.org/"
                   target="_blank"
                 >
@@ -170,7 +170,7 @@ export default function Form() {
                 </Link>
                 <br />
                 <Link
-                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
+                  className="ml-3 text-left subpixel-antialiased dark:text-black hover:text-golden"
                   href="https://www.thehotline.org/"
                   target="_blank"
                 >
@@ -178,7 +178,7 @@ export default function Form() {
                 </Link>
                 <br />
                 <Link
-                  className="ml-3 text-left subpixel-antialiased hover:text-golden"
+                  className="ml-3 text-left subpixel-antialiased dark:text-black hover:text-golden"
                   href="https://www.rainn.org/"
                   target="_blank"
                 >

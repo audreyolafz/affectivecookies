@@ -32,15 +32,27 @@ export default function Account() {
           <u>Here is an overview:</u>
           <br />
           <br />
-          <b>Card</b> | Fill in the fields to create a custom mental health
-          card! Check out the card gallery below.
+          <b>Card</b> | Fill in the fields to create a custom animated mental
+          health card! On desktop, hover over the card to reveal call/ text
+          helplines, which are hyperlinked. Check out the card gallery below.
           <br />
           <b>Feed</b> | Since you are signed in, you can view your Twitter feed
-          filtered with mental health in mind.
+          filtered with mental health in mind. Simply check the categories you
+          want to see.
           <br />
-          <b>Inclusively</b> | Your words matter. Make your words count by
-          ensuring they use kinder and more inclusive phrases.
+          <b>Inclusion</b> | Your words matter. Make your words count by
+          ensuring they use kinder and more inclusive phrases. Then, you can
+          copy it and share it with the world!
         </p>
+        <br />
+        <br />
+        <p className="text-center leading-loose text-xl sm:mx-3 md:mx-10 lg:mx-96">
+          <h3>Here is a secret:</h3>
+          Do you see the cookie jar in the right hand corner? Is it empty? Well,
+          you can earn cookie points by doing certain things...😉
+        </p>
+        <br />
+        <br />
       </div>
     );
   }

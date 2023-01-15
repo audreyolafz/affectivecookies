@@ -58,7 +58,7 @@ export default function Affect({ tweets }) {
         <Nav />
         <br />
         {session ? (
-          <ul className="float-left ml-5 w-56 text-lg font-medium text-gray-900 bg-white rounded-lg border-navy dark:border-sand border-solid border-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+          <ul className="mb-48 lg:mb-0 float-left ml-5 w-56 text-lg font-medium text-gray-900 bg-white rounded-lg border-navy dark:border-sand border-solid border-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
             <h3 className="text-lg text-center m-2">
               Check or uncheck the boxes to view your Twitter feed
               sentimentally.
@@ -140,7 +140,6 @@ export default function Affect({ tweets }) {
             </h1>
           </div>
         )}
-        <div className="sm:mb-48 md:mb-48 lg:mb-0"></div>
         {checkedGr ? (
           <div className="p-5 mb-4 sm:mx-10 lg:mx-96 bg-green-100 rounded-lg border border-green-800 dark:bg-green-600 dark:border-green-50">
             <h1 className="text-lg font-semibold text-green-800 dark:text-white">

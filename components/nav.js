@@ -6,6 +6,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useContext, useState, createContext, useEffect } from "react";
 import Image from "next/image";
 import jar from "/public/illustrations/jar.png";
+import cookie from "/public/illustrations/cookieThree.png";
 import { useCounterContext } from "/context/state";
 
 export default function Nav() {
@@ -26,11 +27,20 @@ export default function Nav() {
   return (
     <div>
       <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
-      <nav className="px-2 mb-8 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 cursor-auto">
+      <nav className="px-2 mb-8 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 bg-sand dark:bg-navy cursor-auto">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <Link href="/" className="flex items-center">
-            <span className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
-              Affective Cookies
+          <Link href="/" className="flex flex-row">
+            <span>
+              {/* <Image
+                className="pr-2 cursor-pointer"
+                src={cookie}
+                width="40"
+                height="40"
+                alt="logo"
+              /> */}
+              <h2 className="text-xl font-semibold whitespace-nowrap cursor-pointer hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
+                Affective Cookies
+              </h2>
             </span>
           </Link>
 
