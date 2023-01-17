@@ -137,6 +137,8 @@ export default function Inclusively() {
           )}
         </div>
       </div>
+      <br />
+      <br />
     </div>
   );
 }

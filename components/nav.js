@@ -38,7 +38,7 @@ export default function Nav() {
                 height="40"
                 alt="logo"
               /> */}
-              <h2 className="text-xl font-semibold whitespace-nowrap cursor-pointer hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
+              <h2 className="visible text-xl font-semibold whitespace-nowrap cursor-pointer hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
                 Affective Cookies
               </h2>
             </span>
