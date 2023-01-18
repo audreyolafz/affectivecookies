@@ -29,16 +29,16 @@ export default function Nav() {
       <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
       <nav className="px-2 mb-8 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 bg-sand dark:bg-navy cursor-auto">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <Link href="/" className="flex flex-row">
-            <span>
-              {/* <Image
-                className="pr-2 cursor-pointer"
+          <Link href="/">
+            <span className="flex flex-row">
+              <Image
+                className="pr-4 flex cursor-pointer"
                 src={cookie}
                 width="40"
                 height="40"
                 alt="logo"
-              /> */}
-              <h2 className="visible text-xl font-semibold whitespace-nowrap cursor-pointer hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
+              />
+              <h2 className="pl-2 pt-2 flex invisible lg:visible text-xl font-semibold whitespace-nowrap cursor-pointer hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
                 Affective Cookies
               </h2>
             </span>
@@ -105,7 +105,7 @@ export default function Nav() {
                   .querySelector("#theme_toggle")
                   .classList.toggle("rotate-180");
               }}
-              className="p-2 rounded-full hover:bg-black dark:hover:bg-white hover:bg-opacity-10 dark:hover:bg-opacity-10 transform duration-200"
+              className="pr-2 py-2 rounded-full hover:bg-black dark:hover:bg-white hover:bg-opacity-10 dark:hover:bg-opacity-10 transform duration-200"
               id="theme_toggle"
             >
               <CgDarkMode size={28} />
@@ -124,47 +124,41 @@ export default function Nav() {
                 <li>
                   <Link
                     href="/cards/form"
-                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
+                    className="self-center whitespace-nowrap"
                   >
-                    Card
+                    <h3 className="cursor-pointer text-md font-semibold hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
+                      Card
+                    </h3>
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    href="/cookies/jar"
-                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
-                    Cookie
-                  </Link>
-                </li> */}
                 <li>
                   <Link
                     href="/affect/affect"
-                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
+                    className="self-center whitespace-nowrap"
                   >
-                    Feed
+                    <h3 className="cursor-pointer text-md font-semibold hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
+                      Feed
+                    </h3>
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/affect/inclusively"
-                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
+                    className="self-center whitespace-nowrap"
                   >
-                    Inclusion
+                    <h3 className="cursor-pointer text-md font-semibold hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
+                      Inclusion
+                    </h3>
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    href="/cards/gallery"
-                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
-                    Gallery
-                  </Link>
-                </li> */}
                 <li>
                   <Link
                     href="/auth/account"
-                    className="self-center text-xl font-semibold whitespace-nowrap hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white"
+                    className="self-center whitespace-nowrap"
                   >
-                    Account
+                    <h3 className="cursor-pointer text-md font-semibold hover:bg-transparent hover:text-golden dark:hover:text-golden dark:text-white">
+                      Account
+                    </h3>
                   </Link>
                 </li>
               </ul>

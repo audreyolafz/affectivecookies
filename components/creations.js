@@ -10,7 +10,7 @@ import inclusive from "/public/homepage/inclusive.png";
 
 export default function Creations() {
   return (
-    <div className="sm:mx-3 sm:my-1 md:my-2 lg:my-3 relative">
+    <div className="mx-3 my-1 md:my-2 lg:my-3 relative">
       <Image src={imposterThree} width="250px" height="250px" />
 
       <h1 className="mb-4 text-center text-5xl font-bold tracking-tight leading-none text-gray-900 lg:mx-80 dark:text-white">
@@ -75,6 +75,7 @@ export default function Creations() {
           <Image src={feed} width="640" height="360" alt="feed" />
           <br />
         </div>
+        <br />
         <h3 className="text-xl ml-8 font-semibold">
           Are your words <i>really</i> inclusive?
         </h3>
