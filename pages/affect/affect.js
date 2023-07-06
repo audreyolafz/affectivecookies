@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { useSession } from "next-auth/react";
 import Sentiment from "sentiment";
 import displayHomeTimeline from "../api/twitter";
@@ -58,85 +59,97 @@ export default function Affect({ tweets }) {
         <Nav />
         <br />
         {session ? (
-          <ul className="mb-48 lg:mb-0 float-left ml-5 w-56 text-lg font-medium text-gray-900 bg-white rounded-lg border-navy dark:border-sand border-solid border-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-            <h3 className="text-lg text-center m-2">
-              Check or uncheck the boxes to view your Twitter feed
-              sentimentally.
-            </h3>
-            <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
-              <div className="flex items-center pl-3">
-                <input
-                  id="green-checkbox"
-                  type="checkbox"
-                  onClick={handleGreenCheck}
-                  checked={checkedGr}
-                  className="w-4 h-4 text-green-600 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                />
-                <label
-                  htmlFor="green-checkbox"
-                  className="py-3 ml-2 text-lg font-medium text-green-700 dark:text-green-300"
-                >
-                  Positive 😀
-                </label>
-              </div>
-            </li>
-            <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
-              <div className="flex items-center pl-3">
-                <input
-                  id="yellow-checkbox"
-                  type="checkbox"
-                  onClick={handleYellowCheck}
-                  checked={checkedYe}
-                  className="w-4 h-4 text-yellow-400 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-yellow-300 dark:focus:ring-yellow-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                />
-                <label
-                  htmlFor="yellow-checkbox"
-                  className="py-3 ml-2 text-lg font-medium text-yellow-400 dark:text-yellow-100"
-                >
-                  Neutral 😐
-                </label>
-              </div>
-            </li>
-            <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
-              <div className="flex items-center pl-3">
-                <input
-                  id="orange-checkbox"
-                  type="checkbox"
-                  onClick={handleOrangeCheck}
-                  checked={checkedOr}
-                  data-modal-toggle="popup-modal"
-                  className="w-4 h-4 text-orange-500 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-orange-400 dark:focus:ring-orange-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                />
-                <label
-                  htmlFor="green-checkbox"
-                  className="py-3 ml-2 text-lg font-medium text-orange-500 dark:text-orange-300"
-                >
-                  Mental Health Sensitive 🧠
-                </label>
-              </div>
-            </li>
-            <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
-              <div className="flex items-center pl-3">
-                <input
-                  id="red-checkbox"
-                  type="checkbox"
-                  onClick={handleRedCheck}
-                  checked={checkedRe}
-                  className="w-4 h-4 text-red-600 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                />
-                <label
-                  htmlFor="red-checkbox"
-                  className="py-3 ml-2 text-lg font-medium text-red-700 dark:text-red-200"
-                >
-                  Negative 😟
-                </label>
-              </div>
-            </li>
-          </ul>
+          <div>
+            <ul className="mb-48 lg:mb-0 float-left ml-5 w-56 text-lg font-medium text-gray-900 bg-white rounded-lg border-navy dark:border-sand border-solid border-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <h3 className="text-lg text-center m-2">
+                Check or uncheck the boxes to view your Twitter feed
+                sentimentally.
+              </h3>
+              <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
+                <div className="flex items-center pl-3">
+                  <input
+                    id="green-checkbox"
+                    type="checkbox"
+                    // onClick={handleGreenCheck}
+                    checked={checkedGr}
+                    onChange={handleGreenCheck}
+                    className="w-4 h-4 text-green-600 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  />
+                  <label
+                    htmlFor="green-checkbox"
+                    className="py-3 ml-2 text-lg font-medium text-green-700 dark:text-green-300"
+                  >
+                    Positive 😀
+                  </label>
+                </div>
+              </li>
+              <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
+                <div className="flex items-center pl-3">
+                  <input
+                    id="yellow-checkbox"
+                    type="checkbox"
+                    // onClick={handleYellowCheck}
+                    checked={checkedYe}
+                    onChange={handleYellowCheck}
+                    className="w-4 h-4 text-yellow-400 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-yellow-300 dark:focus:ring-yellow-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  />
+                  <label
+                    htmlFor="yellow-checkbox"
+                    className="py-3 ml-2 text-lg font-medium text-yellow-400 dark:text-yellow-100"
+                  >
+                    Neutral 😐
+                  </label>
+                </div>
+              </li>
+              <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
+                <div className="flex items-center pl-3">
+                  <input
+                    id="orange-checkbox"
+                    type="checkbox"
+                    checked={checkedOr}
+                    onChange={handleOrangeCheck}
+                    data-modal-toggle="popup-modal"
+                    className="w-4 h-4 text-orange-500 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-orange-400 dark:focus:ring-orange-400 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  />
+                  <label
+                    htmlFor="green-checkbox"
+                    className="py-3 ml-2 text-lg font-medium text-orange-500 dark:text-orange-300"
+                  >
+                    Mental Health Sensitive 🧠
+                  </label>
+                </div>
+              </li>
+              <li className="w-full rounded-t-lg border-b border-gray-200 dark:border-gray-600">
+                <div className="flex items-center pl-3">
+                  <input
+                    id="red-checkbox"
+                    type="checkbox"
+                    checked={checkedRe}
+                    onChange={handleRedCheck}
+                    className="w-4 h-4 text-red-600 bg-gray-100 rounded border-navy dark:border-sand border-solid border-2 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  />
+                  <label
+                    htmlFor="red-checkbox"
+                    className="py-3 ml-2 text-lg font-medium text-red-700 dark:text-red-200"
+                  >
+                    Negative 😟
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
         ) : (
           <div>
-            <h1 className="mb-4 text-center text-base tracking-tight leading-none text-gray-900 md:text-3xl lg:text-xl lg:mx-80 dark:text-white">
-              Oops! Please sign in with Twitter.
+            <h1 className="mb-4 text-center text-base tracking-tight leading-none text-gray-900 cursor-pointer md:text-3xl lg:text-xl lg:mx-80 dark:text-white">
+              Hi there, with the current current changes to{" "}
+              <Link
+                className="ml-3 text-left subpixel-antialiased dark:text-black hover:text-golden"
+                href="https://twitter.com/TwitterDev/status/1641222782594990080"
+                target="_blank"
+              >
+                <u>Twitter&apos;s API</u>
+              </Link>
+              , unfortunately this functionality has been broken.
             </h1>
           </div>
         )}
@@ -146,11 +159,11 @@ export default function Affect({ tweets }) {
               Positive
             </h1>
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
-              {green_result.map((i) => (
+              {green_result.map((item, index) => (
                 <li className="block items-center p-3 rounded-lg sm:flex hover:bg-green-200 dark:hover:bg-green-700">
                   <div className="text-gray-800 dark:text-gray-100">
                     <div className="text-base font-normal">
-                      <h2>{i}</h2>
+                      <h2 key={index}>{item}</h2>
                     </div>
                   </div>
                 </li>
@@ -166,11 +179,11 @@ export default function Affect({ tweets }) {
               Neutral
             </h1>
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
-              {yellow_result.map((i) => (
+              {yellow_result.map((item, index) => (
                 <li className="block items-center p-3 rounded-lg sm:flex hover:bg-yellow-200 dark:hover:bg-yellow-600">
                   <div className="text-gray-800 dark:text-gray-100">
                     <div className="text-base font-normal">
-                      <h2>{i}</h2>
+                      <h2 key={index}>{item}</h2>
                     </div>
                   </div>
                 </li>
@@ -187,11 +200,11 @@ export default function Affect({ tweets }) {
               Mental Health Sensitive
             </h1>
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
-              {orange_result.map((i) => (
+              {orange_result.map((item, index) => (
                 <li className="block items-center p-3 rounded-lg sm:flex hover:bg-orange-200 dark:hover:bg-orange-700">
                   <div className="text-gray-800 dark:text-gray-100">
                     <div className="text-base font-normal">
-                      <h2>{i}</h2>
+                      <h2 key={index}>{item}</h2>
                     </div>
                   </div>
                 </li>
@@ -208,11 +221,11 @@ export default function Affect({ tweets }) {
               Negative
             </h1>
             <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
-              {red_result.map((i) => (
+              {red_result.map((item, index) => (
                 <li className="block items-center p-3 rounded-lg sm:flex hover:bg-red-200 dark:hover:bg-red-700">
                   <div className="text-gray-800 dark:text-gray-100">
                     <div className="text-base font-normal">
-                      <h2>{i}</h2>
+                      <h2 key={index}>{item}</h2>
                     </div>
                   </div>
                 </li>

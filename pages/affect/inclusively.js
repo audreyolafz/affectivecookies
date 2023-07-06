@@ -58,7 +58,7 @@ export default function Inclusively() {
           <title>Affective Cookies | Inclusively</title>
           <meta
             name="description"
-            content="App that gives advice using OpenAI GPT-3"
+            content="Project that makes words more inclusive"
           />
           <link rel="icon" href="/illustrations/cookieOne.png" />
         </Head>
